@@ -1,0 +1,11 @@
+dir .
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/ada
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/cp
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/fortran
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/go
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/java
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/lto
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/objc
+dir /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/objcp
+source /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc/gdbinit.in

@@ -1,0 +1,13 @@
+Package: overlord
+Version: gd4a80eb-1
+Depends: libc, libsbdaemon, hiredis, jansson
+Provides: 
+Source: qca/feeds/streamboost/overlord
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mo Chen <moc@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 27584
+Description:  Overlord manages bandwidth allocation by computing the current policy profile for each flow.

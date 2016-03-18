@@ -1,0 +1,17 @@
+Source-Makefile: package/vmstat/Makefile
+Package: vmstat
+Version: 1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: System CPU and memory monitor
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: System CPU and memory monitor
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

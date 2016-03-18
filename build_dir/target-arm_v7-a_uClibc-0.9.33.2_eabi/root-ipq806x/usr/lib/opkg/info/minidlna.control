@@ -1,0 +1,13 @@
+Package: minidlna
+Version: latest-3
+Depends: libc
+Provides: 
+Source: package/minidlna
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 113408
+Description:  minidlna server

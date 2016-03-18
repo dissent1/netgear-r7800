@@ -1,0 +1,13 @@
+Package: libunistring
+Version: 0.9.3-1
+Depends: libc
+Provides: 
+Source: package/libunistring
+Section: libs
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Espen Jürgensen <espenjurgensen+openwrt@gmail.com>
+Architecture: ipq806x
+Installed-Size: 413211
+Description:  This library provides functions for manipulating Unicode strings and for manipulating C strings according to the Unicode standard.

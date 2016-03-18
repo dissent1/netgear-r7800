@@ -1,0 +1,7 @@
+kernel//home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/profiler/qca-nss-profile-drv.ko
+kernel//home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/nss_qdisc/qca-nss-qdisc.ko
+kernel//home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/capwapmgr/qca-nss-capwapmgr.ko
+kernel//home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/netlink/qca-nss-netlink.ko
+kernel//home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/qca-nss-tun6rd.ko
+kernel//home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/qca-nss-tunipip6.ko
+kernel//home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/qca-nss-ipsecmgr.ko

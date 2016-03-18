@@ -1,0 +1,13 @@
+Package: kmod-qca-nss-drv-qdisc
+Version: 3.4.103-1
+Depends: kernel (=3.4.103-1-9bc361d5681459bf8ad202ee07342a8e), kmod-qca-nss-drv, kmod-qca-nss-crypto
+Provides: 
+Source: package/qca-nss-clients
+Section: kernel
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 14778
+Description:  Qdisc for configuring shapers in NSS

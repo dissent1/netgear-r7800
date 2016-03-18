@@ -1,0 +1,13 @@
+Package: qca-wpa-supplicant
+Version: 10.4-4.0.1756.093-1
+Depends: libc, kmod-qca-wifi, libopenssl, libnl-bf, qsdk-wifi-script
+Provides: 
+Source: package/qca-hostap
+Section: QCA
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Qualcomm Atheros
+Architecture: ipq806x
+Installed-Size: 532305
+Description:  WPA Supplicant

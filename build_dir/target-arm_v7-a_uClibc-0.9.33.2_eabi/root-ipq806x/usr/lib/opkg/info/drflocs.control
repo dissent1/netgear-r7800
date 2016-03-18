@@ -1,0 +1,13 @@
+Package: drflocs
+Version: g02f6341-2
+Depends: libc, libpcap, librt, libevent2-core, hiredis, libnl-bf, libnetfilter-conntrack
+Provides: 
+Source: qca/feeds/streamboost/drflocs
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Ryan Nowakowski <rnowakow@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 102316
+Description:  DRFloCS implements Layer 4-based packet inspection sauce to accelerate your life!!!

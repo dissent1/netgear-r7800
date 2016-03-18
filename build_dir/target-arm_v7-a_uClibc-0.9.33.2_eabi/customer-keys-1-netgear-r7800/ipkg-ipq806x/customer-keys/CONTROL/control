@@ -1,0 +1,13 @@
+Package: customer-keys
+Version: 1-netgear-r7800-1
+Depends: libc
+Provides: 
+Source: package/customer-keys
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Earl Manning <earl.manning@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 5271
+Description:  SSL keys and certificates for a specific customer

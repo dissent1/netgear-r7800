@@ -1,0 +1,13 @@
+Package: flux
+Version: ga5a315d-1
+Depends: libc, jquery, jquery-ui, jquery-contextmenu, jquery-jscrollpane, jquery-swapsies, jquery-flot, jquery-flot-axislabels, jquery-flot-gant, jquery-sparkline, raphael, tresbar, angular, angular-mocks, angular-route, angular-translate, urijs, angular-ozker, angular-loadcontent
+Provides: 
+Source: qca/feeds/streamboost/flux
+Section: language-javascript
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 165900
+Description:  Killer Router Web UI Toolkit

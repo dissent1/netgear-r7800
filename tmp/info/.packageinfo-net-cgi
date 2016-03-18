@@ -1,0 +1,18 @@
+Source-Makefile: package/net-cgi/Makefile
+Package: net-cgi
+Default: y
+Version: 1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Title: The mini_httpd CGI interface
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: The mini_httpd CGI interface
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

@@ -1,0 +1,6 @@
+./
+./host
+./etc
+./etc/ssl
+./etc/ssl/certs
+./etc/ssl/certs/client_cert.pem

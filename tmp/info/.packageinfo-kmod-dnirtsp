@@ -1,0 +1,18 @@
+Source-Makefile: package/kmod-dnirtsp/Makefile
+Package: kmod-dnirtsp
+Submenu: DNI Kernel Module
+Version: <LINUX_VERSION>+--1
+Depends: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: DNI RTSP ALG
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: DNI RTSP ALG
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

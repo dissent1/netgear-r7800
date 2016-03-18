@@ -1,0 +1,13 @@
+Package: openvpn-openssl
+Version: 2.3.2-3
+Depends: libc, kmod-tun, liblzo, libopenssl
+Provides: 
+Source: package/openvpn
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mirko Vogt <mirko@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 158343
+Description:  Open source VPN solution using OpenSSL

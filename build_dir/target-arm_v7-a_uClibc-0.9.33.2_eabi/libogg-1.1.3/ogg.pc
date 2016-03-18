@@ -1,0 +1,14 @@
+# ogg pkg-config file
+
+prefix=/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libogg-1.1.3/ipkg-install
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: ogg
+Description: ogg is a library for manipulating ogg bitstreams
+Version: 1.1.3
+Requires:
+Conflicts:
+Libs: -L${libdir} -logg
+Cflags: -I${includedir}

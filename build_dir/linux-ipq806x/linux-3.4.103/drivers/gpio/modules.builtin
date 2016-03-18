@@ -1,0 +1,2 @@
+kernel/drivers/gpio/gpio-msm-common.ko
+kernel/drivers/gpio/gpio-msm-v2.ko

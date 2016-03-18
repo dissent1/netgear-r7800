@@ -1,0 +1,11 @@
+kernel/net/ipv4/netfilter/nf_nat_amanda.ko
+kernel/net/ipv4/netfilter/nf_nat_ftp.ko
+kernel/net/ipv4/netfilter/nf_nat_h323.ko
+kernel/net/ipv4/netfilter/nf_nat_irc.ko
+kernel/net/ipv4/netfilter/nf_nat_pptp.ko
+kernel/net/ipv4/netfilter/nf_nat_sip.ko
+kernel/net/ipv4/netfilter/nf_nat_snmp_basic.ko
+kernel/net/ipv4/netfilter/nf_nat_tftp.ko
+kernel/net/ipv4/netfilter/nf_nat_proto_gre.ko
+kernel/net/ipv4/netfilter/ipt_ECN.ko
+kernel/net/ipv4/netfilter/ipt_NETMAP.ko

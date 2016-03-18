@@ -1,0 +1,13 @@
+Package: settings-loader
+Version: 0.0.1-1
+Depends: libc, redis-cli
+Provides: 
+Source: qca/feeds/streamboost/settings-loader
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mo Chen <moc@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 660
+Description:  Settings loader (wait for it) loads settings into Redis.

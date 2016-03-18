@@ -1,0 +1,2 @@
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/netlink/qca-nss-netlink.ko
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/netlink/nss_nl.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/netlink/nss_nlcrypto.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/netlink/nss_nlipv4.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/netlink/nss_nlipsec.o

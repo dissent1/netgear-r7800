@@ -1,0 +1,15 @@
+Package: kmod-ebtables
+Version: 3.4.103-1
+Depends: kernel (=3.4.103-1-9bc361d5681459bf8ad202ee07342a8e)
+Provides: 
+Source: package/kernel
+Section: kernel
+Status: unknown hold not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 6049
+Description:  ebtables is a general, extensible frame/packet identification
+ framework. It provides you to do Ethernet
+ filtering/NAT/brouting on the Ethernet bridge.

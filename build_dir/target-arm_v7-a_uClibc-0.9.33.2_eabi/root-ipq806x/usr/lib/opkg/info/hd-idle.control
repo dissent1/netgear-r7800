@@ -1,0 +1,13 @@
+Package: hd-idle
+Version: 1.04-1
+Depends: libc
+Provides: 
+Source: package/hd-idle
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 4428
+Description:  Another idle-daemon for attached hard drives

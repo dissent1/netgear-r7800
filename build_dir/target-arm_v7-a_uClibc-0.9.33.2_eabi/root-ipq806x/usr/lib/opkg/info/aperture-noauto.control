@@ -1,0 +1,16 @@
+Package: aperture-noauto
+Version: g2e65dce-2
+Depends: libc, jansson, curl, libxml2, app-flow-scripts
+Provides: aperture
+Source: qca/feeds/streamboost/aperture
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Cristian Prundeanu <prundeanu@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 40505
+Description:  Aperture continuously monitors the available upload and download rate and
+ adjusts the TBF of the root interfaces accordingly.
+ 
+ This is the package without auto-start.

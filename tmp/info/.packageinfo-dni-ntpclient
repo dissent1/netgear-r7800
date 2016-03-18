@@ -1,0 +1,18 @@
+Source-Makefile: package/dni-ntpclient/Makefile
+Package: dni-ntpclient
+Version: 4
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread @TARGET_ipq806x
+Menu-Depends: 
+Provides: 
+Build-Depends: datalib
+Section: utils
+Category: Base system
+Title: The CGI interface
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: 	The CGI interface
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

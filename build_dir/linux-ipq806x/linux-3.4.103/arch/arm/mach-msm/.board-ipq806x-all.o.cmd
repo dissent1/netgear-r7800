@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-msm/board-ipq806x-all.o := arm-openwrt-linux-uclibcgnueabi-ld -EL    -r -o arch/arm/mach-msm/board-ipq806x-all.o arch/arm/mach-msm/board-ipq806x.o arch/arm/mach-msm/board-ipq806x-storage.o arch/arm/mach-msm/board-ipq806x-gpiomux.o 

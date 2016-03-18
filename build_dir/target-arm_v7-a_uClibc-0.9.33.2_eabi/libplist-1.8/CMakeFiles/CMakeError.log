@@ -1,0 +1,42 @@
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1444977423/fast"
+make[4]: Entering directory `/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1444977423.dir/build.make CMakeFiles/cmTryCompileExec1444977423.dir/build
+make[5]: Entering directory `/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/CMakeFiles/CMakeTmp'
+/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/host/bin/cmake -E cmake_progress_report /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1444977423.dir/TestEndianess.c.o
+/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/bin/arm-openwrt-linux-uclibcgnueabi-gcc   -Os -pipe -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=softfp -fhonour-copts -Wno-error=unused-but-set-variable -msoft-float       -o CMakeFiles/cmTryCompileExec1444977423.dir/TestEndianess.c.o   -c /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTryCompileExec1444977423
+/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/host/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1444977423.dir/link.txt --verbose=1
+/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/bin/arm-openwrt-linux-uclibcgnueabi-gcc   -Os -pipe -march=armv7-a -mfpu=vfpv3-d16 -mfloat-abi=softfp -fhonour-copts -Wno-error=unused-but-set-variable -msoft-float       -L/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/usr/lib -L/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/lib -L/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/usr/lib -L/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/lib  CMakeFiles/cmTryCompileExec1444977423.dir/TestEndianess.c.o  -o cmTryCompileExec1444977423 -rdynamic 
+make[5]: Leaving directory `/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/CMakeFiles/CMakeTmp'
+make[4]: Leaving directory `/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+

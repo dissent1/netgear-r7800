@@ -1,0 +1,17 @@
+Source-Makefile: package/datalib/Makefile
+Package: datalib
+Version: 1.0-1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Small application for saving data on embedded system
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: Small application for saving data on embedded system
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

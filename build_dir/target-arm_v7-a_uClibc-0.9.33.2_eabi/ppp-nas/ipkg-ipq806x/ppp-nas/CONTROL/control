@@ -1,0 +1,13 @@
+Package: ppp-nas
+Version: 1
+Depends: libc
+Provides: 
+Source: package/ppp-nas
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 5474
+Description:  PPP tools for controlling Multi-PPPoE

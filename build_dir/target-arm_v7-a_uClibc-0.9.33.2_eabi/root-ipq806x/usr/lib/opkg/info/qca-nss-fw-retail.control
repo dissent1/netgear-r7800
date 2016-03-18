@@ -1,0 +1,13 @@
+Package: qca-nss-fw-retail
+Version: 1.0.c8-00014-1
+Depends: libc
+Provides: qca-nss-fw
+Source: package/qca-nss-fw
+Section: kernel
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 155458
+Description:  This package contains the NSS firmwares (retail) for QCA chipset

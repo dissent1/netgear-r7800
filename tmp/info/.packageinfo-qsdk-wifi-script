@@ -1,0 +1,20 @@
+Source-Makefile: package/qsdk-wifi-script/Makefile
+Package: qsdk-wifi-script
+Version: 1-1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: qca-wifi scripts
+Maintainer: Matthew McClintock <mmcclint@qca.qualcomm.com>
+Source: 
+Type: ipkg
+Description: qca-wifi scripts
+Matthew McClintock <mmcclint@qca.qualcomm.com>
+@@
+Config:
+	source "package/qsdk-wifi-script/Config.in"
+@@
+
+

@@ -1,0 +1,18 @@
+Source-Makefile: package/kmod-pptp/Makefile
+Package: kmod-pptp
+Submenu: Other modules
+Version: <LINUX_VERSION>-1
+Depends: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: PPTP linux kernel module
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: PPTP linux kernel module
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

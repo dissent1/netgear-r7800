@@ -1,0 +1,22 @@
+Source-Makefile: package/radardetect/Makefile
+Package: radardetect
+Version: 1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: DNI radardetect tool
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description:   timer tool for DFS channels
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+Config:
+        menu "Configurations"
+                depends on PACKAGE_radardetect
+        endmenu
+@@
+
+

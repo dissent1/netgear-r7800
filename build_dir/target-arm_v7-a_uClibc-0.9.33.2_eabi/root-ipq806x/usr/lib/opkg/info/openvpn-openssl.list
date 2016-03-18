@@ -1,0 +1,8 @@
+/etc/openvpn/push_routing_rule
+/etc/init.d/zzprefix-check_cert_files
+/etc/init.d/openvpn
+/usr/sbin/openvpn
+/etc/rc.d/S60openvpn
+/lib/upgrade/keep.d/openvpn-openssl
+/etc/openvpn/download
+/lib/upgrade/keep.d/openvpn

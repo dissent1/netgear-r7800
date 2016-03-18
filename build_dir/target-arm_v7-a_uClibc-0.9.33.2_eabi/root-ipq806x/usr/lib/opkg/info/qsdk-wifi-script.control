@@ -1,0 +1,13 @@
+Package: qsdk-wifi-script
+Version: 1-1
+Depends: libc
+Provides: 
+Source: package/qsdk-wifi-script
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Matthew McClintock <mmcclint@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 31367
+Description:  qca-wifi scripts

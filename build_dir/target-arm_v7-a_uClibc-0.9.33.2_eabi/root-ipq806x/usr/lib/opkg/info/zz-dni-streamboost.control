@@ -1,0 +1,13 @@
+Package: zz-dni-streamboost
+Version: 1
+Depends: libc
+Provides: 
+Source: package/zz-dni-streamboost
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 72202
+Description:  override QCA streamboost configure files instead of DNI's configure files

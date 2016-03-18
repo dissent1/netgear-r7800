@@ -1,0 +1,3 @@
+/lib/modules/3.4.103/dni-qos.ko
+/sbin/dni_qos
+/etc/modules.d/39-dni-qos

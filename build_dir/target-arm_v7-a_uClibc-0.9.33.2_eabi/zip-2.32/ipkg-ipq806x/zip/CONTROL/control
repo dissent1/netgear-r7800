@@ -1,0 +1,16 @@
+Package: zip
+Version: 2.32-1
+Depends: libc
+Provides: 
+Source: package/zip
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 66118
+Description:  This is InfoZIP's zip program. It produces files that are fully 
+ compatible with the popular PKZIP program; however, the command line 
+ options are not identical. In other words, the end result is the same, 
+ but the methods differ.

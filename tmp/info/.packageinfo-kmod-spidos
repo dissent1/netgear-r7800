@@ -1,0 +1,18 @@
+Source-Makefile: package/kmod-spidos/Makefile
+Package: kmod-spidos
+Submenu: Other modules
+Version: <LINUX_VERSION>--1
+Depends: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: DNI SPI DOS firewall module
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: DNI SPI DOS firewall module
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

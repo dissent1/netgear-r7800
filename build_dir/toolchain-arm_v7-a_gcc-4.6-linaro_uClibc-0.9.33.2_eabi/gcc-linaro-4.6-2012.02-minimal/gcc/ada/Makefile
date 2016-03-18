@@ -1,0 +1,5 @@
+# All makefile fragments assume that $(srcdir) points to the gcc
+# directory, not the language subdir
+srcdir = /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/gcc
+-include ./gcc-interface/Makefile
+-include ../gcc-interface/Makefile

@@ -1,0 +1,15 @@
+Package: ozker
+Version: g125d397-2
+Depends: libc, jansson, libcurl, fcgi, hiredis, libsbdaemon, app-flow-scripts
+Provides: 
+Source: qca/feeds/streamboost/ozker
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Cristian Prundeanu <prundeanu@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 47946
+Description:  ozKer is the descendant of Oz and Aker (guardian to the Egyptian
+ underworld and remover of death causes). Or, you could call it The Web
+ UI Gateway Which Validates User Input.

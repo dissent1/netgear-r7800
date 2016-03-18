@@ -1,0 +1,13 @@
+Package: led-control
+Version: 1
+Depends: libc
+Provides: 
+Source: package/led-control
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 2457
+Description:  Update utility for LED control

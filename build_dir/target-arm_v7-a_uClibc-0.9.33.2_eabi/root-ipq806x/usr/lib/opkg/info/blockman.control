@@ -1,0 +1,13 @@
+Package: blockman
+Version: g31df683-2
+Depends: libc, hiredis, libsbdaemon
+Provides: 
+Source: qca/feeds/streamboost/blockman
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Yingming Yu<leoy@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 26237
+Description:  Blockman is Da Man in charge of blocking/unblocking of connections.

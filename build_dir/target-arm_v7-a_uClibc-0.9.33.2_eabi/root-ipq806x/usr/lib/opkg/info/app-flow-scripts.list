@@ -1,0 +1,8 @@
+/etc/appflow/uci2streamboost
+/etc/appflow/notice.txt
+/usr/sbin/streamboost_status_monit
+/usr/sbin/streamboost
+/etc/config/appflow
+/etc/hotplug.d/iface/40-streamboost
+/etc/appflow/streamboost.opkg.conf
+/etc/hotplug.d/firewall/20-streamboost

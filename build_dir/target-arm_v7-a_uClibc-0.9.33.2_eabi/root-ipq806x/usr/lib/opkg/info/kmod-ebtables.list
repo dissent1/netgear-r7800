@@ -1,0 +1,8 @@
+/etc/modules.d/49-ebtables
+/lib/modules/3.4.103/ebt_pkttype.ko
+/lib/modules/3.4.103/ebt_vlan.ko
+/lib/modules/3.4.103/ebt_limit.ko
+/lib/modules/3.4.103/ebt_among.ko
+/lib/modules/3.4.103/ebt_802_3.ko
+/lib/modules/3.4.103/ebtable_nat.ko
+/lib/modules/3.4.103/ebt_stp.ko

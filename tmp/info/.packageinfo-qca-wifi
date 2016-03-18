@@ -1,0 +1,86 @@
+Source-Makefile: package/qca-wifi/Makefile
+Package: kmod-qca-wifi
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+10.4-4.0.1756.225-1
+Depends: @(PACKAGE_qca-wifi-fw-hw1-10.4-asic||PACKAGE_qca-wifi-fw-hw2-10.4-asic||PACKAGE_qca-wifi-fw-hw2-10.4-emu_bb||PACKAGE_qca-wifi-fw-hw2-10.4-emu_m2m||PACKAGE_qca-wifi-fw-asic) +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) +qsdk-wifi-script @TARGET_ipq806x +TARGET_ipq806x:kmod-qca-nss-drv
+Menu-Depends: 
+Provides: 
+Build-Variant: akronite-perf
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+Config:
+	menu "custom source directory"
+		depends on PACKAGE_kmod-qca-wifi
+	config qca-wifi_USE_CUSTOM_SOURCE_DIR
+		depends on PACKAGE_kmod-qca-wifi
+		bool "Use custom source directory"
+		default n
+	config qca-wifi_CUSTOM_SOURCE_DIR
+		depends on qca-wifi_USE_CUSTOM_SOURCE_DIR
+		string "Custom source directory"
+		default ""
+	endmenu
+	menu "overwrite package version"
+		depends on PACKAGE_kmod-qca-wifi
+	config qca-wifi_USE_CUSTOM_VERSION
+		depends on PACKAGE_kmod-qca-wifi
+		bool "Use custom package version"
+		default n
+
+	config qca-wifi_CUSTOM_VERSION
+		depends on qca-wifi_USE_CUSTOM_VERSION
+		string "qca-wifi version as string (default version: 10.4-4.0.1756.225)"
+		default "10.4-4.0.1756.225"
+
+	endmenu
+  source "package/qca-wifi/Config.in"
+@@
+
+Package: kmod-qca-wifi-akronite-perf-emu
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+10.4-4.0.1756.225-1
+Depends: @(PACKAGE_qca-wifi-fw-hw1-10.4-asic||PACKAGE_qca-wifi-fw-hw2-10.4-asic||PACKAGE_qca-wifi-fw-hw2-10.4-emu_bb||PACKAGE_qca-wifi-fw-hw2-10.4-emu_m2m||PACKAGE_qca-wifi-fw-asic) +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) +qsdk-wifi-script @TARGET_ipq806x +TARGET_ipq806x:kmod-qca-nss-drv
+Menu-Depends: 
+Provides: 
+Build-Variant: akronite-perf-emu
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+
+Package: kmod-qca-wifi-perf
+Menu: 1
+Prereq-Check: 1
+Version: <LINUX_VERSION>+10.4-4.0.1756.225-1
+Depends: @(PACKAGE_qca-wifi-fw-hw1-10.4-asic||PACKAGE_qca-wifi-fw-hw2-10.4-asic||PACKAGE_qca-wifi-fw-hw2-10.4-emu_bb||PACKAGE_qca-wifi-fw-hw2-10.4-emu_m2m||PACKAGE_qca-wifi-fw-asic) +libgcc +libc +wireless-tools +librt +iproute2 @(!(PACKAGE_kmod-ath&&PACKAGE_kmod-mac80211)) +qsdk-wifi-script @TARGET_ar71xx
+Menu-Depends: 
+Provides: 
+Build-Variant: perf
+Section: QCA
+Category: QCA Proprietary software
+Title: QCA Wireless LAN Driver
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: QCA Wireless LAN Driver
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+
+

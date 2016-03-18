@@ -1,0 +1,18 @@
+Package: sqlite3-cli
+Version: 3.6.16-1
+Depends: libc, libsqlite3, libncurses, libreadline
+Provides: 
+Source: package/sqlite3
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 20145
+Description:  =
+ SQLite is a small C library that implements a self-contained, embeddable, 
+ zero-configuration SQL database engine.	
+ This package contains a terminal-based front-end to the SQLite (v3.x) library 
+ that can evaluate queries interactively and display the results in 
+ multiple formats.

@@ -1,0 +1,17 @@
+Source-Makefile: package/zz-dni-streamboost/Makefile
+Package: zz-dni-streamboost
+Version: 1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: opt
+Category: Bigfoot
+Title: override QCA streamboost configure files instead of DNI's configure files
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: override QCA streamboost configure files instead of DNI's configure files
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

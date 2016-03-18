@@ -1,0 +1,13 @@
+Package: angular-loadcontent
+Version: g8402b96-1
+Depends: libc, jquery, angular, angular-mocks, angular-route, angular-translate, urijs
+Provides: 
+Source: qca/feeds/streamboost/angular-loadcontent
+Section: language-javascript
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 5560
+Description:  Angular media loader

@@ -1,0 +1,13 @@
+Package: disktype
+Version: 1
+Depends: libc
+Provides: 
+Source: package/disktype
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 7335
+Description:  disktype is used to detect the 200M EFI partition

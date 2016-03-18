@@ -1,0 +1,13 @@
+Package: dni-ntpclient
+Version: 4
+Depends: libc
+Provides: 
+Source: package/dni-ntpclient
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 9374
+Description:  The CGI interface

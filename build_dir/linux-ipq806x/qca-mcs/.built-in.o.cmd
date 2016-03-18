@@ -1,0 +1,1 @@
+cmd_/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/built-in.o :=  rm -f /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/built-in.o; arm-openwrt-linux-uclibcgnueabi-ar rcsD /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/built-in.o

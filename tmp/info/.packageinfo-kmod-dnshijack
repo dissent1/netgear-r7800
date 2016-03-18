@@ -1,0 +1,18 @@
+Source-Makefile: package/kmod-dnshijack/Makefile
+Package: kmod-dnshijack
+Submenu: Other modules
+Version: <LINUX_VERSION>--1
+Depends: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: DNI DNS Hijack firewall module
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: DNI DNS Hijack firewall module
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

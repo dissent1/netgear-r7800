@@ -1,0 +1,13 @@
+Package: kmod-usb-gadget
+Version: 3.4.103-1
+Depends: kernel (=3.4.103-1-9bc361d5681459bf8ad202ee07342a8e), kmod-usb-core
+Provides: 
+Source: package/kernel
+Section: kernel
+Status: unknown hold not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 105
+Description:  Kernel support for USB Gadget mode.

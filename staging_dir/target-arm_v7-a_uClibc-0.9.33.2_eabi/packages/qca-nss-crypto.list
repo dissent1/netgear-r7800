@@ -1,0 +1,8 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/qca-nss-userspace
+./usr/include/qca-nss-userspace/nss_crypto_if.h
+./usr/include/qca-nss-crypto
+./usr/include/qca-nss-crypto/nss_crypto_if.h

@@ -1,0 +1,13 @@
+Package: ntgrddns
+Version: 1-1
+Depends: libc
+Provides: 
+Source: package/ntgrddns
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 24085
+Description:  This package contains a tiny ddns util for Netgear Home Router.

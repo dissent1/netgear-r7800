@@ -1,0 +1,47 @@
+charset.o: \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/charset.c \
+ config.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/system.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/filenames.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/libiberty.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/ansidecl.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/safe-ctype.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/cpplib.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/symtab.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/obstack.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/line-map.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/internal.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/symtab.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/cpp-id-data.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/cpplib.h \
+ /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/ucnid.h
+
+config.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/system.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/filenames.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/libiberty.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/ansidecl.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/safe-ctype.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/cpplib.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/symtab.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/../include/obstack.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/line-map.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/internal.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/symtab.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/cpp-id-data.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/include/cpplib.h:
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/gcc-linaro-4.6-2012.02/libcpp/ucnid.h:

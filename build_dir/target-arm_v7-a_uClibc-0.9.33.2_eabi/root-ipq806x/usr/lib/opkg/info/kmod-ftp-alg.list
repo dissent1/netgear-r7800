@@ -1,0 +1,3 @@
+/lib/modules/3.4.103/nf_conntrack_ftp.ko
+/lib/modules/3.4.103/nf_nat_ftp.ko
+/etc/modules.d/48-ftp-alg

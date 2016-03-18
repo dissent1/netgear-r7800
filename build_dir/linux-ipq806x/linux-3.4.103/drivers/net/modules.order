@@ -1,0 +1,15 @@
+kernel/drivers/net/bonding/bonding.ko
+kernel/drivers/net/ifb.ko
+kernel/drivers/net/ppp/ppp_generic.ko
+kernel/drivers/net/ppp/ppp_async.ko
+kernel/drivers/net/ppp/pppox.ko
+kernel/drivers/net/ppp/pppoe.ko
+kernel/drivers/net/ppp/ppp_generic.ko
+kernel/drivers/net/ppp/ppp_async.ko
+kernel/drivers/net/ppp/pppox.ko
+kernel/drivers/net/ppp/pppoe.ko
+kernel/drivers/net/ppp/ppp_generic.ko
+kernel/drivers/net/ppp/ppp_async.ko
+kernel/drivers/net/ppp/pppox.ko
+kernel/drivers/net/ppp/pppoe.ko
+kernel/drivers/net/slip/slhc.ko

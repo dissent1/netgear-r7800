@@ -1,0 +1,1 @@
+cmd_sound/core/seq/oss/snd-seq-oss.ko := arm-openwrt-linux-uclibcgnueabi-ld -EL -r  -T /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/linux-3.4.103/sourcecode/scripts/module-common.lds --build-id  -o sound/core/seq/oss/snd-seq-oss.ko sound/core/seq/oss/snd-seq-oss.o sound/core/seq/oss/snd-seq-oss.mod.o

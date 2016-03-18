@@ -1,0 +1,13 @@
+Package: policy-reader
+Version: 0.0.1-1
+Depends: libc, redis-cli
+Provides: 
+Source: qca/feeds/streamboost/policy-reader
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mo Chen <moc@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 588
+Description:  Policy-reader reads policy.redis into redis.

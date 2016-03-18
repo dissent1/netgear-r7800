@@ -1,0 +1,14 @@
+Package: tar
+Version: 1.23-1
+Depends: libc, bzip2
+Provides: 
+Source: package/tar
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 146236
+Description:  Tar is a program for packaging a set of files as a
+ single archive in tar format.

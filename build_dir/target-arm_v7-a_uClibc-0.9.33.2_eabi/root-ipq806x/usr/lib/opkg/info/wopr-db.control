@@ -1,0 +1,13 @@
+Package: wopr-db
+Version: 20150813165303-gea65011-generic-1
+Depends: libc
+Provides: 
+Source: qca/feeds/customers-qualcomm-ap148/wopr-db
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Ryan Nowakowski <rnowakow@qca.qualcomm.com>
+Architecture: all
+Installed-Size: 26137
+Description:  Flow definitions for drflocs

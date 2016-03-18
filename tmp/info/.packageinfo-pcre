@@ -1,0 +1,18 @@
+Source-Makefile: package/pcre/Makefile
+Package: libpcre
+Version: 7.6-2
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Title: A Perl Compatible Regular Expression library
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: pcre-7.6.tar.bz2
+Type: ipkg
+Description: A Perl Compatible Regular Expression library
+http://www.pcre.org/
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

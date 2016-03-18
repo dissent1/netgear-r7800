@@ -1,0 +1,13 @@
+Package: ap-mode
+Version: 1
+Depends: libc
+Provides: 
+Source: package/ap-mode
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 2043
+Description:  Shell script used to enable/disable AP Mode

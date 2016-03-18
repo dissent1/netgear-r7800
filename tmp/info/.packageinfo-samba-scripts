@@ -1,0 +1,17 @@
+Source-Makefile: package/samba-scripts/Makefile
+Package: samba-scripts
+Version: 1.0.0-1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Title: SAMBA Scripts
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: SAMBA Scripts
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

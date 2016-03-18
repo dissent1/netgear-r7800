@@ -1,0 +1,13 @@
+Package: flowmark
+Version: g1595d4a-1
+Depends: libc, libsbdaemon, hiredis, libevent2-core, libnetfilter-conntrack, libpthread
+Provides: 
+Source: qca/feeds/streamboost/flowmark
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Nic Costa <ncosta@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 19829
+Description:  Flowmark receives a 5-tuple and a flow ID and marks the appropriate conntrack entry with the flow ID.

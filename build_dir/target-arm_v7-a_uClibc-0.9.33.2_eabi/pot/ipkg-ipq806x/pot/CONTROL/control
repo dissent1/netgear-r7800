@@ -1,0 +1,13 @@
+Package: pot
+Version: 4
+Depends: libc
+Provides: 
+Source: package/pot
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 5380
+Description:  POT

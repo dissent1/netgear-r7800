@@ -1,0 +1,19 @@
+Source-Makefile: package/qca-ssdk-shell/Makefile
+Package: qca-ssdk-shell
+Submenu: QCA SSDK
+Version: 1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread 
+Menu-Depends: 
+Provides: 
+Section: QCA
+Category: QCA Proprietary software
+Title: Shell application for QCA SSDK
+Maintainer: Qualcomm Atheros
+Source: 
+Type: ipkg
+Description: Shell application for QCA SSDK
+http://www.qca.qualcomm.com
+Qualcomm Atheros
+@@
+
+

@@ -1,0 +1,13 @@
+Package: macoui-db
+Version: 20141230102119-g4db3611-generic-1
+Depends: libc
+Provides: 
+Source: qca/feeds/streamboost/macoui-db
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mo Chen <moc@qca.qualcomm.com
+Architecture: all
+Installed-Size: 9218
+Description:  Mac OUI mappings.

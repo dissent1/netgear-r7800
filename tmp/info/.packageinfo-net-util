@@ -1,0 +1,18 @@
+Source-Makefile: package/net-util/Makefile
+Package: net-util
+Version: 1-1
+Depends: +libc +USE_EGLIBC:librt +USE_EGLIBC:libpthread @TARGET_ipq806x
+Menu-Depends: 
+Provides: 
+Build-Depends: datalib
+Section: utils
+Category: Utilities
+Title: Tiny utils for configuring the Router.
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: 	This package contains an utility for configuring Home Router.
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

@@ -1,0 +1,1 @@
+cmd_net/bridge/netfilter/ebt_802_3.ko := arm-openwrt-linux-uclibcgnueabi-ld -EL -r  -T /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/linux-3.4.103/sourcecode/scripts/module-common.lds --build-id  -o net/bridge/netfilter/ebt_802_3.ko net/bridge/netfilter/ebt_802_3.o net/bridge/netfilter/ebt_802_3.mod.o

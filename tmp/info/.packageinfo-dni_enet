@@ -1,0 +1,18 @@
+Source-Makefile: package/dni_enet/Makefile
+Package: kmod-dni_enet
+Submenu: Network Devices
+Version: <LINUX_VERSION>-
+Depends: @TARGET_ipq806x
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Kernel module for Pass Through Ethernet device
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Source: 
+Type: ipkg
+Description: Kernel module for Pass Through Ethernet device
+OpenWrt Developers Team <openwrt-devel@openwrt.org>
+@@
+
+

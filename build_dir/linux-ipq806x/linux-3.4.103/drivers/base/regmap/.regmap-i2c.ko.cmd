@@ -1,0 +1,1 @@
+cmd_drivers/base/regmap/regmap-i2c.ko := arm-openwrt-linux-uclibcgnueabi-ld -EL -r  -T /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/linux-3.4.103/sourcecode/scripts/module-common.lds --build-id  -o drivers/base/regmap/regmap-i2c.ko drivers/base/regmap/regmap-i2c.o drivers/base/regmap/regmap-i2c.mod.o

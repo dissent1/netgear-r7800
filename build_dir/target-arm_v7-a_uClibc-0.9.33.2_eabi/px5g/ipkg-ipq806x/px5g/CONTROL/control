@@ -1,0 +1,15 @@
+Package: px5g
+Version: 1
+Depends: libc
+Provides: 
+Source: package/px5g
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Jo-Philipp Wich <xm@subsignal.org>
+Architecture: ipq806x
+Installed-Size: 25432
+Description:  Px5g is a tiny standalone X.509 certificate generator.
+ It suitable to create key files and certificates in DER
+ and PEM format for use with stunnel, uhttpd and others.

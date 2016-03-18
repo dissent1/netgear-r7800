@@ -1,0 +1,13 @@
+Package: samba
+Version: 3.0.24-1
+Depends: libc
+Provides: 
+Source: package/samba
+Section: net
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 1607396
+Description:  SAMBA

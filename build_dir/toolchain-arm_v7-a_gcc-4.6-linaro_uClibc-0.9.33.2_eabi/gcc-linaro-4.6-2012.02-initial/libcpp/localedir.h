@@ -1,0 +1,1 @@
+#define LOCALEDIR "/home/projects/R7800-V1.0.0.40_gpl_src/staging_dir/toolchain-arm_v7-a_gcc-4.6-linaro_uClibc-0.9.33.2_eabi/share/locale"

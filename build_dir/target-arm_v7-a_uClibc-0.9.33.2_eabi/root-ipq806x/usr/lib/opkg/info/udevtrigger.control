@@ -1,0 +1,13 @@
+Package: udevtrigger
+Version: 106-1
+Depends: libc
+Provides: 
+Source: package/udev
+Section: utils
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: OpenWrt Developers Team <openwrt-devel@openwrt.org>
+Architecture: ipq806x
+Installed-Size: 7731
+Description:  Small utility to request kernel devices events for coldplug

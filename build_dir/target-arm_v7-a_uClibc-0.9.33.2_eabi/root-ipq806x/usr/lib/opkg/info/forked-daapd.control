@@ -1,0 +1,13 @@
+Package: forked-daapd
+Version: 23.0-dni1-20140216
+Depends: libc, libgpg-error, libgcrypt, libgdbm, zlib, libexpat, libunistring, libevent2, libdaemon, libantlr3c, confuse, glib2, alsa-lib, libffmpeg-full, mxml, libavl, avahi-daemon, libavahi-client, sqlite3-cli, libplist
+Provides: 
+Source: package/forked-daapd
+Section: sound
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Espen Jürgensen <espenjurgensen+openwrt@gmail.com>
+Architecture: ipq806x
+Installed-Size: 183354
+Description:  Improved iTunes (DAAP) server. Support for Apple Remote and AirPlay.

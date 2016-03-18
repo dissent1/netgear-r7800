@@ -1,0 +1,1 @@
+cmd_drivers/regulator/built-in.o :=  arm-openwrt-linux-uclibcgnueabi-ld -EL    -r -o drivers/regulator/built-in.o drivers/regulator/core.o drivers/regulator/dummy.o drivers/regulator/fixed-helper.o drivers/regulator/ipq-regulator.o 

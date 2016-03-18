@@ -1,0 +1,9 @@
+./
+./host
+./usr
+./usr/include
+./usr/include/qca-mcs
+./usr/include/qca-mcs/mc_ecm.h
+./usr/include/qca-mcs/mc_api.h
+./usr/include/mc_ecm.h
+./usr/include/mc_api.h

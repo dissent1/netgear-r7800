@@ -1,0 +1,13 @@
+Package: jigglyp0f
+Version: gae11533-2
+Depends: libc, p0f, libevent2, hiredis, libsbdaemon
+Provides: 
+Source: qca/feeds/streamboost/jigglyp0f
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mo Chen <moc@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 19280
+Description:  An interface to translate p0f stdout to Redis pubsub.

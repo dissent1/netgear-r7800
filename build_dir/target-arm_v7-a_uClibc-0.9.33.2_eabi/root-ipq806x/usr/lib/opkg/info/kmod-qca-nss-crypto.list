@@ -1,0 +1,3 @@
+/lib/modules/3.4.103/qca-nss-crypto-tool.ko
+/etc/modules.d/33-qca-nss-crypto
+/lib/modules/3.4.103/qca-nss-crypto.ko

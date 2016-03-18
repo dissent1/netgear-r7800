@@ -1,0 +1,13 @@
+Package: callhomeclient
+Version: g28ceed2-2
+Depends: libc, curl, openssl-util, customer-keys
+Provides: 
+Source: qca/feeds/streamboost/callhomeclient
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Ryan Nowakowski <rnowakow@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 4086
+Description:  Client for the callhome server

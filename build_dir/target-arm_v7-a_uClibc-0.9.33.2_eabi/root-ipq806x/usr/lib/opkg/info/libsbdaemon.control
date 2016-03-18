@@ -1,0 +1,13 @@
+Package: libsbdaemon
+Version: ge9e259d-2
+Depends: libc
+Provides: 
+Source: qca/feeds/streamboost/libsbdaemon
+Section: Bigfoot
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mo Chen <moc@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 2597
+Description:  This package contains a library for decrypting Streamboost daemon configuration files.

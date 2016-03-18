@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/test/plist_test.c
+plist/plist.h
+/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/libplist-1.8/test/plist/plist.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+sys/stat.h
+-
+
+include/plist/plist.h
+stdint.h
+-
+sys/types.h
+-
+stdarg.h
+-
+

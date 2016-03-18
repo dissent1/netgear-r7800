@@ -1,0 +1,13 @@
+Package: cape
+Version: g381256a-1
+Depends: libc, libsbdaemon, hiredis
+Provides: 
+Source: qca/feeds/streamboost/cape
+Section: opt
+Status: unknown ok not-installed
+Essential: no
+Priority: optional
+Maintainer: Mo Chen <moc@qca.qualcomm.com>
+Architecture: ipq806x
+Installed-Size: 23906
+Description:  CAPE chooses a policy for a given flow, given classification tags.
