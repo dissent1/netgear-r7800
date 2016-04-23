@@ -19,7 +19,10 @@ endef
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) ./files/* $(PKG_BUILD_DIR)/
-	$(CP) ./src/* $(PKG_BUILD_DIR)/
+#	$(CP) ./src/* $(PKG_BUILD_DIR)/
+endef
+
+define Build/Compile
 endef
 
 define Package/zz-dni-streamboost/install

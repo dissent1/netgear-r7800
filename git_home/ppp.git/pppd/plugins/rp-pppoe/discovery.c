@@ -642,7 +642,10 @@ discovery(PPPoEConnection *conn)
     FILE *fp = NULL;
     char cmd[128];
     char old_session[80] = {0};
-
+    int sleep_start = 0;
+    unsigned int sleep_time = 60;
+    char *pppoe_unit;
+    int result;
     /* Skip discovery and don't open discovery socket? */
     if (conn->skipDiscovery && conn->noDiscoverySocket) {
 	conn->discoveryState = STATE_SESSION;
@@ -680,15 +683,31 @@ discovery(PPPoEConnection *conn)
 	fclose(fp);
 	fp = NULL;
     }
-
+    pppoe_unit = getenv("session_unit");
+    result = strncmp(pppoe_unit, "1", 1);
     do {
-	padiAttempts++;
-	if (padiAttempts > MAX_PADI_ATTEMPTS) {
-	    warn("Timeout waiting for PADO packets");
-	    close(conn->discoverySocket);
-	    conn->discoverySocket = -1;
-	    return;
+	if ( result == 0 ){
+		if ( sleep_start > 0 )
+			warn("Timeout waiting for PADO packets");
+	}else{
+		padiAttempts++;
+		if (padiAttempts > MAX_PADI_ATTEMPTS) {
+	   	 warn("Timeout waiting for PADO packets");
+	   	 close(conn->discoverySocket);
+	   	 conn->discoverySocket = -1;
+		    return;
+		}
 	}
+
+        if( !result ){ // Doubling the time interval on each retry for multipppoe session 2
+                 if ( sleep_start > 0 ){
+                         sleep( sleep_time - 5 );
+                         sleep_time *=2;
+                 }else{
+                         sleep_start++;
+                 }
+        }
+
 	sendPADI(conn);
 	conn->discoveryState = STATE_SENT_PADI;
 	waitForPADO(conn, timeout);

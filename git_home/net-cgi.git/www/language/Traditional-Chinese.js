@@ -128,9 +128,9 @@ bh_select_no_IP_option3="不存在上述問題。"
 
 
 //BRS_03A_E_IP_problem_staticIP_B_macClone.html
-bh_use_pc_mac="If you previously connected to your Internet service with a computer or another router, NETGEAR genie can use the same MAC address that worked before."
+bh_use_pc_mac="如果您之前使用電腦或另一台路由器連線至網際網路服務，則 NETGEAR genie 可以使用之前能夠正常運作的 MAC 位址。"
 
-bh_mac_in_product_label="A MAC address is a unique number. You can find the MAC address of the computer or router on its product label."
+bh_mac_in_product_label="MAC 位址是一個唯一的號碼。您可以在電腦或路由器的產品標籤上找到其 MAC 位址。"
 
 bh_enter_mac="請在這裡輸入 MAC 位址。"
 
@@ -240,15 +240,15 @@ bh_same_server_wan_ip="我的 IP 位址不可與伺服器位址相同！"
 
 //readySHARE remote strings
 remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
-ready_share_info1="ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class=\"linktype\" target=\"_blank\" href=\'http://readycloud.netgear.com\">click here</a>, then click <b>Sign In > Create Account</b>."
-how_setup_ready_share="To Set Up ReadyCLOUD"
+ready_cloud_info="<p>ReadyCLOUD 可讓您透過網際網路，從遠端存取連接至路由器 USB 連接埠的 USB 儲存裝置。 如要使用 ReadyCLOUD，>您必須擁有 ReadyCLOUD 帳戶。 若您沒有 ReadyCLOUD 帳戶，請<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">按一下這裡</a>，然後按一下<b>登入 > 建立帳戶</b>。 </p><p><b>設定 ReadyCLOUD</b></p><p><ol><li>將 USB 儲存裝置連接至路由器的 USB 連接埠。</li><li>在下方欄位中輸入您的 ReadyCLOUD 使用者名稱和密碼，然後按一下<b>註冊</b>按鈕。 您的路由器和 USB 裝置即會註冊至 ReadyCLOUD。</li><li> 造訪 <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>，按一下「登入」，輸入您的 ReadyCLOUD 使用者名稱和密碼，然後按一下<b>>登入</b>按鈕。</li></ol></p><p>      您也可以使用 ReadyCLOUD 應用程式，在您的電腦或行動裝置與路由器的 USB 儲存裝置間建立安全連線。<br>      請<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">按一下這裡</a>，下載 ReadyCLOUD 應用程式。</p>"
+ready_share_info1="ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">click here</a>, then click <b>Sign In > Create Account</b>."
+how_setup_ready_share="如何設定 ReadySHARE Cloud"
 ready_share_step1="Connect a USB storage device to your router's USB port."
 ready_share_step2="Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD."
-ready_share_step3="Visit <a class=\"linktype\" target=\"_blank\" href=\'http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button."
-ready_share_set_note="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class=\"linktype\" target=\"_blank\" href=\'http://readycloud.netgear.com/client/cloud_download.html\">Click here</a> to download the ReadyCLOUD app."
+ready_share_step3="Visit <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button."
+ready_share_set_note="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Click here</a> to download the ReadyCLOUD app."
 ready_share_start="使用 ReadyCLOUD 註冊路由器和 USB 裝置"
-ready_share_get_account="If you don't have a ReadyCLOUD account <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a> to get one"
+ready_share_get_account="如果您沒有 ReadyCLOUD 帳戶，請<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>按一下這裡</a>取得"
 username="使用者名稱"
 key_passphrase="密碼"
 register="註冊"
@@ -256,13 +256,13 @@ register_note="<b>注意：</b>您的路由器在您取消註冊前，會持續�
 help_center="說明中心"
 help_show_hide="顯示/隱藏説明中心"
 
-resister_user="<b>This router is registered with the following ReadyCLOUD user:</b>"
-access_storage_method="Now you can login at <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> with your ReadyCLOUD account to access your USB device from anywhere."
+resister_user="下列 ReadyCLOUD 使用者已註冊此路由器："
+access_storage_method="現在您可以用 ReadyCLOUD 帳戶登入 <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>，從任何位置存>取 USB 裝置。"
 unregister_info="按一下<B>取消註册</B>以使用其他 ReadyCLOUD 帳戶註冊此路由器"
 unregister="取消註册"
 
 result_register_ok="已成功完成註冊"
-result_register_fail="Registration failed. Please check your user name and password and try again."
+result_register_fail="註冊失敗。 請檢查您的使用者名稱和密碼，然後再試一次。"
 result_unreg_ok="已成功完成取消註冊"
 result_unreg_fail="取消註冊失敗"
 
@@ -354,7 +354,7 @@ bh_ap_warn_doc="Your router is about to setup to Access Piont Mode. You may expe
 bh_ap_link="www.routerlogin.net"
 
 bh_ap_select_title="偵測到您網路中已存在其他的路由器或閘道"
-bh_ap_select_doc="Your NETGEAR router is connected to a network that already has another router.This means that you must select an operation mode:"
+bh_ap_select_doc="除新連接的 NETGEAR 路由器之外，您的網路中還存在另一台路由器。如果您想要保留連接第一台路由器，genie 建議您將 NETGEAR 路由器設定為「存取點」模>式。NETGEAR 路由器處於「存取點」模式時，您可以用它來加入網路，另一台路由器的設定和工作不受影響。"
 bh_ap_select_question="是否要將此裝置設定為「存取點」模式？"
 bh_ap_select_item_1="是（推薦）"
 bh_ap_select_item_2="否，我希望它以預設的路由器模式執行"
@@ -452,9 +452,9 @@ bh_help_me_content="genie 會逐步引導您回答幾個問題，並且建議最
 bh_let_me_choose="讓我自己選擇"
 bh_let_me_choose_tips="您隨時都可以再次執行設定精靈以變更模式。"
 bh_mode_illustration="按一下這裡即可檢視圖示。"
-bh_router_description="This mode allows you to take advantage of NETGEAR <a href='router_function.html' target='_blank'>router functions.</a> The NETGEAR router is set up as a normal WiFi router behind your existing router or gateway. This mode requires that all of your devices be connected to the new NETGEAR router and not to your existing gateway."
-bh_ap_description="This mode is apporpriate for easy setup if devices are already connected to your existing router or gateway, or if you just want to use this new NETGEAR router to extend your WiFi coverage. Some <a href='router_function.html' target='_blank'>router functions</a> are not available in access point mode."
-bh_select_tips="It appears that you are installing the NETGEAR router behind your existing Internet provider WiFi router or gateway. You can choose to install your router in different operation modes."
+bh_router_description="此模式能讓您充分利用 NETGEAR <a href='router_function.html' target='_blank'>路由器功能。</a> NETGEAR 路由器已在您現有的路由器或閘道後方>設定為一般 WiFi 路由器。 此模式需要將所有的裝置連線至新的 NETGEAR 路由器，而不是您的現有閘道。"
+bh_ap_description="此模式適用於簡易設定：若裝置已連線至您現有的路由器或閘道，或者您只想使用這個新的 NETGEAR 路由器延伸您的 WiFi 涵蓋範圍。 某些<a href='router_function.html' target='_blank'>路由器功能</a>無法在「存取點模式」中使用。"
+bh_select_tips="您似乎正將 NETGEAR 路由器安裝到現有的網際網路供應商 WiFi 路由器或閘道的後方。 您可選擇將您的路由器安裝到不同的操作模式。"
 bh_select_router_or_ap="如果您想要自行選擇模式，您必須選擇「路由器模式」或「存取點模式」選項按鈕。"
 //BRS_ap_detect_01_01.html
 bh_current_network="您目前的網路"

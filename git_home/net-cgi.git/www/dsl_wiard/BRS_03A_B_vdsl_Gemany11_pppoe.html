@@ -9,6 +9,7 @@
 <script language="javascript" type="text/javascript" src="script/brs_hijack.js"></script>
 <script language="javascript" type="text/javascript" src="script/funcs.js"></script>
 <% hijack_language() %>
+<% deleteFiles("/tmp/ping_result_error", "/tmp/ping_ip_result_error", "/tmp/ping_gateway_result_error")%>
 <% deleteFiles("/tmp/ping_result", "/tmp/wget_file_result") %>
 </head>
 <script>
@@ -21,6 +22,7 @@ var wan2_bridge="<% cfg_get("dsl_wan2_bridge_mode") %>";
 var lan_selecte="<% cfg_get("iptv_mask") %>";
 var name ="";
 var lan1_selecte=lan_selecte & 1;
+var lan_ports_num = (typeof(top.lan_ports_num) == "undefined") ? 4 : top.lan_ports_num;
 addLoadEvent(initPage);
 function initPage()
 {
@@ -52,16 +54,12 @@ function initPage()
 		}
 	}
 	if(display_iptv2 == "1"){
-		document.getElementById("iptv").style.display="";
 		if(enable_iptv == "1")
 			cf.use_iptv.checked = true;
 		else
 			cf.use_iptv.checked = false;
-		if(wan2_bridge == "1")
+		if(wan2_bridge == "1" && lan_ports_num != 1)
 		{
-			document.getElementById("bridge").style.display="";
-			document.getElementById("bridge1").style.display="";
-			document.getElementById("bridge2").style.display="";
 			if((lan_selecte & 2) == 2)
 				cf.lan2.checked = true;
 			if((lan_selecte & 4) == 4)
@@ -72,15 +70,7 @@ function initPage()
 				cf.lan4.checked = true;
 			enable_bridge();
 		}
-		else
-		{
-			document.getElementById("bridge").style.display="none";
-			document.getElementById("bridge1").style.display="none";
-			document.getElementById("bridge2").style.display="none";
-		}
 	}
-	else
-		document.getElementById("iptv").style.display="none";
 
 	cf.pppoe_username1.disabled = false;
 	cf.help_choice[0].checked = true;
@@ -130,7 +120,7 @@ function checkPPPoE()
 	{
 		cf.hid_use_iptv.value = "1";
 		if(wan2_bridge == "1"){
-			if((cf.lan2.checked == false) && (cf.lan3.checked == false) && (cf.lan4.checked == false))
+			if((cf.lan2.checked == false) && (cf.lan3.checked == false) && (cf.lan4.checked == false) && (lan_ports_num != 1))
 			{
 				alert(dsl_bridge_warning);
 				return false;
@@ -317,6 +307,9 @@ function enable_bridge()
 </div>
 
 </form>
+<script>
+	control_display("dsl_pppoe");
+</script>
 </body>
 
 </html>

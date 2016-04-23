@@ -1,5 +1,5 @@
 #!/bin/sh /etc/rc.common
-START=80
+#START=80
 
 NET6CONF="/etc/net6conf/net6conf"
 

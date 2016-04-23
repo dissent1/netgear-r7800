@@ -949,6 +949,7 @@ int main(int argc, char**argv)
 {
 	FILE *fp, *filp;
 	char *diskname = NULL;
+	char *device_name;
 	struct timeval currenttime, newtime;
 
 	signal(SIGINT, cleanup);
@@ -991,7 +992,11 @@ int main(int argc, char**argv)
 
 	system("/etc/init.d/forked-daapd stop");
 	if (config_match("endis_itunes", "1") && itunes_share_floders[0] != 0 && (fp = fopen("/etc/forked-daapd.conf", "w")) != NULL) {
-		fprintf(fp, daapd_conf, itunes_db_folder, itunes_db_folder, config_get("upnp_serverName"), itunes_share_floders);
+		device_name  = config_get("upnp_serverName");
+		if (*device_name != '\0')
+			fprintf(fp, daapd_conf, itunes_db_folder, itunes_db_folder, config_get("upnp_serverName"), itunes_share_floders);
+		else
+			fprintf(fp, daapd_conf, itunes_db_folder, itunes_db_folder, config_get("Device_name"), itunes_share_floders);
 		fclose(fp);
 		char filename[256];
 		

@@ -19,7 +19,7 @@ PKG_CONFIG_DEPENDS := \
 include $(INCLUDE_DIR)/package.mk
 
 WEB_PATH:=www
-PKG_GIT_TREEISH:=uhttpd-dni015
+PKG_GIT_TREEISH:=uhttpd-dni013
 define Package/uhttpd/default
   SECTION:=net
   CATEGORY:=Network

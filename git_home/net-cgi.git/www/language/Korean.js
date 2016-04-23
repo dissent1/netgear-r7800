@@ -144,6 +144,8 @@ bh_browser_file="이전에 저장한 공유기 설정 백업 파일을 찾고, �
 
 bh_back_mark="뒤로"
 
+bh_browse_mark="찾기"
+
 
 //BRS_03B_haveBackupFile_fileRestore.html
 bh_settings_restoring="공유기 설정 복원"
@@ -238,7 +240,7 @@ bh_same_server_wan_ip="내 IP 주소는 서버 주소와 같을 수 없습니다
 
 //readySHARE remote strings
 remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
+ready_cloud_info="<p>ReadyCLOUD를 사용하면 인터넷을 통해 공유기의 USB 포트에 연결된 USB 스토리지 장치에 원격으로 액세스할 수 있습니다. ReadyCLOUD를 사용하려면 ReadyCLOUD 계정이 있어야 합니다. ReadyCLOUD 계정이 없는 경우 <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">여기를 클릭</a>하고 <b>로그인 > 계정 생성</b>을 클릭합니다. </p><p><b>ReadyCLOUD 설정 방법</b></p><p><ol><li>공유기의 USB 포트에 USB 스토리지 장치를 연결합니다.</li><li>아래 입력란에 ReadyCLOUD 사용자 이름 및 암호를 입력한 후 <b>등록</b> 버튼을 클릭합니다. 공유기 및 USB 장치가 ReadyCLOUD에 등록됩니다.</li><li> <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>을 방문하여 로그인을 클릭한 후 ReadyCLOUD 사용자 이름 및 암호를 입력하고 <b>로그인</b> 버튼을 클릭합니다.</li></ol></p><p>      또한, ReadyCLOUD 앱을 사용하여 컴퓨터 또는 모바일 장치와 공유기의 USB 스토리지 장치 간에 보안 연결을 이용할 수 있습니다.<br>      ReadyCLOUD 앱을 다운로드하려면 <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">여기를 클릭</a>하십시오.</p>"
 ready_share_info1="ReadySHARE Cloud를 사용하면 인터넷을 통해 공유기의 USB 포트에 연결되어 있는 USB 스토리지 장치에 원격으로 액세스할 수 있습니다."
 how_setup_ready_share="ReadySHARE Cloud 설정 방법"
 ready_share_step1="1 단계: ReadySHARE Cloud 계정이 필요합니다. 계정이 없으면<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>여기를 클릭하여</a> 계정을 만드십시오."
@@ -246,7 +248,7 @@ ready_share_step2="2 단계: 이 페이지에 ReadySHARE Cloud 사용자 이름�
 ready_share_step3="3 단계: 계정을 사용하여 <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a>에 로그인합니다. 공유기에 연결되어 있는 USB 장치가 표시됩니다."
 ready_share_set_note="<b>참고:</b> 이 클라이언트를 사용하지 않으면 USB 장치의 컨텐츠를 검색할 수는 있지만 파일을 열거나 변경할 수 없습니다."
 ready_share_start="공유기와 ReadyCLOUD에 연결된 USB를 등록합니다"
-ready_share_get_account="ReadySHARE Cloud 계정을 가지고 있지 않으면 <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>여기를 클릭하여</a> 계정을 만드십시오."
+ready_share_get_account="ReadyCLOUD 계정이 없으면 <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>여기를 클릭</a>하여 계정을 만듭니다."
 username="Username"
 key_passphrase="암호"
 register="등록"
@@ -254,13 +256,13 @@ register_note="<b>참고:</b> 공유기는 사용자가 등록 취소할 때까�
 help_center="도움말 센터"
 help_show_hide="도움말 센터 표시/숨기기"
 
-resister_user="ReadySHARE Cloud에 사용자가 등록되었습니다."
-access_storage_method="위의 2~4 단계에 따라 어디서든 스토리지에 액세스할 수 있습니다."
+resister_user="이 공유기에는 다음 ReadyCLOUD 사용자가 등록되었습니다:"
+access_storage_method="이제 어디서든 USB 장치로 액세스할 수 있는 ReadyCLOUD 계정을 사용하여 <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>에 로그인할 수 있습니다."
 unregister_info="다른 ReadyCLOUD 계정으로 이 공유기를 등록하려면 <B>등록 취소</B>를 클릭합니다."
 unregister="등록 취소"
 
 result_register_ok="등록되었습니다."
-result_register_fail="등록하지 못했습니다."
+result_register_fail="등록하지 못했습니다. 사용자 이름 및 암호를 확인한 후 다시 시도하십시오."
 result_unreg_ok="등록이 취소되었습니다."
 result_unreg_fail="등록을 취소하지 못했습니다."
 
@@ -453,11 +455,13 @@ bh_mode_illustration="그림을 보려면 여기를 클릭하십시오."
 bh_router_description="이 모드에서는 NETGEAR <a href='router_function.html' target='_blank'>공유기 기능</a>을 사용할 수 있습니다. NETGEAR 공유기는 기존 공유기 또는 게이트웨이 뒤에 일반 WiFi 공유기로 설정됩니다. 이 모드에서는 모든 장치가 기존 게이트웨이가 아닌 새 NETGEAR 공유기에 연결되어야 합니다."
 bh_ap_description="이 모드는 장치가 이미 기존 공유기 또는 게이트웨이에 연결된 경우 또는 이 새 NETGEAR 공유기를 사용하여 WiFi 범위를 확장하고자 하는 경우 간단히 설치하기에 좋습니다. 일부 <a href='router_function.html' target='_blank'>공유기 기능</a>은 액세스 포인트 모드에서 사용할 수 없습니다."
 bh_select_tips="NETGEAR 공유기를 기존 인터넷 공급자 WiFi 공유기 또는 게이트웨이 뒤에 설치하려고 합니다. 다른 작동 모드로 공유기를 설치할 수 있습니다."
+bh_select_router_or_ap="모드를 직접 선택하려면, 공유기 모드 또는 액세스 포인트 모드 라디오 버튼을 선택해야 합니다."
 //BRS_ap_detect_01_01.html 
 bh_current_network="현재 네트워크"
 bh_help_choose_page1_str="genie가 인터넷 연결 시 게이트웨이를 사용하는 것을 감지했습니다. NETGEAR에서는 새 공유기의 모든 기능을 사용하고자 하는 경우 공유기 모드를 사용할 것을 권장합니다. genie가 공유기 모드의 적합 여부를 확인하기 위하여 몇 가지 질문을 드릴 것입니다."
 //BRS_ap_detect_01_02.html
 bh_help_choose_page2_str="현재 기존 게이트웨이에서 <a href='port_forwording.html' target='_blank'>포트 포워딩</a>(또는 포트 매핑) 같은 <a href='router_function.html' target='_blank'>고급 기능</a>을 사용하고 있습니까? 일반적으로 이들 기능은 고급 사용자가 사용합니다."
+bh_select_yes_or_no="예 또는 아니요 라디오 버튼을 선택해야 합니다."
 //BRS_ap_detect_01_03.html
 bh_help_choose_page3_str1="공유기 모드가 올바르게 작동하려면 인터넷 서비스 공급자에 의해 제공된 장비(예: 게이트웨이에 연결된 TV 셋톱 박스 또는 무선 전화)를 제외한 모든 WiFi 및 유선 장치를 NETGEAR 공유기에 연결해야 합니다."
 bh_help_choose_page3_str2="모든 기타 장치(유선 및 무선)를 기존 게이트웨이에서 연결 해제하여 NETGEAR 공유기에 연결할 수 있습니까?"
@@ -492,7 +496,7 @@ bh_learn_more_title="공유기와 액세스 포인트"
 bh_learn_more_str_1="genie가 새 NETGEAR 공유기를 인터넷 서비스 공급자의 DSL이나 케이블 게이트웨이와 같은 다른 게이트웨이 뒤에 설치하려는 것을 감지했습니다. 일반적으로 게이트웨이는 WiFi나 Voice over IP(VoIP) 기능도 제공합니다. NETGEAR 공유기는 2가지 작동 모드로 설치할 수 있습니다."
 bh_learn_more_str_2="이 모드는 새 NETGEAR 공유기를 게이트웨이 뒤에 일반 WiFi 공유기로 구성하며 게이트웨이 뒤에 별도의 WiFi 네트워크를 생성합니다. NETGEAR에서는 이들 공유기의 고급 기능을 최대한 활용할 수 있도록 공유기 모드를 사용하실 것을 권장합니다. 공유기 모드에서는 새 NETGEAR 공유기만 기존 게이트웨이에 연결할 수 있습니다. 모든 장치를 새 NETGEAR 공유기에 연결해야 합니다. 기존 게이트웨이에 WiFi 기능이 있는 경우 비활성화하십시오."
 bh_learn_more_str_3="<p><b>Access Point</b></p><p>If you want to use the new router to get better WiFi performance beyond what you have with your existing gateway, access point mode is the easiest way to do that. NETGEAR recommends that you disable the WiFi function on your existing gateway, if it has WiFi functionality. With this mode, you can connect wired devices to the gateway and connect wired and WiFi devices to your new NETGEAR router. In this mode, by default, the new router's IP address is assigned by your gateway dynamically and is unlikely to be 192.168.1.1. However, you can still use the URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> to access the router's management GUI from a device connected to the router. Some <a href='router_function.html' target='_blank'>router functions</a> are not available in this mode, and you must use router mode if you want to use those functions.</p>"
-bh_learn_more_str_4="이 모드에서는 기본적으로 게이트웨이에 의해 동적으로 새 공유기의 IP 주소가 할당되지만 192.168.1.1로는 할당되지 않습니다. 하지만 공유기에 연결된 장치에서 URL <a href='www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a>을 사용하여 공유기의 관리 GUI에 액세스할 수 있습니다. 일부 <a href='router_function.html' target='_blank'>공유기 기능</a>은 이 모드에서 사용할 수 없으며 이 기능을 사용하려면 공유기 모드를 사용해야 합니다."
+bh_learn_more_str_4="이 모드에서는 기본적으로 게이트웨이에 의해 동적으로 새 공유기의 IP 주소가 할당되지만 192.168.1.1로는 할당되지 않습니다. 하지만 공유기에 연결된 장치에서 URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a>을 사용하여 공유기의 관리 GUI에 액세스할 수 있습니다. 일부 <a href='router_function.html' target='_blank'>공유기 기능</a>은 이 모드에서 사용할 수 없으며 이 기능을 사용하려면 공유기 모드를 사용해야 합니다."
 //port_forwording.html
 bh_port_forwarding="포트 포워딩"
 bh_port_forwarding_content="포트 포워딩(또는 포트 매핑)을 사용하면 인터넷을 통해 홈 네트워크에 액세스할 수 있습니다. 집에 웹 서버 같은 장치가 있고, 귀하가 등록한(일반적으로 동적 DNS 서비스를 통해) 호스트 이름을 사용하거나 IP 주소를 사용하여 다른 사람이 원격으로 액세스하는 경우 포트 포워딩 기능이 활성화되어 있을 것입니다. 이 기능에 대해 들어본 적이 없는 경우 집에 있는 장치에 원격 액세스가 가능하다 해도 이 기능을 사용하지 않을 것입니다."
@@ -501,7 +505,7 @@ bh_router_function="공유기 기능"
 bh_rouer_function_str_1="<p>액세스 포인트 모드를 선택하는 경우 다음 공유기 기능을 사용할 수 없습니다.</p><p><ul><li style='height:20px' class='textRow centerTd2'>게스트 네트워크</li><li style='height:20px' class='textRow centerTd2'>자녀 보호</li><li style='height:20px' class='textRow centerTd2'>QoS</li><li style='height:20px' class='textRow centerTd2'>액세스 제어</li><li style='height:20px' class='textRow centerTd2'>트래픽 미터</li><li style='height:20px' class='textRow centerTd2'>사이트 차단</li><li style='height:20px' class='textRow centerTd2'>서비스 차단</li><li style='height:20px' class='textRow centerTd2'>고정 라우트</li></ul></p>"
 bh_router_adv_function="고급 기능"
 bh_router_function_str_2="<p>다음 공유기 기능은 공유기 모드에서만 사용할 수 있지만 기존 게이트웨이에서 구성해야 합니다.</p><p><ul><li style='height:20px' class='textRow centerTd2'>포트 포워딩</li><li style='height:20px' class='textRow centerTd2'>포트 트리거링</li><li style='height:20px' class='textRow centerTd2'>IPv6</li><li style='height:20px' class='textRow centerTd2'>UPnP/IGD</li><li style='height:20px' class='textRow centerTd2'>원격 관리</li><li style='height:20px' class='textRow centerTd2'>VPN 종료</li></ul></p>"
-warning_info="게이트웨이의 WiFi를 비활성화할 수 있는지 여부를 지정해야 합니다."
+bh_warning_info="게이트웨이의 WiFi를 비활성화할 수 있는지 여부를 지정해야 합니다."
 
 bh_pppoe_identi="연결 인식자"
 bh_pppoe_online="T-온라인 번호"
@@ -583,3 +587,6 @@ bh_dsl_bridge_con="(If select Bridge Mode,the LAN4 port will be configured as IP
 bh_dsl_bridge_lan4="Enable IPTV on LAN4"
 bh_dsl_bridge_lan3="Enable IPTV on LAN3"
 bh_dsl_bridge_lan2="Enable IPTV on LAN2"
+bh_ppp_readycloud_query="ReadyCLOUD와 공유기를 등록하는 경우 공유기의 인터넷 연결 모드가 요청할 때만 연결에서 항상 연결로 변경됩니다. 이 변경은 ReadyCLOUD에서 원격으로 연결 USB 저장 장치로 액세스하기 위해 필요합니다. 계속하시겠습니까?"
+bh_ppp_readycloud_warning_1="ReadyCLOUD에 공유기를 등록하는 경우 ReadyCLOUD에서 원격으로 공유기에 연결된 USB 스토리지 장치로 액세스하기 위해 공유기의 인터넷 연결 모드를 수동 연결에서 항상 연결로 변경해야 합니다. 변경하려면 인터넷 설정 페이지로 이동하십시오."
+bh_ppp_readycloud_warning_2="공유기 또는 게이트웨이가 인터넷에 연결되어 있지 않습니다. ReadyCLOUD에 공유기 또는 게이트웨이를 등록하려면 인터넷에 연결되어야 합니다. 공유기 또는 게이트웨이를 인터넷에 연결한 후 다시 시도하십시오."

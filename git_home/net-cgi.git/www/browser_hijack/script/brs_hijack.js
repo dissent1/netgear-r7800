@@ -178,3 +178,44 @@ function isMac()
 {
 	return (detectOS() == "Mac");
 }
+
+function control_display(page)
+{
+	if(page == "dsl_dhcp")
+	{
+		if(lan_ports_num == 1){
+			document.getElementById("bridge_doc").style.display = "none";
+			document.getElementById("bridge_lans").style.display = "none";
+			document.getElementById("content_div").style.width ="100%";
+			document.getElementById("connection_identi").style.height = "60px";	
+		}
+	}
+	else if(page == "dsl_pppoe")
+	{
+		if(display_iptv2 == "1"){
+			document.getElementById("iptv").style.display="";
+			if(wan2_bridge == "1" && lan_ports_num != 1 )
+			{
+				document.getElementById("bridge").style.display="";
+				document.getElementById("bridge1").style.display="";
+				document.getElementById("bridge2").style.display="";
+			}
+			else
+			{
+				document.getElementById("bridge").style.display="none";
+				document.getElementById("bridge1").style.display="none";
+				document.getElementById("bridge2").style.display="none";
+			}
+		}
+		else
+			document.getElementById("iptv").style.display="none";
+		if(vlan_id == "")
+		{
+			var obj = document.getElementById("vlanid_text");
+			if(obj != null){
+				document.getElementById("vlanid").style.display="none";
+				obj.style.display="none";
+			}
+		}
+	}
+}

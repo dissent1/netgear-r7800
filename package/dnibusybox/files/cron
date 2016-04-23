@@ -4,9 +4,24 @@ START=70
 
 CRONTABS=/tmp/etc/crontabs
 CRON_SPOOL=/var/spool/cron
-CRON_ROOT_FILE=${CRONTABS}/root
+
+prepare_crontab()
+{
+	case "$($CONFIG get i_opmode)" in
+	apmode)
+		/sbin/apsched ;;
+	brmode)
+		echo -n > $CRONTABS/root
+		echo -n "root" > $CRONTABS/cron.update
+		;;
+	*)
+		/sbin/cmdsched
+		;;
+	esac
+}
 
 start () {
+	prepare_crontab
 	/usr/sbin/dsyslog restart
 
 	mkdir -p $CRON_SPOOL
@@ -37,11 +52,17 @@ start () {
 
 stop() {
 	killall -9 crond
-	killall ntpclient
-	killall syslogd
 }
 
 restart() {
 	stop
 	start
 }
+
+boot () {
+	mkdir -p $CRONTABS
+	mkdir -p $CRON_SPOOL
+	ln -s $CRONTABS ${CRON_SPOOL}/crontabs
+	start
+}
+

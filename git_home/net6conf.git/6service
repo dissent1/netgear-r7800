@@ -10,6 +10,9 @@ if [ "$wan6_type" = "autoDetect" ]; then
 		"6to4 Tunnel")
 			export w6_type="6to4"
 		;;
+		"6rd Tunnel")
+			export w6_type="6rd"
+			;;
 		"DHCP")
 			export w6_type="dhcp"
 		;;
@@ -142,7 +145,7 @@ get_prefix_dhcp() {
 		# "lease_time	prefix	prefix_len"
 		# Spec Rev.10 P337,the subnet prefix of the router's LAN is unknown until the IPv6 WAN connection is brought up successfully.
 		local wan6_ip=`ifconfig $WAN |grep "inet6 addr" |grep -v "Link" |awk '{print $3}'`
-		if [ $w6_type != dhcp ] || [ -e $SRVC_RELOAD_FILE ] || [ "x$wan6_ip" != "x" ]; then
+		if [ "x$w6_type" != "xdhcp" ] || [ -e $SRVC_RELOAD_FILE ] || [ "x$wan6_ip" != "x" ]; then
 			[ -s $DHCP6S_PD ] && cat $DHCP6S_PD && return 0
 		fi
 
@@ -192,6 +195,13 @@ get_prefix_fixed() {
 	printf "$DHCP6S_DEFAULT_TIME  $DHCP6S_PREFER_TIME  %s  %s" `format_prefix $lanip6 $prelen` $prelen
 }
 
+get_prefix_6rd() {
+	local prefix=`$CONFIG get ipv6_6rd_prefix`
+	local prelen=`$CONFIG get ipv6_6rd_prelen`
+
+	printf "$DHCP6S_DEFAULT_TIME  $DHCP6S_PREFER_TIME  %s  %s" $prefix $prelen
+}
+				
 get_prefix() {
 	local prefix
 	case "$w6_type" in
@@ -200,6 +210,8 @@ get_prefix() {
 	6to4) prefix=`get_prefix_6to4`
 	;;
 	fixed) prefix=`get_prefix_fixed`
+	;;
+	6rd) prefix=`get_prefix_6rd`
 	;;
 	pppoe) prefix=`get_prefix_dhcp`
 	;;

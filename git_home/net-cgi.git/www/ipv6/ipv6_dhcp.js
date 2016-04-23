@@ -1,8 +1,8 @@
 function check_ipv6_dhcp(cf)
 {
-	for(i=0;i<cf.userClass.value.length;i++)
+	for(i=0;i<cf.ipv6_system.value.length;i++)
 	{
-		if(isValidChar(cf.userClass.value.charCodeAt(i))==false)
+		if(isValidChar(cf.ipv6_system.value.charCodeAt(i))==false)
 		{
 			alert("$acname_not_allowed");
 			return false;
@@ -34,7 +34,7 @@ function check_ipv6_dhcp(cf)
 
 	if(ipv6_save_common(cf) == false)
                 return false;
-	if(check_mapt(cf) == false)
+	if(have_mapt && cf.cb_enable.checked == true && check_mapt(cf) == false)
 		return false;
 	return true;
 }

@@ -427,6 +427,11 @@ main(argc, argv)
 #ifdef HAVE_MULTILINK
     mp_check_options();
 #endif
+    if ( req_unit == 1 ){
+    	setenv("session_unit", "1", 0);
+    }else{
+	setenv("session_unit", "0", 0);
+	}
     for (i = 0; (protp = protocols[i]) != NULL; ++i)
 	if (protp->check_options != NULL)
 	    (*protp->check_options)();

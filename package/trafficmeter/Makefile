@@ -42,7 +42,7 @@ define Package/trafficmeter/install
 	$(CP) ./files/network_status $(1)/usr/traffic_meter/
 	$(INSTALL_BIN) ./files/traffic_meter $(1)/usr/traffic_meter/
 	$(INSTALL_BIN) ./files/traffic_statistics $(1)/usr/traffic_meter/
-	$(INSTALL_BIN) ./files/traffic_meter.init $(1)/etc/init.d/
+	$(INSTALL_BIN) ./files/traffic_meter.init $(1)/etc/init.d/traffic_meter
 	install -m0755 $(PKG_BUILD_DIR)/traffic_meter $(1)/sbin/
 	install -m0755 $(PKG_BUILD_DIR)/cmd_traffic_meter $(1)/sbin/
 	install -m0755 $(PKG_BUILD_DIR)/tfm_led $(1)/sbin/

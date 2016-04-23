@@ -24,7 +24,8 @@ define Package/samba-scripts
 endef
 
 define Build/Prepare
-	$(CP) ./src/* $(PKG_BUILD_DIR)
+	mkdir -p $(PKG_BUILD_DIR)
+	$(CP) ./src/* $(PKG_BUILD_DIR)/
 	$(call Build/Patch/Default)
 endef
 

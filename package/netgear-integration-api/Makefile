@@ -29,11 +29,13 @@ endef
 
 define Package/netgear-integration-api/install
 	$(MAKE) -C $(PKG_BUILD_DIR) install INS_DIR_PRE=$(1)
-	ln -sf ntgr_integration_api $(1)/usr/sbin/api 
-	ln -sf ntgr_integration_api $(1)/usr/sbin/firewall 
-	ln -sf ntgr_integration_api $(1)/usr/sbin/internet 
-	ln -sf ntgr_integration_api $(1)/usr/sbin/nvconfig
-	ln -sf ntgr_integration_api $(1)/usr/sbin/system
+	ln -sf ntgr_sw_api $(1)/usr/sbin/api 
+	ln -sf ntgr_sw_api $(1)/usr/sbin/app-register 
+	ln -sf ntgr_sw_api $(1)/usr/sbin/dlna 
+	ln -sf ntgr_sw_api $(1)/usr/sbin/firewall 
+	ln -sf ntgr_sw_api $(1)/usr/sbin/internet 
+	ln -sf ntgr_sw_api $(1)/usr/sbin/nvconfig
+	ln -sf ntgr_sw_api $(1)/usr/sbin/system
 endef
 
 $(eval $(call BuildPackage,netgear-integration-api))

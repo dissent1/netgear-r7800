@@ -3245,6 +3245,7 @@ make_ia(spec, conflist, retlist, client_conf, do_binding)
 	struct dhcp6_listval *specia;
 	struct dhcp6_ia ia;
 	int found = 0;
+	int re = 0;
 
 	/*
 	 * If we happen to have a binding already, update the binding and
@@ -3312,8 +3313,11 @@ make_ia(spec, conflist, retlist, client_conf, do_binding)
 		             || spec->type == DHCP6_LISTVAL_IATA
 #endif
 		            ) && client_conf->pool.name != NULL ) {
-			if (make_iana_from_pool(&client_conf->pool, specia, &ialist))
+			re = make_iana_from_pool(&client_conf->pool, specia, &ialist);
+			if (re == 1)
 				found++;
+			else if (re == 2 )
+				return (0);
 		}
 	}
 	if (found == 0) {
@@ -3440,6 +3444,8 @@ make_iana_from_pool(poolspec, spec, retlist)
 		if (is_available_in_pool(pool, &saddr.addr)) {
 			found = 1;
 		}
+		else
+			found = 2;
 	} else {
 		if (get_free_address_from_pool(pool, &saddr.addr)) {
 			found = 1;

@@ -87,7 +87,7 @@ var adsl_list = {"Australia":{
 					"Westnet":{"vpi":"8","vci":"35","encap":"pppoa","multi":"vc"},
 					"Optus":{"vpi":"8","vci":"35","encap":"pppoe","multi":"llc"},
 					"Primus":{"vpi":"8","vci":"35","encap":"pppoe","multi":"llc"},
-					"TPG":{"vpi_num":"0","vpi2":"0","vci2":"35","multi2":"llc","vpi":"8","vci":"35","encap":"pppoe","multi":"llc"},
+					"TPG":{"vpi_num":"0","vpi2":"0","vci2":"32","multi2":"llc","vpi":"8","vci":"35","encap":"pppoe","multi":"llc"},
 					"iiNet":{"vpi":"8","vci":"35","encap":"pppoe","multi":"llc"},
 					"Dodo":{"vpi":"8","vci":"35","encap":"pppoe","multi":"llc"},
 					"Telstra Bigpond":{"vpi":"8","vci":"35","encap":"pppoe","multi":"llc"},
@@ -404,28 +404,48 @@ function sAlert(str, callback_ok, callback_cancel, dwidth, anc, button_lang){
 	//setting ok button
 	button.setAttribute("type","button");
 	if(button_lang == "yes/no")
-		button.setAttribute("value","Yes");
+		button.setAttribute("value","$yes_mark");
+	else if(button_lang == "cancel/apply")
+		button.setAttribute("value","$cancel_mark");
 	else
-		button.setAttribute("value","OK");
+		button.setAttribute("value","$ok_mark");
 	button.style.width="80px";
 	button.style.marginLeft="140px";
 	button.style.marginBottom="10px";
-	button.style.background=" #702b86";
-	button.style.border="1px solid "+ " #702b86";
+	if(button_lang == "cancel/apply")
+	{
+		button.style.background=" #5bb6e5";
+		button.style.border="1px solid "+ " #5bb6e5";
+	}
+	else
+	{
+		button.style.background=" #702b86";
+		button.style.border="1px solid "+ " #702b86";
+	}
 	button.style.color="white";
 	button.onclick=click_ok;
 	var button1=document.createElement("input");//create cancel button
 	//setting cancel button
 	button1.setAttribute("type","button");
 	if(button_lang == "yes/no")
-		button1.setAttribute("value","No");
+		button1.setAttribute("value","$no_mark");
+	else if(button_lang == "cancel/apply")
+		button1.setAttribute("value","$apply_mark");
 	else
-		button1.setAttribute("value","Cancel");
+		button1.setAttribute("value","$cancel_mark");
 	button1.style.width="80px";
 	button1.style.marginLeft="10px";
 	button1.style.marginBottom="10px";
-	button1.style.background="#5bb6e5";
-	button1.style.border="1px solid "+ "#5bb6e5";
+	if(button_lang == "cancel/apply")
+	{
+		button1.style.background="#702b86";
+		button1.style.border="1px solid "+ "#702b86";
+	}
+	else
+	{
+		button1.style.background="#5bb6e5";
+		button1.style.border="1px solid "+ "#5bb6e5";
+	}
 	button1.style.color="white";
 	button1.onclick=click_cancel;
 	function removeObj(){//close warning
@@ -445,7 +465,7 @@ function sAlert(str, callback_ok, callback_cancel, dwidth, anc, button_lang){
 	function click_cancel(){// for cancel button
 		if(typeof(callback_cancel) == "function")
 			callback_cancel();
-		if(button_lang != "yes/no")
+		if(button_lang != "yes/no" && button_lang != "cancel/apply")
 			removeObj();
 	}
 
@@ -2018,7 +2038,7 @@ function checkwep_a(form)
 	var KEY3=form.KEY3_an.value;
 	var KEY4=form.KEY4_an.value;
 
-	if(form.Wepenc_an.value==13)
+	if(form.wepenc_an.value==13)
 	{
 		if( form.wep_key_no_an[0].checked == true )
 		{
@@ -2065,7 +2085,7 @@ function checkwep_a(form)
 			return false;
 
 	}
-	if(form.Wepenc_an.value==5)
+	if(form.wepenc_an.value==5)
 	{
 		if( form.wep_key_no_an[0].checked == true)
 		{
@@ -2487,8 +2507,8 @@ function clickgenerate_a(form)
 			return false;
 		}
 	}			
-	if(form.Wepenc_an.options[0].selected == true)
-		PassPhrase40(form.passphraseStr_an, form.Wepenc_an, form.wep_key_no_an, form.KEY1_an, form.KEY2_an, form.KEY3_an, form.KEY4_an);
+	if(form.wepenc_an.options[0].selected == true)
+		PassPhrase40(form.passphraseStr_an, form.wepenc_an, form.wep_key_no_an, form.KEY1_an, form.KEY2_an, form.KEY3_an, form.KEY4_an);
 	else
 		PassPhrase104(form.passphraseStr_an, form.KEY1_an, form.KEY2_an, form.KEY3_an, form.KEY4_an);
 	form.generate_flag.value=1;
@@ -2537,7 +2557,7 @@ function change_serv(cf)
 		goto_formframe("BAS_l2tp.htm");
 	else if( cf.login_type.value == "Telstra Bigpond" )
 		goto_formframe("BAS_bpa.htm");
-	else if( cf.login_type.value == "Other" )
+	else if( cf.login_type.value == "PPPoE" )
 	{
 	   if(top.dsl_enable_flag == 0)
 		goto_formframe("BAS_pppoe.htm");
@@ -2569,34 +2589,34 @@ function change_ipv6(type)
 	switch(type)
 	{
 		case "disabled":
-			goto_formframe("IPv6_disabled.htm");
+			top.formframe.location.href = "IPv6_disabled.htm";
 			break;
 		case "autoDetect":
-			goto_formframe("IPv6_auto.htm");
+			top.formframe.location.href = "IPv6_auto.htm";
 			break;
 		case "autoConfig":
-			goto_formframe("IPv6_autoConfig.htm");
+			top.formframe.location.href = "IPv6_autoConfig.htm";
 			break;
 		case "6to4":
-			goto_formframe("IPv6_tunnel.htm");
+			top.formframe.location.href = "IPv6_tunnel.htm";
 			break;
 		case "bridge":
-			goto_formframe("IPv6_passThrougth.htm");
+			top.formframe.location.href = "IPv6_passThrougth.htm";
 			break;
 		case "fixed":
-			goto_formframe("IPv6_fixed.htm");
+			top.formframe.location.href = "IPv6_fixed.htm";
 			break;
 		case "dhcp":
-			goto_formframe("IPv6_dhcp.htm");
+			top.formframe.location.href = "IPv6_dhcp.htm";
 			break;
 		case "pppoe":
-			goto_formframe("IPv6_pppoe.htm");
+			top.formframe.location.href = "IPv6_pppoe.htm";
 			break;
 		case "6rd":
-                        goto_formframe("IPv6_6rd.htm");
+			top.formframe.location.href = "IPv6_6rd.htm";
                         break;
 		default:
-			goto_formframe("IPv6_disabled.htm");
+			top.formframe.location.href = "IPv6_disabled.htm";
 			break;
 	} 
 }
@@ -2945,7 +2965,7 @@ function top_left_nolink()
 {
 	if( parent.multi_lang_router_flag == 1 )
 	{
-		parent.topframe.document.forms[0].lang_avi.disabled = true;
+		parent.topframe.document.forms[0].language.disabled = true;
 		//parent.topframe.document.forms[0].apply.disabled = true;
 	}
 }
@@ -3273,7 +3293,7 @@ function select_type( type)
 	else if(type == 1 )
 		location.href="rae_ap.htm";
 	else if(type == 2 )
-		location.href="rae_extender.htm";
+		goto_formframe("rae_bridge.htm");
 
 }
 
@@ -3308,5 +3328,19 @@ function disableElements(formFields)
 		var elements = document.getElementsByTagName(tag);
 		for(var j=0, len=elements.length; j<len; j++)
 			elements[j].disabled = true;
+	}
+}
+function setHeight_for_IE6()
+{
+	if(isIE_or_Opera && IE_version() == 6)
+	{
+		var pageHeight;
+		if(document.compatMode == "CSS1Compat")
+			pageHeight = document.documentElement.clientHeight;
+		else
+			pageHeight = document.body.clientHeight;
+		var divHeight = pageHeight - 149;
+		document.getElementById("footer").style.top = divHeight + "px";
+		document.getElementById("formframe_div").style.height = divHeight + "px";
 	}
 }

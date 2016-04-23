@@ -33,30 +33,15 @@ function initPage()
 	choices_text = document.createTextNode(bh_select_no_IP_option3);
 	insertAfter(choices_text, choices[2]);
 
-	
-	//buttons
-	/*var btns_div1 = document.getElementById("btnsContainer_div1");
-	btns_div1.onclick = function()
-	{
-		return manuallyConfig();
-	}
-	
-
-        var btn = btns_div1.getElementsByTagName("div");
-        var btn_text = document.createTextNode(bh_manual_config_connection);
-        btn[0].appendChild(btn_text);*/
-
-        var btns_div2 = document.getElementById("btnsContainer_div2");
+        var btn = document.getElementById("next");
+	btn.value = bh_next_mark;
 		if( master == "admin" )
-        btns_div2.onclick = function()
+        btn.onclick = function()
         {
                 return  modemCycleChoice();
         }
-
-        btn = btns_div2.getElementsByTagName("div");
-        btn_text = document.createTextNode(bh_next_mark);
-        btn[0].appendChild(btn_text);
-
+	else
+		btn.className="grey_short_btn";
 	
 	//show firmware version
 	showFirmVersion("");

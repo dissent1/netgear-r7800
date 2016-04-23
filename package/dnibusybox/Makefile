@@ -88,6 +88,7 @@ define Package/dnibusybox/install
 
 	$(INSTALL_DIR) $(1)/usr/sbin/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dni-examples/dsyslog $(1)/usr/sbin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dni-examples/dsyslog $(1)/etc/init.d/syslogd
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dni-examples/cmd_cron $(1)/usr/sbin/
 	$(INSTALL_BIN) ./files/cron $(1)/etc/init.d/
 	$(INSTALL_DIR) $(1)/etc/bandcheck

@@ -32,6 +32,10 @@ set_other_radio_setting() {
     local section=$(config_foreach is_section_ifname wifi-iface $IFNAME)
     local qca_hostapd_config_file=/var/run/hostapd-`echo $IFNAME`.conf
 
+    tmp_ssid=$( echo $tmp_ssid |sed  -e 's/\\\\/\\/g')
+    tmp_ssid=$(echo $tmp_ssid |sed  -e 's/\\\"/\"/g')
+    [ -n "$wpa" ] || wpa=0
+
     [ -f "$qca_hostapd_config_file" ] && {
 	sed -i '/^wpa/d' $qca_hostapd_config_file
 	sed -i '/^ssid/d' $qca_hostapd_config_file
@@ -208,7 +212,7 @@ case "$CMD" in
 		# no update other radio, if it's one radio project
 		[ `uci show wireless | grep -c "wifi[0-9].type="` = "1" ] && exit
 
-		set_other_radio_setting "ath$((`echo $1 | cut -c 4`^1))" $psk $ssid
+		set_other_radio_setting "ath$((`echo $1 | cut -c 4`^1))" "$psk" "$ssid"
 		;;
 	WPS-TIMEOUT)
 		kill "$(cat "/var/run/hostapd-cli-$IFNAME.pid")"

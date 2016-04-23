@@ -1,10 +1,11 @@
 function checkvpn(cf)
 {
 	var count =0;
-	var int_port = parseInt(cf.vpn_port.value,10);
-	if(cf.enable_vpn.checked == true)
+	var int_port = parseInt(cf.openvpn_service_port.value,10);
+	if(cf.openvpnActive.checked == true)
 	{
-		if(old_endis_ddns != "1" && (old_wan_assign == "0" || (old_wan_assign == "1" && select_basic != "1")))
+		if(old_endis_ddns != "1" && (old_wan_assign == "0" || (old_wan_assign == "1" && select_basic != "1")) 
+			&& !(pppoe_get_wan_assign == "1" && info_get_wanproto == "pppoe"))
 		{
 			alert("$no_ddns");
 			return false;
@@ -22,28 +23,28 @@ function checkvpn(cf)
 	}
 
 	
-	if(cf.enable_vpn.checked == true)
+	if(cf.openvpnActive.checked == true)
 		cf.hidden_enable_vpn.value=1;
 	else
 		cf.hidden_enable_vpn.value=0;
-	if(cf.vpn_type[0].checked == true)
+	if(cf.openvpn_protocol[0].checked == true)
 		cf.hidden_vpn_type.value="udp";
-	else if(cf.vpn_type[1].checked == true)
+	else if(cf.openvpn_protocol[1].checked == true)
 		cf.hidden_vpn_type.value="tcp";
-	cf.hidden_vpn_port.value=cf.vpn_port.value;
+	cf.hidden_vpn_port.value=cf.openvpn_service_port.value;
 
-	if(cf.vpn_access[0].checked == true)
+	if(cf.openvpn_redirectGW[0].checked == true)
 		cf.hidden_vpn_access.value="auto";
-	else if(cf.vpn_access[1].checked == true)
+	else if(cf.openvpn_redirectGW[1].checked == true)
 		cf.hidden_vpn_access.value="all";
-	else if(cf.vpn_access[2].checked == true)
+	else if(cf.openvpn_redirectGW[2].checked == true)
 		cf.hidden_vpn_access.value="home";
-	if((cf.enable_vpn.checked == true)&&(check_all_port(int_port, cf.hidden_vpn_type.value) == false))
+	if((cf.openvpnActive.checked == true)&&(check_all_port(int_port, cf.hidden_vpn_type.value) == false))
         {
                 alert("$invalid_port_used");
                 return false;
         }
-	if(cf.enable_vpn.checked == true && backup_rsp == "")
+	if(cf.openvpnActive.checked == true && backup_rsp == "")
 	{
 		cf.hidden_backup_rspToPing.value = cf.rspToPing_value;
 	}
@@ -51,7 +52,14 @@ function checkvpn(cf)
 	{
 		alert("$warn_change_vpn_config");
 	}
-
+	if(cf.openvpnActive.checked == true && select_basic == "0" && ((internet_ppp_type == "0" && wan_pppoe_demand == "1") || (internet_ppp_type == "1" && wan_pptp_demand == "1") || ( internet_ppp_type == "3" && wan_mulpppoe_demand == "1") || ( internet_ppp_type == "4" && wan_l2tp_demand == "1")))
+	{
+		if( confirm("$ppp_dial_on_demand_vpn_query") == false)
+			return false;
+	}
+	if(cf.openvpnActive.checked == true && select_basic == "0" && ((internet_ppp_type == "0" && wan_pppoe_demand == "2") || (internet_ppp_type == "1" && wan_pptp_demand == "2") || ( internet_ppp_type == "3" && wan_mulpppoe_demand == "2") || ( internet_ppp_type == "4" && wan_l2tp_demand == "2")))
+		alert("$ppp_dial_on_demand_vpn_warning");
+	
 	return true;
 
 }
@@ -73,6 +81,7 @@ function checkdownload(cf, num)
 		cf.download_button_type.value="nonwindows";
 	cf.action="/apply.cgi?/vpn_frame.htm timestamp="+ts;
 	cf.submit_flag.value="vpn_compress_conf";
+	cf.submit();
 	return true;
 }
 

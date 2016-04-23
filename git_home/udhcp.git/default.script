@@ -47,6 +47,49 @@ compare_the_same_subnet(){
 	fi
 }
 
+new_option_6rd=$ip6rd
+restart_ipv6=0
+update_6rd=0
+# if no have 6rd option212, unset Option212_get
+# if get 6rd option212, set Option212_get and 6rd parameters.
+if [ -z "$new_option_6rd" ]; then
+	echo "no 6RD parameters available, so unset 6rd related config"
+	update_6rd=1
+	$CONFIG unset Option212_get
+	$CONFIG unset Ipv6rdPrefixDynamic
+	$CONFIG unset Ipv6rdPlenDynamic
+	$CONFIG unset Ipv6rdRelayDynamic
+	$CONFIG unset Ipv6rdv4MaskDynamic
+else
+	srd_masklen=`echo ${new_option_6rd} |awk '{print $1}'`
+        srd_prefixlen=`echo ${new_option_6rd} |awk '{print $2}'`
+        srd_prefix=`echo ${new_option_6rd} |awk '{print $3}' | sed 's/:0000//g'`
+        srd_prefix="${srd_prefix}::"
+        srd_braddr=`echo ${new_option_6rd} |awk '{print $4}'`
+	$CONFIG set Option212_get=1
+	$CONFIG set Ipv6rdPrefixDynamic=${srd_prefix}
+	$CONFIG set Ipv6rdPlenDynamic=${srd_prefixlen}
+	$CONFIG set Ipv6rdRelayDynamic=$srd_braddr
+	$CONFIG set Ipv6rdv4MaskDynamic=$srd_masklen
+	if [ "x$WAN6_PROTO" != "x6rd" ] ;then
+		update_6rd=1
+	fi
+	sixrd_prefix=`$CONFIG get Ipv6rdPrefix`
+	# set 6rd information if they are empty
+	if [ "x$sixrd_prefix" = "x" ] ;then
+		$CONFIG set Ipv6rdPrefix=${srd_prefix}
+		$CONFIG set Ipv6rdPlen=${srd_prefixlen}
+		$CONFIG set Ipv6rdRelay=$srd_braddr
+		$CONFIG set Ipv6rdv4Mask=$srd_masklen
+	fi
+fi
+
+if [ "x$WAN6_PROTO" = "x6rd" ] || [ "x$WAN6_PROTO" = "x6to4" ] ;then
+        restart_ipv6=1
+elif [ "x$WAN6_PROTO" = "xautoDetect" ] && [ "x$update_6rd" = "x1" ] ;then
+	restart_ipv6=1
+fi
+
 DNS_ASSIGN=0
 if [ "$WAN_PROTO" = "bigpond" ]; then
 	if [ "$($CONFIG get wan_bpa_dns_assign)" = "1" ]; then
@@ -89,9 +132,9 @@ case "$1" in
 
 		$IFCONFIG $interface 0.0.0.0 && $CONFIG set wan_dhcp_ipaddr=0.0.0.0
 
-		# start 6to4 when ipv4 wan type is changed.
-		local ipv6_wantype=$($CONFIG get ipv6_type)
-		if [ "x$ipv6_wantype" = "x6to4" ]; then
+		# start 6to4/6rd when ipv4 wan type is changed.
+		if [ "x$restart_ipv6" = "x1" ] ; then
+ 			killall net6conf
 			/etc/net6conf/net6conf restart
 		fi
 		# Restart static route & ripd
@@ -188,10 +231,10 @@ case "$1" in
 			done
 
 			for i in $router ; do
+				$ECHO "adding router $i"
 				if compare_the_same_subnet "$ip" "$i" "$subnet"; then
 					$ROUTE add -net $i netmask 255.255.255.255 dev $interface
 				fi
-				$ECHO "adding router $i"
 				$ROUTE add default gw $i dev $interface 
 			done
 			$CONFIG set wan_dhcp_gateway=$router
@@ -298,9 +341,9 @@ case "$1" in
 				fi
 			fi
 
-			# start 6to4 when ipv4 wan type is changed.
-			local ipv6_wantype=$($CONFIG get ipv6_type)
-			if [ "x$ipv6_wantype" = "x6to4" ]; then
+			# start 6to4/6rd when ipv4 wan type is changed.
+			if [ "x$restart_ipv6" = "x1" ] ; then
+ 				killall net6conf
 				/etc/net6conf/net6conf restart
 			fi
 

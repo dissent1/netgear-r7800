@@ -6,14 +6,17 @@ BASEDIR="/etc/net6conf"
 
 start()
 {
-	/sbin/detwanv6 ${WAN} ${outfile} &
 	echo -n "Detecting..." > ${outfile}
+	/sbin/detwanv6 ${WAN} ${outfile} &
 	while [ "x$(cat ${outfile})" = "xDetecting..." ]; do
 		sleep 5
 	done
 	case `cat ${outfile}` in
 		"6to4 Tunnel")
 			${BASEDIR}/6to4 start
+		;;
+		"6rd Tunnel")
+			${BASEDIR}/6rd start
 		;;
 		"DHCP")
 			${BASEDIR}/6dhcpc start
@@ -29,13 +32,31 @@ start()
 	esac
 }
 
+detwanv6_is_running()
+{
+	if ps | grep detwanv6 | grep -v grep >&- 2>&- ; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+stop()
+{
+	echo -n "Stop 6autodet"
+	detwanv6_is_running && /usr/bin/killall detwanv6
+	rm ${outfile}
+}
+
 case "$1" in
 	"start")
 		start
 	;;
 	"stop")
+		stop
 	;;
 	"restart")
+		stop
 		start
 	;;
 esac

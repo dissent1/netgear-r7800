@@ -29,8 +29,8 @@ start() {
 	fi
 
 	if [ "x$uplimit" != "x" ] && [ "x$downlimit" != "x" ]; then
-		uplimit=`awk -v up=$uplimit 'BEGIN{printf "%.0f",up/0.94}'`
-		downlimit=`awk -v down=$downlimit 'BEGIN{printf "%.0f",down/0.94}'`
+		uplimit=`awk -v up=$uplimit 'BEGIN{printf "%.0f",up/0.9}'`
+		downlimit=`awk -v down=$downlimit 'BEGIN{printf "%.0f",down/0.9}'`
 	fi
 	redis-cli set settings:bw:up $uplimit > /dev/null
 	redis-cli set settings:bw:down $downlimit > /dev/null

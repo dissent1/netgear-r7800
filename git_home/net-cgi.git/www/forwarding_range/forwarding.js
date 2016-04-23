@@ -56,6 +56,7 @@ function check_forwarding_edit(cf)
 		cf.select_edit_num.value=parseInt(item_count[select_num]);
 		cf.submit_flag.value="forwarding_editnum_range";
 		cf.action="/apply.cgi?/forwarding_edit_wait.htm timestamp="+ts;
+		cf.submit();
 		return true;
 	}
 }
@@ -94,6 +95,7 @@ function check_forwarding_del(cf)
 		cf.select_del.value=parseInt(forward_table[select_num]);
 		cf.select_del_num.value=parseInt(item_count[select_num]);
 		cf.submit_flag.value="forwarding_del_range";
+		cf.submit();
 		return true;
 	}
 	
@@ -228,6 +230,7 @@ function Check_add(cf)
 		cf.serflag.value=0;
 
 	cf.submit_flag.value="forwarding_hidden_add";
+	cf.submit();
 	return true;
 }
 
@@ -734,7 +737,7 @@ function check_forwarding_add_range(cf,flag)
 	cf.port_end.value=ext_end_port;
 	cf.hidden_port_int_start.value=int_start_port;
 	cf.hidden_port_int_end.value=int_end_port;
-	
+	cf.submit();
 	return true;
 }
 
@@ -747,7 +750,7 @@ function int_port_value()
 
 function click_arrange_by_ip()
 {
-        var table = document.getElementById("port_forwarding");
+        var table = document.getElementById("pf_record");
         var tbody = table.tBodies[0];
         var tr = tbody.rows;
         var trValue = new Array();

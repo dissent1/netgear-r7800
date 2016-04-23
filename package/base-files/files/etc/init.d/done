@@ -44,7 +44,20 @@ boot() {
 	fi
 
 	/sbin/cmdftp restart &
+
+	# Start ipmac binding
+	/sbin/ip_mac start
+
 	/sbin/check_status.sh &
+
+	#tmply fixed pppd can not get ip after upgrade FW.
+        local ipv4_pppd=`ps | grep "pppd call dial-provider updetach" | grep -v "grep" |awk '{print $1}'`
+        local pppip=`ifconfig ppp0 |grep "inet addr" |cut -f2 -d: |cut -f1 -d' '`
+        if [ "x$ipv4_pppd" != "x" ] && [ "x$pppip" = "x" ]; then
+                /bin/kill -SIGHUP $ipv4_pppd
+                /bin/kill $ipv4_pppd; pppd call dial-provider updetach
+        fi
+
 	rm -f /tmp/boot_status
 	echo "[R7800]***boot done***" > /dev/console
 }

@@ -1,6 +1,15 @@
 #! /bin/sh
 
 DISK_FIND_TABLE=/tmp/find_disk_abcxzy
+download_state="$(/bin/config get green_download_enable)"
+download_start() {
+	sleep 2
+	green_download=`ps -w| grep -v grep |grep -c green_download.sh`
+	download_entry=`ps -w| grep -v grep |grep -c greendownload`
+	[ "x$green_download" != "x0" ] && return
+	[ "x$download_entry" != "x0" ] && return
+	[ "x$download_state" == "x1" ] && echo "hotplug starting green_download ........" > /dev/console && /usr/sbin/green_download.sh start
+}
 
 # $---> sda1
 print_log()
@@ -106,6 +115,8 @@ if [ $1 = $lastpartition ]; then
 	#/usr/sbin/usb_cfg approve $1
 	/sbin/cmdftp restart
 	/sbin/cmddlna restart &
+	#if download is ennable  start download
+	download_start
 fi
 
 print_log $1

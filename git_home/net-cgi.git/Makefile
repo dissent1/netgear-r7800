@@ -1,39 +1,35 @@
+# GENERATED AUTOMATICALLY BY configure, DON'T EDIT THIS FILE MANUALLY.
+
 ##############################################
-# NET-CGI, DNI processor for web requesting. #
-# Copy right (c) 2015                        #
+# net-cgi, DNI processor for web requesting. #
+#             Copyright (c) 2015             #
 ##############################################
 
-export TOPRULE=$(CURDIR)/toprule.mk
+export INSTALL_DIR:=install -d -m0755
+export INSTALL_BIN:=install -m0755
+export INSTALL_DATA:=install -m0644
+export INSTALL_CONF:=install -m0600
+export LN:=ln -sf
+export CP:=cp -fpR
+export TOUCH:=touch
 
-PKG_RELEASE:=net-cgi-dni227
+export WWW_OUT_DIR:=/home/haiyan.zhuang/project/r7800-beta2-buildroot.git/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/net-cgi/www.out
 
-include $(TOPRULE)
+export INS_DIR_PRE:=
+export INS_BIN_DIR:=$(INS_DIR_PRE)/usr/sbin
+export INS_WWW_DIR:=$(INS_DIR_PRE)/www
 
-virtual_cgis:=apply.cgi func.cgi upgrade_check.cgi upgrade.cgi \
-	backup.cgi brs_backup.cgi restore.cgi langupg.cgi \
-	ubootupg.cgi unauth.cgi recover.cgi debug_cloud.cgi \
-	debug.cgi green_upg.cgi bt_file.cgi mobile_install.cgi
+export NETCGI_CONF:=/home/haiyan.zhuang/project/r7800-beta2-buildroot.git/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/net-cgi/files/net-cgi.config
 
-.PHONY: all install clean
-all:
-	$(INSTALL_DIR) $(WWW_OUT_DIR)
+export NEW_SOURCE:=
 
-	$(MAKE) -C $(SOURCE_DIR)
-	$(MAKE) -C $(WWW_DIR)
-	$(MAKE) -C $(FILES_DIR)
+SOURCE_DIR:="src"
+FILES_DIR:="files"
+SCRIPT_DIR:="scripts"
+WWW_DIR:="www"
 
-	$(CP) $(SCRIPT_DIR)/* $(WWW_OUT_DIR)/cgi-bin
-	$(TOUCH) $(foreach n,$(virtual_cgis),$(WWW_OUT_DIR)/$(n))
-
-install:
-	$(INSTALL_DIR)	$(INS_BIN_DIR)
-	$(INSTALL_DIR)	$(INS_WWW_DIR)
-
+all %::
 	$(MAKE) -C $(SOURCE_DIR) $@
 	$(MAKE) -C $(WWW_DIR) $@
-	$(MAKE) -C $(FILES_DIR) $@
-
-clean:
-	$(MAKE) -C $(SOURCE_DIR) $@
-	$(MAKE) -C $(WWW_DIR) $@
+	$(MAKE) -C $(SCRIPT_DIR) $@
 	$(MAKE) -C $(FILES_DIR) $@

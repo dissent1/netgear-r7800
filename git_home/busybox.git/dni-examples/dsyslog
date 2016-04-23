@@ -1,5 +1,6 @@
 #!/bin/sh /etc/rc.common
 # Copyright (C) 2006 OpenWrt.org
+START=49
 
 LOG_CATEGORY_FILE=/tmp/logcategory
 CONFIG=/bin/config

@@ -15,7 +15,7 @@ NTGRDNS_CONF="/tmp/ntgrdns.conf"
 DDNS_CACHE="/tmp/ez-ipupd.cache"
 DDNS_CONF="/tmp/ez-ipupd.conf"
 DDNS_SCRIPT="/etc/ez-ipupdate.script"
-WAN_IF=eth0
+WAN_IF=brwan
 
 #This address is got from Linux Open Source at Oray Officail Site
 ORAY_SERVER=hphserver.oray.net
@@ -32,7 +32,7 @@ if [ "x$wan_proto" == "x3g" -o "x$wan_proto" == "xpppoe" -o "x$wan_proto" == "xl
 elif [ "x$wan_proto" == "xwimax" ]; then
 	wan_ifname=`$CONFIG get wan_ifname_wimax`
 else
-	wan_ifname=`$CONFIG get wan_ifname`
+	wan_ifname=$WAN_IF
 fi
 
 #wan_ipaddr=`$CONFIG get wan_default_ipaddr`

@@ -67,6 +67,8 @@ static int ipip6_tunnel_init(struct net_device *dev);
 static void ipip6_tunnel_setup(struct net_device *dev);
 static void ipip6_dev_free(struct net_device *dev);
 
+int sysctl_ipv6_6to4_force_ip4fragoff_zero = 0;
+
 static int sit_net_id __read_mostly;
 struct sit_net {
 	struct ip_tunnel __rcu *tunnels_r_l[HASH_SIZE];
@@ -848,7 +850,10 @@ static netdev_tx_t ipip6_tunnel_xmit(struct sk_buff *skb,
 	iph 			=	ip_hdr(skb);
 	iph->version		=	4;
 	iph->ihl		=	sizeof(struct iphdr)>>2;
-	iph->frag_off		=	df;
+	if ( !sysctl_ipv6_6to4_force_ip4fragoff_zero )
+		iph->frag_off		=	df;
+	else
+		iph->frag_off           =       0;
 	iph->protocol		=	IPPROTO_IPV6;
 	iph->tos		=	INET_ECN_encapsulate(tos, ipv6_get_dsfield(iph6));
 	iph->daddr		=	fl4.daddr;
@@ -1115,8 +1120,8 @@ ipip6_tunnel_ioctl (struct net_device *dev, struct ifreq *ifr, int cmd)
 						     (32 - ip6rd.relay_prefixlen));
 			else
 				relay_prefix = 0;
-			if (relay_prefix != ip6rd.relay_prefix)
-				goto done;
+
+			ip6rd.relay_prefix = relay_prefix;
 
 			t->ip6rd.prefix = prefix;
 			t->ip6rd.relay_prefix = relay_prefix;

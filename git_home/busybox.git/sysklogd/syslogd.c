@@ -32,6 +32,8 @@ pid_file = "/tmp/run/syslogd.pid";
 
 /* Path for the file where all log messages are written */
 static const char *logFilePath = "/var/log/messages";
+/* Path for the file where duplicate site blocked messages are written */
+static const char *BlockSitelogFilePath = "/var/log/block-site-messages";
 static int logFD = -1;
 
 /* interval between marks in seconds */
@@ -342,7 +344,7 @@ end:
 }
 
 /* Print a message to the log file. */
-static void log_locally(char *msg)
+static void log_locally(char *msg, int flag)
 {
 	FILE *fp;
 	static time_t last;
@@ -365,13 +367,23 @@ static void log_locally(char *msg)
 
 	limit_log_len(logFilePath, logFileSize, LOG_DEL_NUM);
 
-	if ((fp = fopen(logFilePath, "a+")) == NULL) {
-		printf("Open file %s is fail\n", logFilePath);
-		return;
+	if (flag == 0) {
+		if ((fp = fopen(logFilePath, "a+")) == NULL) {
+			printf("Open file %s is fail\n", logFilePath);
+			return;
+		}
+		fprintf(fp, "%s", msg);
+		fclose(fp);
 	}
 
-	fprintf(fp, "%s", msg);
-	fclose(fp);
+	if (strstr(msg, "site blocked") != NULL) {
+		if ((fp = fopen(BlockSitelogFilePath, "w")) == NULL) {
+			printf("Open file %s is fail\n", BlockSitelogFilePath);
+			return;
+		}
+		fprintf(fp, "%s", msg);
+		fclose(fp);
+	}
 
 	return;
 }
@@ -900,6 +912,7 @@ void syslog_edit_comma(char *msg, int flag, int time_len)
 static void timestamp_and_log(int pri, char *msg, int len)
 {
 	char *timestamp;
+	int block_site_flag = 0; /* If msg is "site blocked", we should handle it special */
 
 #if ENABLE_FEATURE_VENDOR_FORMAT_LOG
 	char *skip;
@@ -951,11 +964,15 @@ static void timestamp_and_log(int pri, char *msg, int len)
 			return;
 
 		/* supress duplicates */
-		if (strncmp(last_msg, msg, LOG_ITEM_SIZE) || not_supress_msg(msg)) {
+		/* Fix bug that sometime when user access blocked site, Send email content is blank */
+		if (strncmp(last_msg, msg, LOG_ITEM_SIZE) || (strstr(msg, "site blocked") != NULL) || not_supress_msg(msg)) {
 			time_t now;
 			time_t loguptime;
 			char loc_tm[128];
-
+		
+			/* site blocked supress duplicates */
+			if ((strstr(msg, "site blocked") != NULL) && !strncmp(last_msg, msg, LOG_ITEM_SIZE))
+				block_site_flag = 1;
 			strncpy(last_msg, msg, LOG_ITEM_SIZE);
 
 			/* Time format looks like: 'Monday, October 1,1999 14:08:57' */
@@ -1013,11 +1030,11 @@ static void timestamp_and_log(int pri, char *msg, int len)
 			} else { /* Normal Format */
 				sprintf(PRINTBUF, "%s %s\n", msg, loc_tm);
 			}
-			log_locally(PRINTBUF);
+			log_locally(PRINTBUF, block_site_flag);
 		}
 	}else {	/* NOT specified the Vendor Name */
 		sprintf(PRINTBUF, "WRONG VENDOR FORMAT, use -V VENDOR_NAME, now support vendor name : NETGEAR\n");
-		log_locally(PRINTBUF);
+		log_locally(PRINTBUF, block_site_flag);
 	}
 #else
 
@@ -1031,7 +1048,7 @@ static void timestamp_and_log(int pri, char *msg, int len)
 				parse_fac_prio_20(pri, res);
 				sprintf(PRINTBUF, "%s %s %s %s\n", timestamp, localHostName, res, msg);
 			}
-			log_locally(PRINTBUF);
+			log_locally(PRINTBUF, block_site_flag);
 		}
 	}
 #endif

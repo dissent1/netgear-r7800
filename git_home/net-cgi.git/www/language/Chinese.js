@@ -144,6 +144,8 @@ bh_browser_file="请选择您保存的路由器设置备份文件，然后单击
 
 bh_back_mark="上一步"
 
+bh_browse_mark="浏览"
+
 
 //BRS_03B_haveBackupFile_fileRestore.html
 bh_settings_restoring="正在恢复路由器设置"
@@ -238,7 +240,7 @@ bh_same_server_wan_ip="我的 IP 地址与服务器地址不能相同！"
 
 //readySHARE remote strings
 remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
+ready_cloud_info="<p>ReadyCLOUD 可让您通过互联网远程访问与您的路由器 USB 端口相连的 USB 存储设备。 要使用 ReadyCLOUD，您必须有一个 ReadyCLOUD 帐户。 如果您没有 ReadyCLOUD 帐户，请<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">单击此处</a>，然后单击<b>登录 > 创建帐户</b>。 </p><p><b>设置 ReadyCLOUD</b></p><p><ol><li>将 USB 存储设备连接到路由器的 USB 端口。</li><li>在下面的字段中输入您的 ReadyCLOUD 用户名和密码，然后单击<b>注册</b>按钮。 您的路由器和 USB 设备已通过 ReadyCLOUD 注册。</li><li> 访问 <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>，单击登录，输入您的 ReadyCLOUD 用户名和密码，然后单击<b>登录</b>按钮。</li></ol></p><p>      您还可以使用 ReadyCLOUD 应用程序在您的计算机或移动设备与路由器的 USB 存储设备之间实现安全连接。<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">单击此处</a>下载 ReadyCLOUD 应用程序。</p>"
 ready_share_info1="ReadySHARE Cloud 功能可让您从因特网远程访问与路由器 USB 端口相连的 USB 存储设备。"
 how_setup_ready_share="如何设置 ReadySHARE Cloud"
 ready_share_step1="第一步：您需要拥有 ReadySHARE Cloud 帐户。如果没有，请<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>单击此处</a>获取一个。"
@@ -246,7 +248,7 @@ ready_share_step2="第二步：在此页中输入 ReadySHARE Cloud 用户名和�
 ready_share_step3="第三步：使用您的帐户重新登录 <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a>。您应该可以看到与路由器连接的 USB 设备。"
 ready_share_set_note="<b>注意：</b>如果没有此客户端，您只能浏览 USB 设备内容，但无法打开文件或进行更改."
 ready_share_start="请使用 ReadyCLOUD 关联您的路由器和 USB 设备"
-ready_share_get_account="如果您还没有ReadySHARE Cloud账户，<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>点击此处</a>获取"
+ready_share_get_account="如果您没有 ReadyCLOUD 账户，请<a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>单击此处</a>获取"
 username="用户名"
 key_passphrase="密码"
 register="注册"
@@ -254,13 +256,13 @@ register_note="<b>注意：</b>您的路由器保持与 ReadyCLOUD 的持续连�
 help_center="帮助中心"
 help_show_hide="显示/隐藏帮助中心"
 
-resister_user="ReadySHARE Cloud 已注册到用户"
-access_storage_method="您可以按上面的第二到四步随时随地访问您的存储空间."
+resister_user="此路由器已关联了以下 ReadyCLOUD 用户："
+access_storage_method="现在您可以使用您的 ReadyCLOUD 帐号登录 <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> 以随时随地访问您的 USB 设备。"
 unregister_info="单击<B>取消注册</B>以使用其他 ReadyCLOUD 帐户关联此路由器"
 unregister="注销"
 
 result_register_ok="已成功完成注册"
-result_register_fail="注册失败"
+result_register_fail="注册失败。 请检查您的用户名和密码并重试。"
 result_unreg_ok="已成功完成注销"
 result_unreg_fail="注销失败"
 
@@ -453,11 +455,13 @@ bh_mode_illustration="单击此处查看演示。"
 bh_router_description="此模式允许您充分利用 NETGEAR<a href='router_function.html' target='_blank'> 路由器功能。</a> NETGEAR 路由器设置为现有路由器或网关后面的正常 WiFi 路由器。 此模式要求您的所有设备都连接到新的 NETGEAR 路由器而不是您的现有网关。"
 bh_ap_description="如果设备已经连接到您的现有路由器或网关，或者您只是想使用这台新 NETGEAR 路由器扩大 WiFi 覆盖范围，为便于设置，适合采用此模式。 在接入点模式下，一些<a href='router_function.html' target='_blank'>路由器功能</a>不可用。"
 bh_select_tips="您似乎正在现有互联网提供商 WiFi 路由器或网关后安装 NETGEAR 路由器。 您可以选择采用不同的操作模式安装您的路由器。"
+bh_select_router_or_ap="如果您要自己选择一种模式，则必须选择路由器模式或接入点模式单选按钮。"
 //BRS_ap_detect_01_01.html 
 bh_current_network="您的当前网络"
 bh_help_choose_page1_str="网件精灵检测到您使用网关实现互联网连接。 如果想要使用新路由器的全部功能，NETGEAR（美国网件公司）建议采用路由器模式。 网件精灵需要询问您一些问题，验证路由器模式是否适合您。"
 //BRS_ap_detect_01_02.html
 bh_help_choose_page2_str="您目前在现有路由器上使用<a href='port_forwording.html' target='_blank'>端口转发</a>（有时称为端口映射）等<a href='router_function.html' target='_blank'>高级功能</a>吗？ 这些功能通常由高级用户使用。"
+bh_select_yes_or_no="必须选择是或否单选按钮。"
 //BRS_ap_detect_01_03.html
 bh_help_choose_page3_str1="为了让路由器模式正确运行，您必须将所有 WiFi 设备和有线设备连接到 NETGEAR 路由器，但您的互联网服务提供商提供的设备除外，比如电视机顶盒或连接到您的网关的无绳电话。"
 bh_help_choose_page3_str2="您能从现有网关断开所有其他设备（有线或无线设备）然后将其连接到 NETGEAR 路由器吗？"
@@ -492,7 +496,7 @@ bh_learn_more_title="路由器对比 接入点"
 bh_learn_more_str_1="网件精灵检测到，您正在尝试在其他网关后安装新的 NETGEAR 路由器，如来自您的互联网提供商的 DSL 或有线网关。通常网关还提供 WiFi 或网际协议通话技术 (VoIP) 功能。 您可以采用两种不同的操作模式安装 NETGEAR 路由器。"
 bh_learn_more_str_2="此模式将新 NETGEAR 路由器配置为一般的 WiFi 路由器，此路由器将在网关后运行并创建一个单独的 WiFi 网络。 要完全利用这些路由器的高级功能，NETGEAR（美国网件公司）建议您使用路由器模式。 在路由器模式下，能够连接到现有网关的唯一设备是新 NETGEAR 路由器。 您必须将您的所有设备都连接到新 NETGEAR 路由器。 如果您的现有网关具有 WiFi 功能，请禁用该功能。"
 bh_learn_more_str_3="<p><b>Access Point</b></p><p>If you want to use the new router to get better WiFi performance beyond what you have with your existing gateway, access point mode is the easiest way to do that. NETGEAR recommends that you disable the WiFi function on your existing gateway, if it has WiFi functionality. With this mode, you can connect wired devices to the gateway and connect wired and WiFi devices to your new NETGEAR router. In this mode, by default, the new router's IP address is assigned by your gateway dynamically and is unlikely to be 192.168.1.1. However, you can still use the URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> to access the router's management GUI from a device connected to the router. Some <a href='router_function.html' target='_blank'>router functions</a> are not available in this mode, and you must use router mode if you want to use those functions.</p>"
-bh_learn_more_str_4="在此模式下，新路由器的 IP 地址默认由您的网关动态分配，不太可能为 192.168.1.1。 但是，您仍然可以从连接到路由器的设备使用 URL <a href='www.routerlogin.net' target='_blank'> http://www.routerlogin.net</a> 访问路由器的管理 GUI。 某些<a href='router_function.html' target='_blank'>路由器功能</a>在此模式下不可用，如果想要使用这些功能，您必须使用路由器模式。"
+bh_learn_more_str_4="在此模式下，新路由器的 IP 地址默认由您的网关动态分配，不太可能为 192.168.1.1。 但是，您仍然可以从连接到路由器的设备使用 URL <a href='http://www.routerlogin.net' target='_blank'> http://www.routerlogin.net</a> 访问路由器的管理 GUI。 某些<a href='router_function.html' target='_blank'>路由器功能</a>在此模式下不可用，如果想要使用这些功能，您必须使用路由器模式。"
 //port_forwording.html
 bh_port_forwarding="端口映射"
 bh_port_forwarding_content="端口转发（有时称为端口映射）允许通过互联网访问您的家庭网络。 如果您家里有 Web 服务器之类的设备，其他人使用您注册的主机名（通常通过动态 DNS 服务）或使用 IP 地址远程访问该设备，则您可能已经启用了端口转发功能。 如果您从未听说过此功能，即使您对家里的设备有远程访问权，则可能您没有使用此功能。"
@@ -501,7 +505,7 @@ bh_router_function="路由器功能"
 bh_rouer_function_str_1="<p>如果您选择接入点模式，下列路由器功能不可用：</p><p><ul><li style='height:20px' class='textRow centerTd2'>访客网络</li><li style='height:20px' class='textRow centerTd2'>家长控制</li><li style='height:20px' class='textRow centerTd2'>QoS</li><li style='height:20px' class='textRow centerTd2'>访问控制</li><li style='height:20px' class='textRow centerTd2'>流量仪表</li><li style='height:20px' class='textRow centerTd2'>拦截站点</li><li style='height:20px' class='textRow centerTd2'>拦截服务</li><li style='height:20px' class='textRow centerTd2'>静态路由</li></ul></p>"
 bh_router_adv_function="高级功能"
 bh_router_function_str_2="<p>下列路由器功能仅在路由器模式下可用，但需要在您的现有网关上配置：</p><p><ul><li style='height:20px' class='textRow centerTd2'>端口转发</li><li style='height:20px' class='textRow centerTd2'>端口触发</li><li style='height:20px' class='textRow centerTd2'>IPv6</li><li style='height:20px' class='textRow centerTd2'>UPnP/IGD</li><li style='height:20px' class='textRow centerTd2'>远程管理</li><li style='height:20px' class='textRow centerTd2'>VPN 终止</li></ul></p>"
-warning_info="您必须指定是否可以禁用网关的 WiFi。"
+bh_warning_info="您必须指定是否可以禁用网关的 WiFi。"
 
 bh_pppoe_identi="连接标识符"
 bh_pppoe_online="T-Online编号"
@@ -583,3 +587,6 @@ bh_dsl_bridge_con="(If select Bridge Mode,the LAN4 port will be configured as IP
 bh_dsl_bridge_lan4="Enable IPTV on LAN4"
 bh_dsl_bridge_lan3="Enable IPTV on LAN3"
 bh_dsl_bridge_lan2="Enable IPTV on LAN2"
+bh_ppp_readycloud_query="如果用 ReadyCLOUD 注册您的路由器，路由器的因特网连接模式就会从按需拨号更改为始终在线。 为了让 ReadyCLOUD 远程访问连接的 USB 存储设备，需要进行此更改。 要继续吗？"
+bh_ppp_readycloud_warning_1="如果用 ReadyCLOUD 注册您的路由器，您需要将路由器的因特网连接模式从手动连接更改为始终在线，以便 ReadyCLOUD 远程访问连接的 USB 存储设备。 转到因特网设置页面进行此更改。"
+bh_ppp_readycloud_warning_2="您的路由器或网关未连接到因特网。 为了用 ReadyCLOUD 注册您的路由器或网关，您需要因特网连接。 将您的路由器或网关连接到因特网，然后重试。"

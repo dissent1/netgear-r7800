@@ -25,8 +25,10 @@ endef
 define Package/telnetenable/install
 	install -d -m0755 $(1)/usr/sbin
 	install -m0755 $(PKG_BUILD_DIR)/telnetenable $(1)/usr/sbin/
-	install -d -m0755 $(1)/lib/network
-	install -m0755 ./files/RtDebug.sh $(1)/lib/network/
+#	install -d -m0755 $(1)/lib/network
+#	install -m0755 ./files/RtDebug.sh $(1)/lib/network/
+	install -d -m0755 $(1)/etc/init.d
+	install -m0755 ./files/telnet.init $(1)/etc/init.d/telnet
 endef
 
 $(eval $(call BuildPackage,telnetenable))

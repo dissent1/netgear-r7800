@@ -9,8 +9,11 @@ var master="<% cfg_get("http_loginname") %>";
 var netgear_region="<% get_firmware_region() %>";
 var valid_region = "<% valid_firmware_region() %>";
 valid_region = parseInt(valid_region, 10);
-if( master == "admin" && valid_region == 1 )
-document.write('<TR><TD nowrap colspan=2 align=center><input class="cancel_bt" type="button" name="Cancel" value="$cancel_mark" onClick="location.href=\'WLG_wireless.htm\';">&nbsp;&nbsp;<input class="apply_bt" type="submit" name="Apply" value="$apply_mark" onclick="return check_wlan();"></TD></TR>');
+
+if( parent.enable_ap_flag == "1")
+document.write('<TR><TD nowrap colspan=2 align=center><input class="cancel_bt" type="button" name="Cancel" value="$cancel_mark" onClick="location.href=\'WLG_wireless.htm\';">&nbsp;&nbsp;<input class="apply1_bt" type="submit" name="Apply" value="$apply_mark" onclick="return check_wlan();" disabled></TD></TR>');
+else if( master == "admin" && valid_region == 1 )
+document.write('<TR><TD nowrap colspan=2 align=center><input class="cancel_bt" type="button" name="Cancel" value="$cancel_mark" onClick="location.href=\'WLG_wireless.htm\';">&nbsp;&nbsp;<input class="apply_bt" type="submit" name="Apply" value="$apply_mark" onclick="return check_wlan();" ></TD></TR>');
 else
 document.write('<TR><TD nowrap colspan=2 align=center><input class="cancel1_bt" type="button" name="Cancel" value="$cancel_mark" disabled>&nbsp;&nbsp;<input class="apply1_bt" type="button" name="Apply" value="$apply_mark" disabled></TD></TR>');
 </script>
@@ -35,6 +38,7 @@ var lanIP = "<% cfg_get("lan_ipaddr") %>";
 var lanSubnet = "<% cfg_get("lan_netmask") %>";
 var wanIP = "<% wan_ip() %>";
 var wanSubnet = "<% wan_netmask() %>";
+
 
 var str_wpae="";
 var str_none="";
@@ -68,7 +72,6 @@ var wl_disablecoext="<% cfg_get("wl_disablecoext") %>";
 <% show_wlan_variable() %>
 var wla_mode="<% cfg_get("wla_simple_mode") %>";
 var guest_router_flag=top.guest_router_flag;
-var enable_ht160 = "<% cfg_get("wla_ht160") %>";
 </script>
 <input type="hidden" name="hidden_wlan_mode">
 <input type="hidden" name="hidden_wlan_channel">
@@ -132,7 +135,7 @@ else if(an_router_flag == 1)
 {
 	document.write('<TR><TD nowrap colspan=2><A tabindex=-1 href="javascript:loadhelp(\'_wlan\',\'Region\')"><B>$wlg_region_select</B></A></TD></TR>');
 	document.write('<TR> <TD nowrap width=35%>$wlan_mark_reg:</TD><TD nowrap>');
-	if(netgear_region.toUpperCase() == "NA" || netgear_region.toUpperCase() == "CA" || netgear_region.toUpperCase() == "JP" || netgear_region.toUpperCase() == "RU" || netgear_region.toUpperCase() == "US")
+	if(netgear_region.toUpperCase() == "NA" || netgear_region.toUpperCase() == "JP" || netgear_region.toUpperCase() == "RU")
 		document.write('<select name="WRegion" size="1" onchange="chgChA(1);setBChannel();" disabled="disabled">');
 	else
 		document.write('<select name="WRegion" size="1" onchange="chgChA(1);setBChannel();">');
@@ -157,7 +160,7 @@ else if(an_router_flag == 1)
 		document.write('<option value=20>$coun_si</option>');
 		document.write('<option value=9>$coun_sa</option>');
 		document.write('<option value=21>$coun_ta</option>');
-	if(netgear_region.toUpperCase() == "NA" || netgear_region.toUpperCase() == "US")
+	if(netgear_region.toUpperCase() == "NA")
 		document.write('<option value=10>$coun_na</option>');
 	else
 		document.write('<option value=10>$coun_us</option>');
@@ -165,14 +168,12 @@ else if(an_router_flag == 1)
 		document.write('</select></TD></TR>');
 	if(netgear_region.toUpperCase() == "JP")
 		document.getElementsByName("WRegion")[0].value = 6;
-	else if(netgear_region.toUpperCase() == "CA")
-		document.getElementsByName("WRegion")[0].value = 3;
 	else
 		document.getElementsByName("WRegion")[0].value = wl_get_countryA;
 }
 </script>
 <TR> 
-	<TD nowrap colspan=2><A tabindex=-1 href="javascript:loadhelp('_wlan','network')"><B>$wlan_network_mark<script> if( an_router_flag == 1) document.write(" (2.4GHz b/g/n)")</script></B></A></TD>
+	<TD nowrap colspan=2><A tabindex=-1 href="javascript:loadhelp('_wlan','network')"><B>$wlan_network_mark<script> if( an_router_flag == 1) document.write("(2.4GHz b/g/n)")</script></B></A></TD>
 </TR>
 <TR id=ssid_bc_bgn>
 	<TD nowrap>
@@ -202,7 +203,7 @@ if(valid_region != 1 && an_router_flag == 0)
 else if(an_router_flag == 0)
 {
 	document.write('<TR> <TD nowrap width=35%>$wlan_mark_reg:</TD><TD nowrap>');
-	if(netgear_region.toUpperCase() == "NA" || netgear_region.toUpperCase() == "JP" || netgear_region.toUpperCase() == "US")
+	if(netgear_region.toUpperCase() == "NA" || netgear_region.toUpperCase() == "JP")
 		document.write('<select name="WRegion" size="1" onchange="setChannel();" disabled="disabled">');
 	else
 		document.write('<select name="WRegion" size="1" onchange="setChannel();">');
@@ -807,8 +808,61 @@ function change_web_format()
 		document.getElementById("video").style.display="none";
 }
 
+function read_netscan()
+{
+        var form=document.forms[0];
+        var login_mac = "<% cfg_get("wan_remote_mac") %>"
+        xmlHttp = createXMLHttpRequest();
+	var flag = 0;
+
+        var url = "QOS_device_info.htm?ts=" + new Date().getTime();
+        xmlHttp.open("GET",url,true);
+        xmlHttp.send(null);
+        xmlHttp.onreadystatechange = function()
+        {
+                if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+                        var jobj = eval('('+xmlHttp.responseText+')');
+                        for(var i in jobj.device){
+                                dev = jobj.device[i];
+                                if(dev.mac){
+                                        var mac = dev.mac.toLowerCase();
+                                        if(mac == login_mac && dev.contype != "guest"){
+                                                form.Apply.className = "apply_bt";
+                                                form.Apply.disabled = false;
+						flag = 1;
+                                        }
+                                }
+                        }
+			if(flag == 0)
+				do_netscan();
+
+                }
+        }
+}
+
+function do_netscan()
+{
+	var form=document.forms[0];
+        xmlHttp = createXMLHttpRequest();
+
+        var url = "DEV_device.htm?ts=" + new Date().getTime();
+        xmlHttp.open("GET",url,true);
+        xmlHttp.send(null);
+        xmlHttp.onreadystatechange = function()
+        {
+                if(xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+ 			setTimeout("read_netscan();", 6000); 
+
+                }
+        }
+}
+
 function loadvalue()
 {
+	if(parent.enable_ap_flag == "1")
+		read_netscan();	
 	top.enabled_wds=<% wds_enable() %>;
 	top.enabled_wps=<% wps_menu() %>;
 	/* bug23114: after set wireless, the wps button in menu maybe need change to grey, so , refresh the menu color */

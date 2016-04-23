@@ -27,7 +27,7 @@ start() {
 	[ "$FAILSAFE" = "true" ] && touch /tmp/.failsafe
 
 	klogd
-	syslogd -m 0
+	#syslogd -m 0
 	ifconfig lo up
 	/bin/datalib
         echo "$(/bin/config get netbiosname)" > /proc/sys/kernel/hostname
@@ -78,10 +78,8 @@ start() {
 		rm -f /lib/firmware/$path1/otp123.bin
 		sync
 	}
-	if [ ! -f /etc/config/wireless ] || [ ! -s /etc/config/wireless ]; then
-		/sbin/wlan detect > /etc/config/wireless
-	fi
 
+	[ -f /etc/config/wireless ] || /sbin/wlan detect > /etc/config/wireless
 	mkdir /tmp/mnt
 	killall -q hotplug2
 	[ -x /sbin/hotplug2 ] && /sbin/hotplug2 --override --persistent \
@@ -165,6 +163,8 @@ start() {
 			/bin/config set ntp_hidden_select="33"
 			/bin/config set time_zone="GMT-8"
 			/bin/config set email_ntpserver="GMT-8"
+			/bin/config set wla_hidden_channel="153"
+			/bin/config set wla_channel="153"
 		fi
 
 		#when region setting on flash's board data area is BZ
@@ -230,7 +230,7 @@ start() {
 			/bin/config set wl_country="2"
 			/bin/config set ntp_server="GMT-10"
 			/bin/config set ntpserver_select="GMT-10"
-			/bin/config set ntp_hidden_select="36"
+			/bin/config set ntp_hidden_select="37"
 			/bin/config set time_zone="GMT-10"
 			/bin/config set email_ntpserver="GMT-10"
 		fi
@@ -278,6 +278,8 @@ start() {
 	# need to update Streamboost database after upgrade firmwrare
 	[ -f /tmp/new_firmware ] && /bin/config set new_firmware=1 && commit_flag=1
 	[ "$commit_flag" = "1" ] && /bin/config commit
+	
+	 /sbin/check_fwupgrade
 
 	cloud checkversion
 }

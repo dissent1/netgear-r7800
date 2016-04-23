@@ -38,6 +38,7 @@ var fermode = "<% cfg_get("dsl_wan_type") %>";
 var bridge_mode_select = "<% cfg_get("dsl_wan2_bridge_mode") %>";
 var lan_selecte="<% cfg_get("iptv_mask") %>";
 var lan1_selecte=lan_selecte & 1;
+var lan_ports_num = (typeof(top.lan_ports_num) == "undefined") ? 4 : top.lan_ports_num;
 var ISP_ALL = 
     new Array (
 	new Array ("Adam","Adam","Clubtelco","Clubtelco","Dodo","Dodo","Exetel","Exetel","iiNet","iiNet","Internode","Internode","Optus","Optus","People Telcom","People Telcom","Primus","Primus","Soul","Soul","Telstra","Telstra","Telstra Bigpond","Telstra Bigpond","TPG","TPG","TransACT","TransACT","Westnet","Westnet","Internode","Internode","Engin","Engin","Other","$dsl_other"),
@@ -1421,9 +1422,11 @@ function lan_select()
 {
 	var cf = document.forms[0];
 	if(cf.bridge_mode.checked == true)
-	{
+	{	
+       	     if(lan_ports_num != 1){
 		document.getElementById("bridge_content").style.display="";
 		document.getElementById("bridge").style.display="";
+	     }
 		document.getElementById("dhcpp").style.display="none"; 
 		document.getElementById("ip_mask").style.display="none";
 		
