@@ -30,13 +30,23 @@
 #include "uhttpd-tls.h"
 #endif
 
+struct auth_login
+{
+	char login_ip[32];
+	char login_mac[32];
+	char login_dev[32];
+	long login_time;
+};
+
 enum {
         AUTH_OK,
         AUTH_TIMEOUT,
-        AUTH_MULTI
+        AUTH_MULTI,
+	AUTH_MULTI_GUEST
 };
 
 int update_login(struct client *cl);
+int update_login_guest(struct client *cl);
 char *cat_file(char *name);
 
 static char *uh_index_files[] = {
@@ -784,7 +794,6 @@ int uh_cgi_auth_check(
 				break;
 			}
 		}
-
 		/* check user and pass */
 		if(!strcmp(remote_addr, "127.0.0.1"))
 			ret = AUTH_OK;
@@ -796,8 +805,14 @@ int uh_cgi_auth_check(
 			else
 				ret=update_login(cl);
 		}
-
-
+		else if(user != NULL && pass != NULL && config_match("guest_enable", "1") && config_match("http_guestname", user) && config_match("http_guestpwd", pass))
+		{
+			if(strstr(pi->name, "/genie.cgi"))
+				ret = AUTH_OK;
+			else
+				ret=update_login_guest(cl);
+		}
+	
 		if( ret == AUTH_OK )
 			return 1;
 		else if( ret == AUTH_MULTI )
@@ -1358,7 +1373,9 @@ int writew(char *file, int value)
 #define LOGIN_IP	"/tmp/AUTH_login_ip"
 #define LOGIN_DEV	"/tmp/AUTH_login_dev"
 #define LOGIN_MAC	"/tmp/AUTH_login_mac"
+#define LOGIN_GUEST     "/tmp/AUTH_login_guest"
 #define LOGIN_TIMEOUT	300 /* 5 min */
+#define GUEST_NUM       8
 
 int update_login(struct client *cl)
 {
@@ -1450,3 +1467,113 @@ int update_login(struct client *cl)
 	return ret;
 }
 
+int update_login_guest(struct client *cl)
+{
+	int ret, local;
+	struct sysinfo info;
+	char mac[32], dev[32];
+	char *login_ip, *login_mac, from[32];
+	long last_time, login_time=0;
+	struct auth_login auth_logins[GUEST_NUM];
+	FILE *fp;
+	int i;
+	char *username;
+	char uname[64];
+	char authinfo[128];
+
+	sprintf(from,"%s",sa_straddr(&cl->peeraddr));
+	sysinfo(&info);
+	username = config_get("http_guestname");
+	strcpy(uname, username);
+	config_set("http_loginname", uname);
+
+	fp = fopen(LOGIN_GUEST, "r+");
+	if(fp == NULL){
+		for(i=0; i<GUEST_NUM; i++){
+			strcpy(auth_logins[i].login_ip, "null");
+			strcpy(auth_logins[i].login_mac, "null");
+			strcpy(auth_logins[i].login_dev, "null");
+			auth_logins[i].login_time = 0;
+		}
+		fp = fopen(LOGIN_GUEST, "w+");
+		if(fp == NULL){
+			return 0;
+		}
+		fwrite(&auth_logins[0], sizeof(struct auth_login), GUEST_NUM, fp);
+	}
+	rewind(fp);
+	fread(&auth_logins[0], sizeof(struct auth_login), GUEST_NUM, fp);
+	for(i=0; i<GUEST_NUM; i++)
+	{
+		login_ip = auth_logins[i].login_ip;
+		if(strcmp(login_ip, "null") != 0 && strcmp(login_ip, from) == 0){
+			last_time = auth_logins[i].login_time;
+			if ((info.uptime - last_time) > LOGIN_TIMEOUT) {
+				ret = AUTH_TIMEOUT;
+				strcpy(auth_logins[i].login_ip, "null");
+			} else {
+				auth_logins[i].login_time = info.uptime;
+				ret = AUTH_OK;
+			}
+			rewind(fp);
+			fwrite(&auth_logins[0], sizeof(struct auth_login), GUEST_NUM, fp);
+			fclose(fp);
+			return ret;
+		}
+	}
+	for(i=0; i<GUEST_NUM; i++)
+	{
+		login_ip = auth_logins[i].login_ip;
+		if( strcmp(login_ip, "null") == 0 ){
+			ret = AUTH_OK;
+			arp_mac(from, mac, dev);
+			strcpy(auth_logins[i].login_ip, from);
+			strcpy(auth_logins[i].login_dev, dev);
+			strcpy(auth_logins[i].login_mac, mac);
+			auth_logins[i].login_time = info.uptime;
+			rewind(fp);
+			fwrite(&auth_logins[0], sizeof(struct auth_login), GUEST_NUM, fp);
+			fclose(fp);
+			//syslog(6, "[%s login] from source %s,",
+			//		login_type(dev, &local), from);
+			return ret;
+		}
+	}
+	for(i=0; i<GUEST_NUM; i++)
+	{
+		last_time = auth_logins[i].login_time;
+		if((info.uptime - last_time) > LOGIN_TIMEOUT){
+			ret = AUTH_TIMEOUT;
+			strcpy(auth_logins[i].login_ip, "null");
+			rewind(fp);
+			fwrite(&auth_logins[0], sizeof(struct auth_login), GUEST_NUM, fp);
+			fclose(fp);
+			return ret;
+		}
+	}
+	for(i=0; i<GUEST_NUM; i++)
+	{
+		arp_mac(from, mac, dev);
+
+		login_mac = auth_logins[i].login_mac;
+		if (strcmp(login_mac, "null") != 0 && strcmp(login_mac,mac) == 0) {
+			ret = AUTH_OK;
+			strcpy(auth_logins[i].login_ip, from);
+			auth_logins[i].login_time = info.uptime;
+			rewind(fp);
+			fwrite(&auth_logins[0], sizeof(struct auth_login), GUEST_NUM, fp);
+			fclose(fp);
+			//syslog(6, "[%s login] from source %s,",
+			//		login_type(dev, &local), from);
+
+		} else {
+			ret = AUTH_MULTI_GUEST;
+			fclose(fp);
+			if ( strcmp(from, "::") != 0 ){
+				//syslog(6, "[%s login failure] from source %s,",
+				//		login_type(dev, &local), from);
+			}
+		}
+		return ret;
+	}
+}

@@ -144,6 +144,8 @@ bh_browser_file="Rufen Sie die zuvor gespeicherte Sicherungsdatei mit den Router
 
 bh_back_mark="Zurück"
 
+bh_browse_mark="Durchsuchen"
+
 
 //BRS_03B_haveBackupFile_fileRestore.html
 bh_settings_restoring="Wiederherstellung der Routereinstellungen"
@@ -238,7 +240,7 @@ bh_same_server_wan_ip="Die eigene IP-Adresse darf nicht mit der Server-Adresse i
 
 //readySHARE remote strings
 remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
+ready_cloud_info="<p>Mit ReadyCLOUD erhalten Sie Remote-Zugriff über das Internet auf ein USB-Speichergerät, das mit dem USB-Port Ihres Routers verbunden ist. Um ReadyCLOUD zu verwenden, müssen Sie über ein ReadyCLOUD-Konto verfügen. Wenn Sie nicht über ein ReadyCLOUD-Konto verfügen, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">klicken Sie hier</a>, und klicken Sie dann auf<b> Anmelden > Konto erstellen</b>. </p><p><b>So konfigurieren Sie ReadyCLOUD</b></p><p><ol><li>Schließen Sie ein USB-Speichergerät an den USB-Port des Routers an.</li><li>Geben Sie Ihren ReadyCLOUD-Benutzernamen und das -Passwort in die Felder unten ein, und klicken Sie auf die Schaltfläche <b>Registrieren</b>. Ihr Router und das USB-Gerät sind bei ReadyCLOUD registriert.</li><li> Besuchen Sie <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, klicken Sie auf <b>Anmelden</b>, geben Sie Ihren ReadyCLOUD-Benutzernamen und das -Passwort ein, und klicken Sie auf die Schaltfläche <b>Anmelden</b>.</li></ol></p><p>      Sie können auch die ReadyCLOUD-App verwenden, um eine sichere Verbindung zwischen Ihrem Computer oder mobilen Gerät und dem USB-Speichergerät des Routers herzustellen.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Klicken Sie hier</a>, um die ReadyCLOUD-App herunterzuladen.</p>"
 ready_share_info1="Mit der ReadySHARE Cloud-Funktion erhalten Sie Remote-Zugriff über das Internet auf ein USB-Speichergerät, das mit dem USB-Port Ihres Routers verbunden ist."
 how_setup_ready_share="So richten Sie ReadySHARE Cloud ein"
 ready_share_step1="Schritt 1: Sie benötigen ein ReadySHARE Cloud-Konto. Wenn Sie noch nicht über ein Konto verfügen,<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>klicken Sie hier</a>, um dieses einzurichten."
@@ -246,7 +248,7 @@ ready_share_step2="Schritt 2: Geben Sie auf dieser Seite Ihren ReadySHARE Cloud-
 ready_share_step3="Schritt 3: Melden Sie sich wieder mit Ihrem Konto bei <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> an. Sie sollten nun das an Ihren Router angeschlossene USB-Gerät sehen."
 ready_share_set_note="<b>Hinweis:</b> Ohne diesen Client können Sie den Inhalt des USB-Geräts durchsuchen aber keine Dateien öffnen oder Änderungen an ihnen vornehmen."
 ready_share_start="Registrieren Sie Ihren Router und das USB-Gerät bei ReadyCLOUD"
-ready_share_get_account="Wenn Sie kein ReadySHARE Cloud-Konto haben, <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>klicken Sie hier</a>, um eines zu erstellen"
+ready_share_get_account="Wenn Sie kein ReadyCLOUD-Konto haben, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>klicken Sie hier</a>, um eines zu erstellen."
 username="Benutzername"
 key_passphrase="Passwort"
 register="Registrieren"
@@ -254,13 +256,13 @@ register_note="<b>Hinweis:</b> Ihr Router behält eine ständige Verbindung mit 
 help_center="Hilfe-Center"
 help_show_hide="Hilfe-Center ein-/ausblenden"
 
-resister_user="ReadySHARE Cloud ist registriert mit dem Benutzer"
-access_storage_method="Sie können den Schritten 2 bis 4 folgen, um überall auf das Speichergerät zuzugreifen."
+resister_user="Diese Router ist mit dem folgenden ReadyCLOUD-Benutzer registriert:"
+access_storage_method="Nun können Sie sich mit ihrem ReadyCLOUD-Konto für den Zugriff auf das USB-Gerät von einem beliebigen Standort bei <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> anmelden."
 unregister_info="Klicken Sie auf <B>Registrierung aufheben</B>, um diesen Router mit einem anderen ReadyCLOUD-Konto zu registrieren."
 unregister="Registrierung aufheben"
 
 result_register_ok="Registrierung erfolgreich abgeschlossen"
-result_register_fail="Registrierung fehlgeschlagen"
+result_register_fail="Registrierung fehlgeschlagen. Bitte überprüfen Sie Ihren Benutzernamen und das Passwort, und versuchen Sie es erneut."
 result_unreg_ok="Abmeldung erfolgreich abgeschlossen"
 result_unreg_fail="Abmeldung fehlgeschlagen"
 
@@ -453,11 +455,13 @@ bh_mode_illustration="Klicken Sie hier, um eine Abbildung zu sehen."
 bh_router_description="Dieser Modus ermöglicht Ihnen die Nutzung der NETGEAR-<a href='router_function.html' target='_blank'>Router-Funktionen.</a> Der NETGEAR-Router wird als normaler WLAN-Router hinter Ihrem bestehenden Router oder Gateway konfiguriert. Dieser Modus setzt voraus, dass alle Ihre Geräte mit dem neuen NETGEAR-Router verbunden sind, und nicht mit dem vorhandenen Gateway."
 bh_ap_description="Dieser Modus ist geeignet für die einfache Konfiguration, wenn Geräte bereits mit Ihrem bestehenden Router oder Gateway verbunden sind, oder wenn Sie diesen neuen NETGEAR-Router nur verwenden möchten, um Ihre WLAN-Abdeckung zu erweitern. Einige<a href='router_function.html' target='_blank'> Router-Funktionen</a> sind nicht im Access Point-Modus verfügbar."
 bh_select_tips="Es scheint so, als ob Sie den NETGEAR-Router hinter dem bestehenden WLAN-Router oder -Gateway Ihres Internetanbieters installieren. Sie können auswählen, Ihren Router in verschiedenen Betriebsmodi zu installieren."
+bh_select_router_or_ap="Wenn Sie einen Modus selbst wählen möchten, wählen Sie die Optionsschaltfläche Routermodus oder Access-Point-Modus."
 //BRS_ap_detect_01_01.html 
 bh_current_network="Ihr aktuelles Netzwerk"
 bh_help_choose_page1_str="genie hat erkannt, dass Sie ein Gateway für Ihre Internetverbindung verwenden. Wenn Sie alle Funktionen Ihres neuen Routers verwenden möchten, empfiehlt NETGEAR den Router-Modus. genie muss Ihnen nun einige Fragen stellen, um sicherzustellen, dass der Router-Modus für Sie geeignet ist."
 //BRS_ap_detect_01_02.html
 bh_help_choose_page2_str="Verwenden Sie derzeit<a href='router_function.html' target='_blank'> erweiterte Funktionen, </a>wie z. B. <a href='port_forwording.html' target='_blank'>Portweiterleitung</a> (manchmal auch Anschlusszuweisung genannt) auf Ihrem vorhandenen Gateway? Diese Funktionen werden in der Regel von erfahrenen Benutzern verwendet."
+bh_select_yes_or_no="Wählen Sie die Optionsschaltfläche Ja oder Nein."
 //BRS_ap_detect_01_03.html
 bh_help_choose_page3_str1="Damit der Router-Modus ordnungsgemäß funktioniert, müssen Sie alle Ihre WLAN- und drahtgebundenen Geräte mit dem NETGEAR-Router verbinden, mit Ausnahme von Geräten, die von Ihrem Internet-Provider zur Verfügung gestellt wurden, z. B. eine Top-Box für Ihr Fernsehgerät oder schnurlose Telefone, die mit Ihrem Gateway verbunden sind."
 bh_help_choose_page3_str2="Können Sie alle Ihre anderen Geräte (drahtgebunden und drahtlos) aus dem vorhandenen Gateway entfernen und sie dann mit dem NETGEAR-Router verbinden?"
@@ -492,7 +496,7 @@ bh_learn_more_title="Router im Vergleich zu Zugriffspunkt"
 bh_learn_more_str_1="genie hat erkannt, dass Sie versuchen, Ihren neuen NETGEAR-Router hinter einem anderen Gateway zu installieren, zum Beispiel das DSL- oder Kabel-Gateway Ihres Internet-Providers. Üblicherweise verfügt ein Gateway auch über WLAN und Voice over Internet (VoIP). Sie können Ihren NETGEAR-Router in zwei verschiedenen Betriebsmodi installieren."
 bh_learn_more_str_2="In diesem Modus wird Ihr neuer NETGEAR-Router als normaler WLAN-Router hinter Ihrem Gateway konfiguriert, und es wird ein separates WLAN-Netzwerk hinter dem Gateway erstellt. Um die erweiterten Funktionen dieses Routers voll nutzen zu können, empfiehlt NETGEAR die Verwendung des Router-Modus. Im Router-Modus ist das einzige Gerät, das mit dem vorhandenen Gateway verbunden werden kann, Ihr neuer NETGEAR-Router. Sie müssen alle Ihre Geräte mit dem neuen NETGEAR-Router verbinden. Falls Ihr vorhandenes Gateway eine WLAN-Funktion hat, deaktivieren Sie sie."
 bh_learn_more_str_3="<p><b>Access Point</b></p><p>If you want to use the new router to get better WiFi performance beyond what you have with your existing gateway, access point mode is the easiest way to do that. NETGEAR recommends that you disable the WiFi function on your existing gateway, if it has WiFi functionality. With this mode, you can connect wired devices to the gateway and connect wired and WiFi devices to your new NETGEAR router. In this mode, by default, the new router's IP address is assigned by your gateway dynamically and is unlikely to be 192.168.1.1. However, you can still use the URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> to access the router's management GUI from a device connected to the router. Some <a href='router_function.html' target='_blank'>router functions</a> are not available in this mode, and you must use router mode if you want to use those functions.</p>"
-bh_learn_more_str_4="In diesem Modus wird die IP-Adresse des neuen Routers von Ihrem Gateway dynamisch zugewiesen und wird wahrscheinlich nicht 192.168.1.1 sein. Sie können aber weiterhin über die URL <a href='www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> von einem mit dem Router verbundenen Gerät aus auf die Management-Benutzeroberfläche des Routers zugreifen. Einige<a href='router_function.html' target='_blank'> Router-Funktionen</a> sind in diesem Modus nicht verfügbar, und Sie müssen den Router-Modus verwenden, wenn Sie diese Funktionen nutzen wollen."
+bh_learn_more_str_4="In diesem Modus wird die IP-Adresse des neuen Routers von Ihrem Gateway dynamisch zugewiesen und wird wahrscheinlich nicht 192.168.1.1 sein. Sie können aber weiterhin über die URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> von einem mit dem Router verbundenen Gerät aus auf die Management-Benutzeroberfläche des Routers zugreifen. Einige<a href='router_function.html' target='_blank'> Router-Funktionen</a> sind in diesem Modus nicht verfügbar, und Sie müssen den Router-Modus verwenden, wenn Sie diese Funktionen nutzen wollen."
 //port_forwording.html
 bh_port_forwarding="Portweiterleitung"
 bh_port_forwarding_content="Portweiterleitung (manchmal auch Anschlusszuweisung genannt) ermöglicht den Zugriff auf Ihr Heimnetzwerk über das Internet. Wenn Sie ein Gerät wie einen Webserver zu Hause haben, auf das andere aus der Ferne mit einem Hostnamen zugreifen, den Sie registriert haben (in der Regel über einen dynamischen DNS-Dienst), oder mit einer IP-Adresse, haben Sie wahrscheinlich die Funktion zur Portweiterleitung aktiviert. Wenn Sie noch nie von dieser Funktion gehört haben, selbst wenn Sie Remote-Zugriff auf ein Gerät zu Hause haben, verwenden Sie diese Funktion wahrscheinlich nicht."
@@ -501,7 +505,7 @@ bh_router_function="Router-Funktionen"
 bh_rouer_function_str_1="<p>Die folgenden Funktionen des Routers sind nicht verfügbar, wenn Sie den Access Point-Modus auswählen:</p><p><ul><li style='height:20px' class='textRow centerTd2'>Gastnetzwerk</li><li style='height:20px' class='textRow centerTd2'>Kindersicherung</li><li style='height:20px' class='textRow centerTd2'>QoS</li><li style='height:20px' class='textRow centerTd2'>Zugriffssteuerung</li><li style='height:20px' class='textRow centerTd2'>Datenverkehrsanzeige</li><li style='height:20px' class='textRow centerTd2'>Internetseiten sperren</li><li style='height:20px' class='textRow centerTd2'>Serien sperren</li><li style='height:20px' class='textRow centerTd2'>Statische Route</li></ul></p>"
 bh_router_adv_function="Erweiterte Funktionen"
 bh_router_function_str_2="<p>Die folgenden Funktionen des Routers sind nur im Router-Modus verfügbar, müssen aber auf Ihrem vorhandenen Gateway konfiguriert werden:</p><p><ul><li style='height:20px' class='textRow centerTd2'>Portweiterleitung</li><li style='height:20px' class='textRow centerTd2'>Port-Triggering</li><li style='height:20px' class='textRow centerTd2'>IPv6</li><li style='height:20px' class='textRow centerTd2'>UPnP/IGD</li><li style='height:20px' class='textRow centerTd2'>Fernsteuerung</li><li style='height:20px' class='textRow centerTd2'>VPN-Abschluss</li></ul></p>"
-warning_info="Sie müssen angeben, ob Sie Ihr Gateway-WLAN deaktivieren können."
+bh_warning_info="Sie müssen angeben, ob Sie Ihr Gateway-WLAN deaktivieren können."
 
 bh_pppoe_identi="Anschlusskennung"
 bh_pppoe_online="T-Online Nummer"
@@ -583,3 +587,6 @@ bh_dsl_bridge_con="(If select Bridge Mode,the LAN4 port will be configured as IP
 bh_dsl_bridge_lan4="Enable IPTV on LAN4"
 bh_dsl_bridge_lan3="Enable IPTV on LAN3"
 bh_dsl_bridge_lan2="Enable IPTV on LAN2"
+bh_ppp_readycloud_query="Wenn Sie Ihren Router mit ReadyCLOUD registrieren, ändert sich der Internetverbindungsmodus des Routers von Wählen bei Bedarf auf Immer aktiviert. Diese Änderung ist für ReadyCLOUD erforderlich, um per Remote-Zugriff auf das angeschlossene USB-Speichergerät zuzugreifen. Möchten Sie fortfahren?"
+bh_ppp_readycloud_warning_1="Wenn Sie Ihren Router mit ReadyCLOUD registrieren, müssen Sie den Internetverbindungsmodus des Routers von Manuell verbinden auf Immer aktiviert ändern, damit ReadyCloud per Remote-Zugriff auf das angeschlossene USB-Speichergerät zugreifen kann. Gehen Sie zur Seite Interneteinrichtung, um diese Änderung vorzunehmen."
+bh_ppp_readycloud_warning_2="Ihr Router oder Gateway ist nicht mit dem Internet verbunden. Sie benötigen für die Registrierung Ihres Routers oder Gateways mit ReadyCLOUD eine Internetverbindung. Verbinden Sie den Router oder Gateway mit dem Internet, und versuchen Sie es erneut."

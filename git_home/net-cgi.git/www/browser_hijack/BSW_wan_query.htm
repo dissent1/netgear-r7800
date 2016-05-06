@@ -10,7 +10,7 @@
 	if(parent.charcount < parent.maxchars )
 	{
 		if(ping_res=="success" && parseInt(parent.charcount) > 5)
-			  parent.ping_ok=1;
+			  parent.ping_ok="success";
 		else
 			setTimeout("location.replace(location.href);", 1000);  
 	}	  

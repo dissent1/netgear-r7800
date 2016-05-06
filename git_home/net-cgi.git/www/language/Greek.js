@@ -144,6 +144,8 @@ bh_browser_file="Περιηγηθείτε στο αντίγραφο ασφαλε
 
 bh_back_mark="Πίσω"
 
+bh_browse_mark="Αναζήτηση"
+
 
 //BRS_03B_haveBackupFile_fileRestore.html
 bh_settings_restoring="Γίνεται επαναφορά των ρυθμίσεων δρομολογητή"
@@ -238,7 +240,7 @@ bh_same_server_wan_ip="Η διεύθυνση IP δεν πρέπει να είν�
 
 //readySHARE remote strings
 remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
+ready_cloud_info="<p>Το ReadyCLOUD σάς παρέχει απομακρυσμένη πρόσβαση μέσω Internet σε μια συσκευή αποθήκευσης USB που είναι συνδεδεμένη με τη θύρα USB του δρομολογητή. Για να χρησιμοποιήσετε το ReadyCLOUD, πρέπει να διαθέτετε λογαριασμό ReadyCLOUD. Εάν δεν διαθέτετε λογαριασμό ReadyCLOUD, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">κάντε κλικ εδώ</a> και κατόπιν κάντε κλικ στις επιλογές <b>Είσοδος > Δημιουργία λογαριασμού</b>. </p><p><b>Ρύθμιση του ReadyCLOUD</b></p><p><ol><li>Συνδέστε μια συσκευή αποθήκευσης USB στη θύρα USB του δρομολογητή.</li><li>Εισαγάγετε το όνομα χρήστη και τον κωδικό πρόσβασης για το ReadyCLOUD στα παρακάτω πεδία και κάντε κλικ στο κουμπί <b>Εγγραφή</b>. Ο δρομολογητής και η συσκευή USB εγγράφονται με το ReadyCLOUD.</li><li> Επισκεφτείτε τη διεύθυνση <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, κάντε κλικ στην επιλογή Είσοδος, εισαγάγετε το όνομα χρήστη και τον κωδικό πρόσβασης για το ReadyCLOUD και κάντε κλικ στο κουμπί <b>Είσοδος</b>.</li></ol></p><p>      Μπορείτε επίσης να χρησιμοποιήσετε την εφαρμογή ReadyCLOUD για να δημιουργήσετε μια ασφαλή σύνδεση μεταξύ του υπολογιστή ή της φορητής συσκευής σας και της συσκευής αποθήκευσης USB του δρομολογητή.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Κάντε κλικ εδώ</a> για λήψη της εφαρμογής ReadyCLOUD.</p>"
 ready_share_info1="Η λειτουργία ReadySHARE Cloud σάς παρέχει απομακρυσμένη πρόσβαση στο Διαδίκτυο μέσω μιας συσκευής αποθήκευσης USB που είναι συνδεδεμένη στη θύρα USB του δρομολογητή."
 how_setup_ready_share="Τρόπος ρύθμισης λειτουργίας ReadySHARE Cloud"
 ready_share_step1="Βήμα 1: Πρέπει να έχετε λογαριασμό ReadySHARE Cloud. Αν δεν έχετε λογαριασμό,<a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>κάντε κλικ εδώ</a> για να αποκτήσετε."
@@ -246,7 +248,7 @@ ready_share_step2="Βήμα 2: Σε αυτήν τη σελίδα, πληκτρο
 ready_share_step3="Βήμα 3: Συνδεθείτε πάλι στο <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> με το λογαριασμό σας. Θα πρέπει να βλέπετε τη συσκευή USB που είναι συνδεδεμένη στο δρομολογητή σας."
 ready_share_set_note="<b>Σημείωση:</b> Χωρίς αυτόν τον πελάτη, μπορείτε να πραγματοποιήσετε αναζήτηση στα περιεχόμενα της συσκευής USB, αλλά δεν μπορείτε να ανοίξετε αρχεία ή να πραγματοποιήσετε αλλαγές σε αυτά."
 ready_share_start="Αντιστοιχίστε το δρομολογητή και τη συσκευή USB με το λογαριασμό ReadyCLOUD"
-ready_share_get_account="Αν δεν έχετε λογαριασμό ReadySHARE Cloud, <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>κάντε κλικ εδώ</a> για να αποκτήσετε"
+ready_share_get_account="Αν δεν διαθέτετε λογαριασμό ReadyCLOUD, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>κάντε κλικ εδώ</a> για να λάβετε έναν"
 username="Όνομα χρήστη"
 key_passphrase="Κωδικός πρόσβασης"
 register="Εγγραφή"
@@ -254,13 +256,13 @@ register_note="<b>Σημείωση:</b> Ο δρομολογητής διατηρ
 help_center="Κέντρο βοήθειας"
 help_show_hide="Εμφάνιση/Απόκρυψη κέντρου βοήθειας"
 
-resister_user="Το ReadySHARE Cloud είναι εγγεγραμμένο με το χρήστη"
-access_storage_method="Μπορείτε να ακολουθήσετε τα βήματα 2~4 για να προσπελάσετε τη συσκευή αποθήκευσης όπου κι αν βρίσκεστε."
+resister_user="Αυτός ο δρομολογητής έχει αντιστοιχιστεί με τον εξής χρήστη του ReadyCLOUD:"
+access_storage_method="Τώρα μπορείτε να συνδεθείτε στη διεύθυνση <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> με το λογαριασμό ReadyCLOUD, για να αποκτήσετε πρόσβαση στη συσκευή USB από οπουδήποτε."
 unregister_info="Κάντε κλικ στην επιλογή <B>Κατάργηση αντιστοίχισης</B>, για να αντιστοιχίσετε το συγκεκριμένο δρομολογητή με διαφορετικό λογαριασμό ReadyCLOUD"
 unregister="Κατάργηση εγγραφής"
 
 result_register_ok="Η εγγραφή ολοκληρώθηκε με επιτυχία"
-result_register_fail="Η εγγραφή απέτυχε"
+result_register_fail="Αποτυχία εγγραφής. Ελέγξτε το όνομα χρήστη και τον κωδικό πρόσβασης και δοκιμάστε ξανά."
 result_unreg_ok="Η κατάργηση της εγγραφής ολοκληρώθηκε με επιτυχία"
 result_unreg_fail="Η κατάργηση εγγραφής απέτυχε"
 
@@ -453,11 +455,13 @@ bh_mode_illustration="Κάντε κλικ εδώ για να δείτε μια �
 bh_router_description="Με αυτήν τη λειτουργία μπορείτε να επωφεληθείτε από τις λειτουργίες του δρομολογητή NETGEAR<a href='router_function.html' target='_blank'>.</a> Ο δρομολογητής NETGEAR ρυθμίζεται ως κανονικός δρομολογητής WiFi πίσω από τον υπάρχοντα δρομολογητή ή την πύλη. Αυτή η λειτουργία απαιτεί τη σύνδεση όλων των συσκευών στο νέο δρομολογητή NETGEAR και όχι στην υπάρχουσα πύλη."
 bh_ap_description="Αυτή η λειτουργία είναι κατάλληλη για εύκολη ρύθμιση, εάν έχουν συνδεθεί ήδη συσκευές στον υπάρχοντα δρομολογητή ή στην υπάρχουσα πύλη σας, ή εάν απλώς θέλετε να χρησιμοποιήσετε αυτόν το νέο δρομολογητή NETGEAR για επέκταση της κάλυψης WiFi. Ορισμένες <a href='router_function.html' target='_blank'>λειτουργίες δρομολογητή</a> δεν είναι διαθέσιμες στη λειτουργία σημείου πρόσβασης."
 bh_select_tips="Φαίνεται ότι η εγκατάσταση του δρομολογητή NETGEAR πραγματοποιείται πίσω από τον υπάρχοντα δρομολογητή WiFi ή την πύλη του παρόχου υπηρεσιών Internet. Μπορείτε να επιλέξετε να εγκαταστήσετε το δρομολογητή σας σε διαφορετικούς τρόπους λειτουργίας."
+bh_select_router_or_ap="Αν θέλετε να επιλέξετε μόνοι σας μια λειτουργία, πρέπει να επιλέξετε Λειτουργία δρομολογητή ή το κουμπί επιλογής Λειτουργία σημείου πρόσβασης."
 //BRS_ap_detect_01_01.html 
 bh_current_network="Το τρέχον δίκτυό σας"
 bh_help_choose_page1_str="Το genie εντόπισε ότι χρησιμοποιείτε μια πύλη για τη σύνδεση στο Internet. Εάν θέλετε να χρησιμοποιήσετε όλες τις λειτουργίες του νέου σας δρομολογητή, η NETGEAR συνιστά τη λειτουργία δρομολογητή. Το genie πρέπει να σας κάνει μερικές ερωτήσεις για να επαληθεύσει ότι η λειτουργία δρομολογητή είναι κατάλληλη για εσάς."
 //BRS_ap_detect_01_02.html
 bh_help_choose_page2_str="Χρησιμοποιείτε αυτήν τη στιγμή <a href='router_function.html' target='_blank'>προηγμένες λειτουργίες</a> όπως η <a href='port_forwording.html' target='_blank'>προώθηση θύρας</a> (ορισμένες φορές ονομάζεται αντιστοίχιση θύρας) στην υπάρχουσα πύλη σας; Αυτές οι λειτουργίες συνήθως χρησιμοποιούνται από προχωρημένους χρήστες."
+bh_select_yes_or_no="Πρέπει να επιλέξετε το κουμπί επιλογής Ναι ή Όχι."
 //BRS_ap_detect_01_03.html
 bh_help_choose_page3_str1="Για να λειτουργεί σωστά η λειτουργία δρομολογητή, πρέπει να συνδέσετε όλες τις συσκευές WiFi και τις ενσύρματες συσκευές στο δρομολογητή NETGEAR, εκτός από τον εξοπλισμό που παρέχεται από τον πάροχο υπηρεσιών Internet, όπως αποκωδικοποιητή τηλεόρασης ή ασύρματα τηλέφωνα που είναι συνδεδεμένα στην πύλη σας."
 bh_help_choose_page3_str2="Μπορείτε να αποσυνδέσετε όλες τις υπόλοιπες συσκευές σας (ενσύρματες και ασύρματες) από την υπάρχουσα πύλη και κατόπιν να τις συνδέσετε στο δρομολογητή NETGEAR;"
@@ -492,7 +496,7 @@ bh_learn_more_title="Σύγκριση δρομολογητή με σημείο �
 bh_learn_more_str_1="Το genie εντόπισε ότι προσπαθείτε να εγκαταστήσετε το νέο σας δρομολογητή NETGEAR πίσω από κάποια άλλη πύλη, όπως π.χ. την καλωδιακή πύλη ή την πύλη DSL του παρόχου υπηρεσιών Internet. Συνήθως οι πύλες παρέχουν και λειτουργίες WiFi ή Voice over Internet (VoIP). Μπορείτε να εγκαταστήσετε το δρομολογητή NETGEAR σε δύο διαφορετικούς τρόπους λειτουργίας."
 bh_learn_more_str_2="Αυτή η λειτουργία διαμορφώνει το νέο σας δρομολογητή NETGEAR ως κανονικό δρομολογητή WiFi πίσω από την πύλη σας και δημιουργεί ένα ξεχωριστό δίκτυο WiFi πίσω από την πύλη σας. Για να επωφεληθείτε στο έπακρο από αυτές τις προηγμένες λειτουργίες του δρομολογητή, η NETGEAR συνιστά τη χρήση της λειτουργίας δρομολογητή. Στη λειτουργία δρομολογητή, η μοναδική συσκευή που μπορεί να συνδεθεί στην υπάρχουσα πύλη σας είναι ο νέος σας δρομολογητής NETGEAR. Πρέπει να συνδέσετε όλες τις συσκευές σας στο νέο δρομολογητή NETGEAR. Εάν η υπάρχουσα πύλη σας διαθέτει λειτουργία WiFi, απενεργοποιήστε την."
 bh_learn_more_str_3="<p><b>Access Point</b></p><p>If you want to use the new router to get better WiFi performance beyond what you have with your existing gateway, access point mode is the easiest way to do that. NETGEAR recommends that you disable the WiFi function on your existing gateway, if it has WiFi functionality. With this mode, you can connect wired devices to the gateway and connect wired and WiFi devices to your new NETGEAR router. In this mode, by default, the new router's IP address is assigned by your gateway dynamically and is unlikely to be 192.168.1.1. However, you can still use the URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> to access the router's management GUI from a device connected to the router. Some <a href='router_function.html' target='_blank'>router functions</a> are not available in this mode, and you must use router mode if you want to use those functions.</p>"
-bh_learn_more_str_4="Σε αυτήν τη λειτουργία, από προεπιλογή, η διεύθυνση IP του νέου δρομολογητή εκχωρείται τυχαία από την πύλη σας και πιθανώς δεν θα είναι 192.168.1.1. Ωστόσο, θα μπορείτε να χρησιμοποιήσετε τη διεύθυνση URL <a href='www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> για να αποκτήσετε πρόσβαση στο GUI διαχείρισης δρομολογητή από μια συσκευή που είναι συνδεδεμένη στο δρομολογητή. Ορισμένες <a href='router_function.html' target='_blank'>λειτουργίες δρομολογητή</a> δεν είναι διαθέσιμες σε αυτήν τη λειτουργία. Εάν θέλετε να χρησιμοποιήσετε τις συγκεκριμένες λειτουργίες, πρέπει να χρησιμοποιήσετε τη λειτουργία δρομολογητή."
+bh_learn_more_str_4="Σε αυτήν τη λειτουργία, από προεπιλογή, η διεύθυνση IP του νέου δρομολογητή εκχωρείται τυχαία από την πύλη σας και πιθανώς δεν θα είναι 192.168.1.1. Ωστόσο, θα μπορείτε να χρησιμοποιήσετε τη διεύθυνση URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> για να αποκτήσετε πρόσβαση στο GUI διαχείρισης δρομολογητή από μια συσκευή που είναι συνδεδεμένη στο δρομολογητή. Ορισμένες <a href='router_function.html' target='_blank'>λειτουργίες δρομολογητή</a> δεν είναι διαθέσιμες σε αυτήν τη λειτουργία. Εάν θέλετε να χρησιμοποιήσετε τις συγκεκριμένες λειτουργίες, πρέπει να χρησιμοποιήσετε τη λειτουργία δρομολογητή."
 //port_forwording.html
 bh_port_forwarding="Προώθηση θύρας"
 bh_port_forwarding_content="Η προώθηση θύρας (ορισμένες φορές ονομάζεται αντιστοίχιση θύρας) επιτρέπει την πρόσβαση στο οικιακό σας δίκτυο μέσω Internet. Εάν διαθέτετε στο σπίτι μια συσκευή όπως διακομιστή web, στην οποία άλλα άτομα αποκτούν απομακρυσμένα πρόσβαση χρησιμοποιώντας ένα όνομα κεντρικού υπολογιστή που είχατε καταχωρίσει (συνήθως μέσω υπηρεσίας Dynamic DNS) ή χρησιμοποιώντας μια διεύθυνση IP, πιθανώς έχετε ενεργοποιήσει τη λειτουργία προώθησης θύρας. Εάν ακούτε πρώτη φορά για αυτή τη λειτουργία, ακόμη και αν έχετε απομακρυσμένη πρόσβαση σε μια συσκευή στο σπίτι, πιθανώς δεν χρησιμοποιείτε τη συγκεκριμένη λειτουργία."
@@ -501,7 +505,7 @@ bh_router_function="Λειτουργίες δρομολογητή"
 bh_rouer_function_str_1="<p>Οι παρακάτω λειτουργίες δρομολογητή δεν είναι διαθέσιμες εάν επιλέξετε τη λειτουργία σημείου πρόσβασης:</p><p><ul><li style='height:20px' class='textRow centerTd2'>Δίκτυο επισκεπτών</li><li style='height:20px' class='textRow centerTd2'>Γονικός έλεγχος</li><li style='height:20px' class='textRow centerTd2'>Qos</li><li style='height:20px' class='textRow centerTd2'>Έλεγχος πρόσβασης</li><li style='height:20px' class='textRow centerTd2'>Μέτρηση κυκλοφορίας</li><li style='height:20px' class='textRow centerTd2'>Αποκλεισμός ιστότοπων</li><li style='height:20px' class='textRow centerTd2'>Αποκλεισμός υπηρεσιών</li><li style='height:20px' class='textRow centerTd2'>Στατική διαδρομή</li></ul></p>"
 bh_router_adv_function="Προηγμένες λειτουργίες"
 bh_router_function_str_2="<p>Οι παρακάτω λειτουργίες δρομολογητή είναι διαθέσιμες μόνο στη λειτουργία δρομολογητή, αλλά χρειάζονται διαμόρφωση στην υπάρχουσα πύλη σας:</p><p><ul><li style='height:20px' class='textRow centerTd2'>Προώθηση θύρας</li><li style='height:20px' class='textRow centerTd2'>Έναυσμα θύρας</li><li style='height:20px' class='textRow centerTd2'>IPv6</li><li style='height:20px' class='textRow centerTd2'>UPnP/IGD</li><li style='height:20px' class='textRow centerTd2'>Απομακρυσμένη διαχείριση</li><li style='height:20px' class='textRow centerTd2'>Τερματισμός VPN</li></ul></p>"
-warning_info="Πρέπει να προσδιορίσετε αν μπορείτε να απενεργοποιήσετε το WiFi της πύλης σας."
+bh_warning_info="Πρέπει να προσδιορίσετε αν μπορείτε να απενεργοποιήσετε το WiFi της πύλης σας."
 
 bh_pppoe_identi="αναγνωριστικό σύνδεσης"
 bh_pppoe_online="Αριθμός T-Online"
@@ -583,3 +587,6 @@ bh_dsl_bridge_con="(If select Bridge Mode,the LAN4 port will be configured as IP
 bh_dsl_bridge_lan4="Enable IPTV on LAN4"
 bh_dsl_bridge_lan3="Enable IPTV on LAN3"
 bh_dsl_bridge_lan2="Enable IPTV on LAN2"
+bh_ppp_readycloud_query="Αν αντιστοιχίσετε το δρομολογητή με το ReadyCLOUD, η λειτουργία σύνδεσης στο Διαδίκτυο του δρομολογητή θα αλλάξει από Κλήση κατ' απαίτηση σε Πάντα ενεργή. Η αλλαγή αυτή είναι απαραίτητη για να έχει το ReadyCLOUD απομακρυσμένη πρόσβαση στη συνδεδεμένη συσκευή αποθήκευσης USB. Θέλετε να συνεχίσετε;"
+bh_ppp_readycloud_warning_1="Αν αντιστοιχίσετε το δρομολογητή με το ReadyCLOUD, πρέπει να αλλάξετε τη λειτουργία σύνδεσης στο Διαδίκτυο του δρομολογητή από Μη αυτόματη σύνδεση σε Πάντα ενεργή για να έχει το ReadyCLOUD απομακρυσμένη πρόσβαση στη συνδεδεμένη συσκευή αποθήκευσης USB. Μεταβείτε στη σελίδα Ρυθμίσεις Διαδικτύου για να κάνετε αυτή την αλλαγή."
+bh_ppp_readycloud_warning_2="Ο δρομολογητής ή η πύλη δεν έχουν συνδεθεί στο Διαδίκτυο. Χρειάζεστε σύνδεση στο Διαδίκτυο για να αντιστοιχίσετε το δρομολογητή ή την πύλη με το ReadyCLOUD. Συνδέστε το δρομολογητή ή την πύλη στο Διαδίκτυο και δοκιμάστε ξανά."

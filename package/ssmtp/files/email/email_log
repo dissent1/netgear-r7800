@@ -3,6 +3,12 @@
 nvram=/bin/config
 smtpc=/usr/sbin/ssmtp
 LOG_FILE=/var/log/messages
+ALERT_LOG_FILE=/var/log/block-site-messages
+email_lock_file=/tmp/tmp_email_lock_file
+
+trap "rm -f $email_lock_file; exit 1" SIGTERM
+trap "rm -f $email_lock_file; exit 1" SIGINT
+
 
 # try without ssl first, if fail then try it with ssl
 no_ssl_first=1
@@ -59,7 +65,12 @@ print_email_header()
 	if [ "$($nvram get email_from_assign)" = "1" ]; then
 		from="\"root@$hostname\"<$($nvram get email_this_addr)>"
 	else
-		from="\"root@$hostname\"<$($nvram get email_username)>"
+		# If no username specify,Just use the email_addr
+		if [ -n "$username" ]; then
+			from="\"root@$hostname\"<$($nvram get email_username)>"
+		else
+			from="\"root@$hostname\"<$($nvram get email_addr)>"
+		fi
 		# as I know, different smtp servers have different rules about "From addr" :
 		# * dni : drops mails that "From addr" != "account email addr" silently.
 		# * pchome : rejects sending mails that "From addr" != "account email addr".
@@ -99,8 +110,7 @@ print_log()
 		fi
 	else
 		if [ "$2" = "send_email_alert" ]; then
-			sed -n '1! G;$p;h' $LOG_FILE | sed -n '1,256 p'|grep "site blocked"
-			sed -i '/site blocked/'d $LOG_FILE
+			cat $ALERT_LOG_FILE
 		else
 			sed -n '1! G;$p;h' $LOG_FILE | sed -n '1,256 p'
 		fi
@@ -124,11 +134,25 @@ sendmail()
 
 sendlog() # $1: clearlog_if_success $2: send_email_alert
 {
+	local count=0
 	local conf=/tmp/ssmtp.conf
 	local email_file=/tmp/tmp_email_file
 	local err_file=/tmp/tmp_email_err_file
 	local addr="$($nvram get email_addr)"
 
+	#Fix bug when 56487 sometimes DUT send Log to Email content is blank
+	while :; do
+		if [ -f $email_lock_file ];then
+			let count=$count+1
+			if [ "$count" = "10" ];then
+				break
+			fi
+			sleep $count
+			continue
+		fi
+		break
+	done
+	touch $email_lock_file
 	if ! sendmail "$1" "$2" 
 	then
 		if [ "x$no_ssl_first" = "x1" ] ; then
@@ -137,17 +161,17 @@ sendlog() # $1: clearlog_if_success $2: send_email_alert
 			then
 				logger -- "[email sent to: $addr]"
 				logger -- "[email failed] $(cat $err_file)"
-				rm -f $conf $email_file $err_file
+				rm -f $conf $email_file $err_file $email_lock_file
 				return 1
 			fi
 		else
 			logger -- "[email sent to: $addr]"
 			logger -- "[email failed] $(cat $err_file)"
-			rm -f $conf $email_file $err_file
+			rm -f $conf $email_file $err_file $email_lock_file
 			return 1
 		fi
 	fi
-	rm -f $conf $email_file $err_file
+	rm -f $conf $email_file $err_file $email_lock_file
 
 	if [ "$1" = "clearlog_if_success" -a "$2" != "send_email_alert" ]; then
 		rm -f $LOG_FILE
@@ -167,7 +191,12 @@ print_email_header_for_hdd()
 	if [ "$($nvram get email_from_assign)" = "1" ]; then
 		from="\"root@$hostname\"<$($nvram get email_this_addr)>"
 	else
-		from="\"root@$hostname\"<$($nvram get email_username)>"
+		# If no username specify,Just use the email_addr
+		if [ -n "$username" ]; then
+			from="\"root@$hostname\"<$($nvram get email_username)>"
+		else
+			from="\"root@$hostname\"<$($nvram get email_addr)>"
+		fi
 		case "$smtp_server" in
 			 smtp.pchome.com.tw)
 			 [ -n "$username" ] && from="${username}@pchome.com.tw"

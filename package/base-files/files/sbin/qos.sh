@@ -3,10 +3,11 @@ TC="/usr/sbin/tc"
 IPTABLES="/usr/sbin/iptables"
 NVRAM="/bin/config"
 ECHO="/bin/echo"
-WAN_IF="$($NVRAM get wan_ifnames)"
+WAN_IF="brwan"
 WAN_PROTO="$($NVRAM get wan_proto)"
 FILTER_ADD="$TC filter add dev $WAN_IF"
 UPRATE="$($NVRAM get qos_uprate)"
+UPRATE=`awk -v NEWUPRATE=$UPRATE 'BEGIN{printf "%.0f",NEWUPRATE*1.06}'`
 QoS_ENABLE="$($NVRAM get qos_endis_on)"
 BANDCTL="$($NVRAM get qos_threshold)"
 WAN_SPEED=`cat /tmp/WAN_status | cut -f 1 -d 'M'`

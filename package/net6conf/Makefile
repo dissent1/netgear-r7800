@@ -11,7 +11,7 @@ PKG_NAME:=net6conf
 PKG_VERSION:=0.2
 PKG_RELEASE:=1
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
-PKG_GIT_TREEISH=net6conf-dni91
+PKG_GIT_TREEISH=net6conf-dni103
 PKG_BUILD_DEPENDS:=wide-dhcpv6-client wide-dhcpv6-server radvd
 
 include $(INCLUDE_DIR)/package.mk
@@ -54,6 +54,7 @@ define Package/net6conf/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/6autoconf $(1)/etc/net6conf/6autoconf
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/6proc $(1)/etc/net6conf/6proc
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dhcp6c-script $(1)/etc/net6conf/dhcp6c-script
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/6rd $(1)/etc/net6conf/6rd
 endef
 
 $(eval $(call BuildPackage,net6conf))

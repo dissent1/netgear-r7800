@@ -42,6 +42,7 @@ var str_wep_an="";
 var str_wpa_an="";
 var str_wpa2_an="";
 var str_wpas_an="";
+
 <% dfs_radar_detect() %>
 var an_router_flag = opener.parent.an_router_flag;
 
@@ -50,7 +51,6 @@ var str_have_an="";
 
 var dfs_channel_router_flag = top.dfs_channel_router_flag;
 var dfs_channel2_router_flag = top.dfs_channel2_router_flag;/* bug 25665: DFS channel supported in canada,Europe and Austrilia */
-var enable_ht160 = "<% cfg_get("wla_ht160") %>";
 <% show_bridge_wlan_variable() %>
 
 

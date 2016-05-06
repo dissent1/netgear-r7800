@@ -557,6 +557,8 @@ int main(int argc, char *argv[])
 					 * Periodic checking for dynamic address availability
 					 * A device that has auto-configured an IP address MUST periodically check 
 					 * every 4 minutes for the existence of a DHCP server.
+					 * [new Router Spec Rev.11 2012.12.03 DHCP (DHCP client)]: if the whole DHCP
+					 * request procedure is failed, router should restart the procedure every 10 seconds.
 					 */
 					timeout = now + (client_config.apmode ? (!br_mode_enable() ? 10 : 10) : 10);
 				}
@@ -569,7 +571,12 @@ int main(int argc, char *argv[])
 						send_renew(xid, server_addr, requested_ip); /* unicast */
 					else send_selecting(xid, server_addr, requested_ip); /* broadcast */
 					
-					timeout = now + ((packet_num == 2) ? 10 : 1);
+					/*
+					 * [new Router Spec Rev.11 2012.12.03 DHCP (DHCP client)]: for the cases of Ethernet cable plug-off and plug-in,
+					 * client should send 3 consecutive DHCP_REQUEST with 1 second interval and include current IP address as preferred
+					 * client IP address.
+					 */
+					timeout = now + 1;
 					packet_num++;
 				} else {
 					/* timed out, go back to init state */

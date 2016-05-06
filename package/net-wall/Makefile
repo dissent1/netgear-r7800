@@ -32,6 +32,7 @@ define Package/net-wall/install
 	install -m0755 $(PKG_BUILD_DIR)/net-wall $(1)/usr/sbin/
 	install -d -m0755 $(1)/etc
 	$(CP) ./files/l7_patten.dat $(1)/etc
+	$(CP) ./files/etc/* $(1)/etc
 endef
 
 $(eval $(call BuildPackage,net-wall))

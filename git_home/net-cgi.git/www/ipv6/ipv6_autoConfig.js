@@ -1,8 +1,8 @@
 function check_ipv6_dhcp(cf)
 {
-	for(i=0;i<cf.userClass.value.length;i++)
+	for(i=0;i<cf.ipv6_system.value.length;i++)
 	{
-		if(isValidChar(cf.userClass.value.charCodeAt(i))==false)
+		if(isValidChar(cf.ipv6_system.value.charCodeAt(i))==false)
 		{
 			alert("$acname_not_allowed");
 			return false;

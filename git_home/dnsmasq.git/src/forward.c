@@ -292,7 +292,7 @@ int mulpppoe_skip_dns(struct in_addr srv, char *name)
                 	/* Remove \n */
 	                buffer[strlen(buffer) - 1] = '\0';
 			if(buffer[0] != '*') {
-	        	        if(!strcasecmp(name, buffer)) {
+	        	        if(strstr(name, buffer)) {
         	        	    	 ppp1_domain = 1;
 				}
 	                } else {

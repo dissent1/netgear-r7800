@@ -46,7 +46,7 @@ define Package/net-cgi/install
 
 	$(LN) /tmp/openvpn/windows.zip $(1)/$(WEB_PATH)/windows.zip
 	$(LN) /tmp/openvpn/nonwindows.zip $(1)/$(WEB_PATH)/nonwindows.zip
-	$(LN) /tmp/openvpn/smart_phone.ovpn $(1)/$(WEB_PATH)/smart_phone.ovpn
+	$(LN) /tmp/openvpn/smart_phone.zip $(1)/$(WEB_PATH)/smart_phone.zip
 endef
 
 $(eval $(call BuildPackage,net-cgi))

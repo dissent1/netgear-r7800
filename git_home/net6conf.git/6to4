@@ -22,6 +22,8 @@ start_6to4() {
 	else
 		$IP tunnel add sit1 mode sit ttl 128 remote $remoteip4 local $localip4
 	fi
+	# initalize kernel 6rd struct since 6rd and 6to4 use some shared code.
+	$IP tunnel 6rd dev sit1 6rd-prefix 2002::/16
 	$IP link set dev sit1 up
 	$IP link set mtu $sitmtu dev sit1
 	$IP -6 addr add ${localip6}/16 dev sit1

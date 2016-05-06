@@ -238,7 +238,7 @@ bh_same_server_wan_ip="يجب ألا يكون عنوان IP الخاص بي هو
 
 //readySHARE remote strings
 remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
+ready_cloud_info="<p>تمنحك ميزة ReadyCLOUD إمكانية الوصول عن بُعد عبر الإنترنت إلى جهاز تخزين USB متصل بمنفذ USB الخاص بموجهك. لاستخدام ميزة ReadyCLOUD، يجب أن يكون لديك حساب ReadyCLOUD. إذا لم يكن لديك حساب ReadyCLOUD،‏<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">فانقر هنا</a>، ثم انقر فوق <b>تسجيل الدخول > إنشاء حساب</b>. </p><p><b>لإعداد ميزة ReadyCLOUD</b></p><p><ol><li>قم بتوصيل جهاز تخزين USB بمنفذ USB الخاص بموجهك.</li><li>أدخل اسم مستخدم ReadyCLOUD وكلمة المرور في الحقول أدناه وانقر فوق الزر <b>تسجيل</b>. إن الموجه وجهاز USB مسجلان في ReadyCLOUD.</li><li> قم بزيارة <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a> وانقر فوق تسجيل الدخول وأدخل اسم مستخدم ReadyCLOUD وكلمة المرور وانقر فوق الزر <b>تسجيل الدخول</b>.</li></ol></p><p>      يمكنك أيضًا استخدام تطبيق ReadyCLOUD لإنشاء اتصال آمن بين الكمبيوتر أو الجهاز المحمول وجهاز تخزين USB الخاص بالموجه.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">انقر هنا</a> لتنزيل تطبيق ReadyCLOUD.</p>"
 ready_share_info1="تمنحك ميزة ReadySHARE Cloud إمكانية الوصول عن بعد عبر الإنترنت إلى جهاز تخزين USB متصل بمنفذ USB خاص بموجهك."
 how_setup_ready_share="كيفية إعداد ReadySHARE Cloud"
 ready_share_step1="Step 1: You need a ReadySHARE Cloud account. If you do not have one, <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>click here</a> to get one."
@@ -246,7 +246,7 @@ ready_share_step2="الخطوة 2: في هذه الصفحة، أدخل اسم م
 ready_share_step3="Step 3: Log back into <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com</a> with your account. You should see the USB device that is connected to your router."
 ready_share_set_note="<b>ملاحظة:</b> بدون هذا العميل، يمكنك استعراض محتويات جهاز USB ولكنك لا تستطيع فتح الملفات أو إجراء تغييرات عليها"
 ready_share_start="سجِّل موجهك وجهاز USB مع ReadyCLOUD"
-ready_share_get_account="if you don't have a ReadySHARE Cloud account <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>click here</a> to get one."
+ready_share_get_account="إذا لم يكن لديك حساب ReadyCLOUD‏<a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>انقر هنا</a> للحصول على واحد"
 username="اسم المستخدم"
 key_passphrase="كلمة المرور"
 register="تسجيل"
@@ -254,13 +254,13 @@ register_note="<b>ملاحظة:</b> يحافظ الموجه على اتصال م
 help_center="مركز التعليمات"
 help_show_hide="إظهار/إخفاء مركز التعليمات"
 
-resister_user="تم تسجيل ReadySHARE Cloud مع المستخدم"
-access_storage_method="يمكنك اتباع الخطوات 2~4 أعلاه للوصول إلى التخزين من أي مكان."
+resister_user="هذا الموجه مسجّل مع مستخدم ReadyCLOUD التالي:"
+access_storage_method="يمكنك الآن تسجيل الدخول إلى<a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> مستخدمًا حسابك في ReadyCLOUD للوصول إلى جهاز USB أينما كنت."
 unregister_info="انقر فوق<B>إلغاء تسجيل</B> لتسجيل هذا الموجه باستخدام حساب مختلف من ReadyCLOUD"
 unregister="إلغاء التسحيل"
 
 result_register_ok="اكتملت عملية التسجيل بنجاح"
-result_register_fail="فشلت عملية التسجيل"
+result_register_fail="فشلت عملية التسجيل. يُرجى التحقق من اسم المستخدم وكلمة المرور، ثم المحاولة مرة أخرى."
 result_unreg_ok="اكتملت عملية إلغاء التسجيل بنجاح"
 result_unreg_fail="فشلت عملية إلغاء التسجيل"
 
@@ -453,11 +453,13 @@ bh_mode_illustration="انقر هنا لرؤية صورة."
 bh_router_description="يتيح لك هذا الوضع الاستفادة من <a href='router_function.html' target='_blank'>وظائف موجه</a>NETGEAR<a href='router_function.html' target='_blank'>.</a> تم إعداد موجه NETGEAR كموجه WiFi عادي خلف الموجه الموجود أو البوابة الموجودة. يتطلب هذا الوضع أن تكون كافة الأجهزة متصلة بموجه NETGEAR الجديد وليس بالبوابة الموجودة."
 bh_ap_description="يعتبر هذا الوضع مناسبًا للإعداد السهل إذا كانت الأجهزة متصلة بالفعل بالموجه الموجود أو البوابة الموجودة أو إذا كنت تريد فقط استخدام موجه NETGEAR الجديد هذا لتوسيع نطاق تغطية WiFi. لا تتوفر بعض<a href='router_function.html' target='_blank'>وظائف الموجه</a> في وضع نقطة الوصول."
 bh_select_tips="يبدو أنك تثبّت موجه NETGEAR خلف موجه WiFi الخاص بموفر الإنترنت الموجود أو البوابة الموجودة. يمكنك اختيار تثبيت الموجه في أوضاع تشغيل مختلفة."
+bh_select_router_or_ap="إذا أردت اختيار وضع بنفسك، عليك تحديد وضع الموجه أو الزر التبادلي وضع نقطة الوصول."
 //BRS_ap_detect_01_01.html 
 bh_current_network="شبكتك الحالية"
 bh_help_choose_page1_str="اكتشف تطبيق genie أنك تستخدم بوابة للاتصال بالإنترنت. إذا أردت استخدام كافة وظائف الموجه الجديد، توصي NETGEAR بوضع الموجه. يريد تطبيق genie أن يطرح عليك بعض الأسئلة للتحقق من أن وضع الموجه مناسب لك."
 //BRS_ap_detect_01_02.html
 bh_help_choose_page2_str="هل تستخدم حاليًا<a href='router_function.html' target='_blank'>وظائف متقدمة</a> مثل <a href='port_forwording.html' target='_blank'>إعادة توجيه المنفذ</a> (تدعى أحيانًا تعيين المنفذ) على البوابة الموجودة؟ تُستخدم هذه الوظائف عادةً من قبل المستخدمين المتقدمين."
+bh_select_yes_or_no="عليك تحديد الزر التبادلي نعم أو لا."
 //BRS_ap_detect_01_03.html
 bh_help_choose_page3_str1="ليتم تشغيل وضع الموجه بشكل صحيح، عليك توصيل كل أجهزة WiFi والأجهزة السلكية بموجه NETGEAR، باستثناء الأجهزة التي يوفرها موفر خدمة الإنترنت، مثل جهاز فك تشفير التلفاز أو الهواتف اللاسلكية المتصلة بالبوابة."
 bh_help_choose_page3_str2="هل يمكنك فصل كل الأجهزة الأخرى (السلكية واللاسلكية) عن البوابة الموجودة وتوصيلها بموجه NETGEAR؟"
@@ -492,7 +494,7 @@ bh_learn_more_title="الموجه مقابل نقطة الوصول"
 bh_learn_more_str_1="كشف genie أنك تحاول تثبيت موجه NETGEAR الجديد خلف بوابة أخرى، مثلاً بوابة كبل أو DSL من موفر خدمة الإنترنت. عادة، توفر البوابة أيضًا WiFi أو وظيفة الصوت عبر الإنترنت (VoIP). يمكنك تثبيت موجه NETGEAR في وضعَي تشغيل مختلفين."
 bh_learn_more_str_2="يؤدي هذا الوضع إلى تكوين موجه NETGEAR الجديد كموجه WiFi عادي خلف البوابة وينشئ شبكة WiFi منفصلة خلف البوابة. للاستفادة بشكل كامل من وظائف الموجه المتقدمة هذه، توصي NETGEAR باستخدام وضع الموجه. في وضع الموجه، يكون الجهاز الوحيد الذي يمكن توصيله بالبوابة الموجودة هو موجه NETGEAR الجديد. عليك توصيل كافة الأجهزة بموجه NETGEAR الجديد. إذا كانت البوابة الموجودة مزوّدة بوظيفة WiFi، فقم بتعطيلها."
 bh_learn_more_str_3="<p><b>Access Point</b></p><p>If you want to use the new router to get better WiFi performance beyond what you have with your existing gateway, access point mode is the easiest way to do that. NETGEAR recommends that you disable the WiFi function on your existing gateway, if it has WiFi functionality. With this mode, you can connect wired devices to the gateway and connect wired and WiFi devices to your new NETGEAR router. In this mode, by default, the new router's IP address is assigned by your gateway dynamically and is unlikely to be 192.168.1.1. However, you can still use the URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> to access the router's management GUI from a device connected to the router. Some <a href='router_function.html' target='_blank'>router functions</a> are not available in this mode, and you must use router mode if you want to use those functions.</p>"
-bh_learn_more_str_4="في هذا الوضع، يكون عنوان IP الخاص بالموجه الجديد معيّنًا بشكل ديناميكي من خلال البوابة ومن غير المرجح أن يكون 192.168.1.1. مع ذلك، لا يزال بإمكانك استخدام عنوان URL‏ <a href='www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> للوصول إلى GUI الخاصة بإدارة الموجه من جهاز متصل بالموجه. لا تتوفر بعض <a href='router_function.html' target='_blank'>وظائف الموجه</a> في هذا الوضع وعليك استخدام وضع الموجه إذا أردت استخدام تلك الوظائف."
+bh_learn_more_str_4="في هذا الوضع، يكون عنوان IP الخاص بالموجه الجديد معيّنًا بشكل ديناميكي من خلال البوابة ومن غير المرجح أن يكون 192.168.1.1. مع ذلك، لا يزال بإمكانك استخدام عنوان URL‏ <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> للوصول إلى GUI الخاصة بإدارة الموجه من جهاز متصل بالموجه. لا تتوفر بعض <a href='router_function.html' target='_blank'>وظائف الموجه</a> في هذا الوضع وعليك استخدام وضع الموجه إذا أردت استخدام تلك الوظائف."
 //port_forwording.html
 bh_port_forwarding="إعادة توجيه المنفذ"
 bh_port_forwarding_content="تسمح إعادة توجيه المنفذ (تدعى أحيانًا تعيين المنفذ) بالوصول إلى الشبكة المنزلية عبر الإنترنت. إذا كان لديك جهاز مثل خادم ويب في المنزل يمكن للآخرين الوصول إليه عن بُعد باستخدام اسم مضيف سجّلته (عادةً عبر خدمة DNS الحيوي) أو باستخدام عنوان IP، فعلى الأرجح أن وظيفة إعادة توجيه المنفذ ممكّنة لديك. إذا لم تسمع قط بهذه الوظيفة، حتى وإن كان لديك إمكانية الوصول عن بُعد إلى جهاز في المنزل، فمن المرجح أنك لا تستخدم هذه الوظيفة."
@@ -501,7 +503,7 @@ bh_router_function="وظائف الموجه"
 bh_rouer_function_str_1="<p>لا تتوفر ميزات الموجه التالية إذا اخترت وضع نقطة الوصول:</p><p><ul><li style='height:20px' class='textRow centerTd2'>شبكة الضيف</li><li style='height:20px' class='textRow centerTd2'>التحكم الأبوي</li><li style='height:20px' class='textRow centerTd2'>QoS</li><li style='height:20px' class='textRow centerTd2'>التحكم في الوصول</li><li style='height:20px' class='textRow centerTd2'>مقياس حركة المرور</li><li style='height:20px' class='textRow centerTd2'>حظر المواقع</li><li style='height:20px' class='textRow centerTd2'>خدمات الحظر</li><li style='height:20px' class='textRow centerTd2'>التوجيه الثابت</li></ul></p>"
 bh_router_adv_function="الوظائف المتقدمة"
 bh_router_function_str_2="<p>تتوفر وظائف الموجه التالية فقط في وضع الموجه، لكنها تتطلب تكوينًا على البوابة الموجودة:</p><p><ul><li style='height:20px' class='textRow centerTd2'>إعادة توجيه المنفذ</li><li style='height:20px' class='textRow centerTd2'>تشغيل المنفذ</li><li style='height:20px' class='textRow centerTd2'>IPv6</li><li style='height:20px' class='textRow centerTd2'>UPnP/IGD</li><li style='height:20px' class='textRow centerTd2'>الإدارة عن بُعد</li><li style='height:20px' class='textRow centerTd2'>إنهاء VPN</li></ul></p>"
-warning_info="عليك تحديد ما إذا كان بإمكانك تعطيل WiFi الخاص بالبوابة."
+bh_warning_info="عليك تحديد ما إذا كان بإمكانك تعطيل WiFi الخاص بالبوابة."
 
 bh_pppoe_identi="معرّف الاتصال"
 bh_pppoe_online="رقم T-Online"
@@ -583,3 +585,6 @@ bh_dsl_bridge_con="(If select Bridge Mode,the LAN4 port will be configured as IP
 bh_dsl_bridge_lan4="Enable IPTV on LAN4"
 bh_dsl_bridge_lan3="Enable IPTV on LAN3"
 bh_dsl_bridge_lan2="Enable IPTV on LAN2"
+bh_ppp_readycloud_query="في حال تسجيل الموجه في ReadyCLOUD، لن يتغير وضع اتصال الإنترنت الخاص بالموجه من الاتصال عند الطلب إلى قيد التشغيل دائماً. إن هذا التغيير مطلوب لـ ReadyCLOUD لإتاحة الوصول عن بُعد إلى جهاز تخزين USB المتصل. هل تريد المتابعة؟"
+bh_ppp_readycloud_warning_1="إذا سجلت الموجه في ReadyCLOUD، يجب أن تغير وضع اتصال الإنترنت الخاص بالموجه من الاتصال يدويًا إلى قيد التشغيل دائمًا لإتاحة وصول ReadyCLOUD عن بُعد إلى جهاز تخزين USB المتصل. انتقل إلى صفحة إعداد الإنترنت لإجراء هذا التغيير."
+bh_ppp_readycloud_warning_2="إن الموجه أو البوابة غير متصلة بالإنترنت. تحتاج إلى اتصال بالإنترنت لتسجيل الموجه أو البوابة في ReadyCLOUD. أمن اتصال الموجه أو البوابة بالإنترنت وحاول مجددًا."

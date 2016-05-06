@@ -453,7 +453,7 @@ static struct arpmsg arpreq;
 
 int init_arp_request(char *ifname)
 {
-	int s;
+	int s, i;
 	struct ifreq ifr;
 	struct arpmsg *arp;
 	
@@ -466,8 +466,16 @@ int init_arp_request(char *ifname)
 
 	ifr.ifr_addr.sa_family = AF_INET;
 	strncpy(ifr.ifr_name, ifname, IFNAMSIZ);
-	if (ioctl(s, SIOCGIFADDR, &ifr) != 0)
-		return 0;
+
+	/*judge whether ARP_IFNAME has an IP,if not sleep 5s*/
+	for (i=5; i >= 0; i--){
+		if (i == 0)
+			return 0;
+		if (ioctl(s, SIOCGIFADDR, &ifr) != 0)
+			sleep(5);	
+		else
+			break;
+	}
 	memcpy(arp->ar_sip, &((struct sockaddr_in *)&ifr.ifr_addr)->sin_addr, 4);
 	
 	if (ioctl(s, SIOCGIFHWADDR, &ifr) != 0)

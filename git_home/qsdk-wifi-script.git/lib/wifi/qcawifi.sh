@@ -229,11 +229,11 @@ load_qcawifi() {
 	config_get enable_smart_antenna qcawifi enable_smart_antenna
 	[ -n "$enable_smart_antenna" ] && append umac_args "enable_smart_antenna=$enable_smart_antenna"
 
-	config_get wl_super_wifi qcawifi wl_super_wifi
-	[ -n "$wl_super_wifi" ] && append umac_args "wl_super_wifi=$wl_super_wifi"
+	config_get wl_tpscale qcawifi wl_tpscale
+	[ -n "$wl_tpscale" ] && append umac_args "wl_tpscale=$wl_tpscale"
 
-	config_get wla_super_wifi qcawifi wla_super_wifi
-	[ -n "$wla_super_wifi" ] && append umac_args "wla_super_wifi=$wla_super_wifi"
+	config_get wla_tpscale qcawifi wla_tpscale
+	[ -n "$wla_tpscale" ] && append umac_args "wla_tpscale=$wla_tpscale"
 
 	config_get nss_wifi_olcfg qcawifi nss_wifi_olcfg
 	[ -n "$nss_wifi_olcfg" ] && append umac_args "nss_wifi_olcfg=$nss_wifi_olcfg"
@@ -260,6 +260,9 @@ load_qcawifi() {
 
 	region=`artmtd -r region | grep REGION | cut -d" " -f2`
 	[ "$region" = "US" ] && append umac_args "new_fcc_rule=1"
+
+	config_get specified_BDF qcawifi specified_BDF
+	[ "x$specified_BDF" = "xPR" ] && append umac_args "use_pr_bd=1"
 
 	find_qca_wifi_dir _qca_wifi_dir
 	for mod in $(cat ${_qca_wifi_dir}/33-qca-wifi*); do
@@ -761,7 +764,7 @@ enable_qcawifi() {
 
 		config_get ODM "$device" ODM
 		config_get bridge "$vif" bridge
-		[ "$ODM" = "dni" ] && [ -n "$wds" ] && brctl stp "$bridge" on
+		[ "$ODM" = "dni" ] && [ "$wds" = "1" ] && brctl stp "$bridge" on
 
 		config_get vlan_pri "$vif" vlan_pri
 		if [ "$vlan_pri" = "" ]; then
@@ -1483,6 +1486,9 @@ enable_qcawifi() {
 
 
 	done
+
+	#enable ol statistic in wireless driver
+	iwpriv "$phy" enable_ol_stats 1
 
 	# update wlan uptime file
 	for vif in $vifs; do

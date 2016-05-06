@@ -78,7 +78,6 @@ endef
 define ModuleAutoLoad
 	$(SH_FUNC) \
 	export modules=; \
-	(cd $(KERNEL_BUILD_DIR)/linux-$(LINUX_VERSION)/sourcecode/scripts/;  chmod 0755 gcc-wrapper.py)
 	add_module() { \
 		priority="$$$$$$$$1"; \
 		mods="$$$$$$$$2"; \
@@ -151,6 +150,9 @@ $(call KernelPackage/$(1)/config)
   endif
 
   $(call KernelPackage/depends)
+
+  $(shell [ -x $(KERNEL_BUILD_DIR)/linux-$(LINUX_VERSION)/sourcecode/scripts/gcc-wrapper.py ] \
+	  || chmod +x $(KERNEL_BUILD_DIR)/linux-$(LINUX_VERSION)/sourcecode/scripts/gcc-wrapper.py)
 
   ifneq ($(if $(filter-out %=y %=n %=m,$(KCONFIG)),$(filter m y,$(foreach c,$(filter-out %=y %=n %=m,$(KCONFIG)),$($(c)))),.),)
     ifneq ($(strip $(FILES)),)

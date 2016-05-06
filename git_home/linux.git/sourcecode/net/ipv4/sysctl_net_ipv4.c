@@ -804,6 +804,13 @@ static struct ctl_table ipv4_net_table[] = {
 		.mode		= 0644,
 		.proc_handler	= ipv4_tcp_mem,
 	},
+	{
+		.procname	= "arp_attack_protect",
+		.data		= &init_net.ipv4.sysctl_arp_attack_protect,
+		.maxlen		= sizeof(int),
+		.mode		= 0644,
+		.proc_handler	= proc_dointvec
+	},
 	{ }
 };
 
@@ -840,6 +847,8 @@ static __net_init int ipv4_sysctl_init_net(struct net *net)
 			&net->ipv4.sysctl_rt_cache_rebuild_count;
 		table[7].data =
 			&net->ipv4.sysctl_ping_group_range;
+		table[8].data =
+			&net->ipv4.sysctl_arp_attack_protect;
 
 	}
 
@@ -851,6 +860,8 @@ static __net_init int ipv4_sysctl_init_net(struct net *net)
 	net->ipv4.sysctl_ping_group_range[1] = 0;
 
 	net->ipv4.sysctl_rt_cache_rebuild_count = 4;
+	/* Dos attack: for log arp attack event */
+	net->ipv4.sysctl_arp_attack_protect = 0;
 
 	tcp_init_mem(net);
 

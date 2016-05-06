@@ -54,6 +54,8 @@ define Package/miniupnpd/install
 	install -m0755 $(PKG_BUILD_DIR)/miniupnpd $(1)/usr/sbin/
 	install -d -m0755 $(1)/sbin
 	install -m0755 $(PKG_BUILD_DIR)/cmdupnp $(1)/sbin/
+	install -d -m0755 $(1)/etc/init.d
+	install -m0755 ./files/upnp.init $(1)/etc/init.d/upnp
 endef
 
 $(eval $(call BuildPackage,miniupnpd))

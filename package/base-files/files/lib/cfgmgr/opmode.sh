@@ -116,6 +116,23 @@ op_set_induced_configs()
 	$CONFIG set i_wla_guest_pri="$i_wla_guest_pri"
 }
 
+bond_create_ifs()
+{
+	local landefmac=$($CONFIG get lan_factory_mac)
+	local wandefmac=$($CONFIG get cur_wanmac)
+
+	bond_init
+	[ "x$wandefmac" = "x" ] && wandefmac=$($CONFIG get wan_factory_mac)
+	ifconfig $RawEthLan hw ether $wandefmac
+	ifconfig $RawEthWan hw ether $wandefmac
+	ifconfig $BondEth hw ether $wandefmac
+	ifconfig $BondEth up
+	vconfig add $BondEth 1 && ifconfig $BondEth.1 down
+	vconfig add $BondEth 2 && ifconfig $BondEth.2 down
+	ip link set dev $BondEth.1 name ethlan
+	ip link set dev $BondEth.2 name ethwan
+}
+
 br_create() # $1: brname
 {
 	brctl addbr $1
@@ -137,6 +154,8 @@ br_allnifs() # $1: brx
 op_del_all_brs_vifs()
 {
 	local brx nif
+	local landefmac=$($CONFIG get lan_factory_mac)
+	local wandefmac=$($CONFIG get wan_factory_mac)
 
 	for brx in $(br_allbrs); do
 		ifconfig $brx down
@@ -162,12 +181,42 @@ op_del_all_brs_vifs()
 		ifconfig $RawEthLan down
 		ifconfig $RawEthWan down
 	}
+        echo "-$RawEthWan" > /sys/devices/virtual/net/bond0/bonding/slaves
+        echo "-$RawEthLan" > /sys/devices/virtual/net/bond0/bonding/slaves
+	ifconfig $RawEthLan hw ether $landefmac
+	ifconfig $RawEthWan hw ether $wandefmac 
+	ifconfig $BondEth down
 }
 
 op_create_br0_brwan()
 {
 	br_create br0
 	br_create brwan
+}
+
+factory_mode_create_brs_and_vifs()
+{
+	local landefmac=$($CONFIG get lan_factory_mac)
+	local wandefmac=$($CONFIG get wan_factory_mac)
+
+	if [ -n "$RawEth" ]; then
+		ifconfig $RawEth hw ether $landefmac
+		ifconfig $RawEth up
+		vconfig add $RawEth 0 && ifconfig $RawEth.0 down
+		vconfig add $RawEth 1 && ifconfig $RawEth.1 down
+		ip link set dev $RawEth.0 name ethlan
+		ip link set dev $RawEth.1 name ethwan
+	else
+		ifconfig $RawEthLan hw ether $landefmac
+		ifconfig $RawEthWan hw ether $wandefmac
+		ip link set dev $RawEthLan name ethlan
+		ip link set dev $RawEthWan name ethwan
+	fi
+
+	brctl addif br0 ethlan
+	brctl addif br0 ethwan
+	ifconfig br0 hw ether $landefmac
+	sw_configvlan "factory"
 }
 
 apmode_create_brs_and_vifs()
@@ -182,6 +231,8 @@ apmode_create_brs_and_vifs()
 		vconfig add $RawEth 1 && ifconfig $RawEth.1 down
 		ip link set dev $RawEth.0 name ethlan
 		ip link set dev $RawEth.1 name ethwan
+	elif [ "$enable_bond" = "1" ]; then
+		bond_create_ifs
 	else
 		ifconfig $RawEthLan hw ether $landefmac
 		ifconfig $RawEthWan hw ether $wandefmac
@@ -207,6 +258,8 @@ normal_create_brs_and_vifs()
 		vconfig add $RawEth 1 && ifconfig $RawEth.1 down
 		ip link set dev $RawEth.0 name ethlan
 		ip link set dev $RawEth.1 name ethwan
+	elif [ "$enable_bond" = "1" ]; then
+		bond_create_ifs
 	else
 		ifconfig $RawEthLan hw ether $landefmac
 		ifconfig $RawEthWan hw ether $wandefmac
@@ -282,7 +335,9 @@ vlan_create_br_and_vif() # $1: vid, $2: pri
 		vlan_set_vif_pri $RawEth.$1 $2
 	else
 		if [ "$WanIndepPhy" = "0" ]; then
+			vconfig add ethlan $1 && ifconfig ethlan.$1 up
 			vconfig add $RawEthWan $1 && ifconfig $RawEthWan.$1 up
+			brctl addif $brx ethlan.$1
 			brctl addif $brx $RawEthWan.$1
 		else
 			vconfig add $RawEthLan $1 && ifconfig $RawEthLan.$1 up
@@ -291,6 +346,9 @@ vlan_create_br_and_vif() # $1: vid, $2: pri
 			brctl addif $brx $RawEthWan.$1
 		fi
 		vlan_set_vif_pri $RawEthWan.$1 $2
+		vlan_set_vif_pri ethlan.$1 $2
+		ifconfig $brx hw ether $wandefmac	
+		brctl stp $brx on
 	fi
 	ifconfig $brx up
 }
@@ -328,19 +386,38 @@ vlan_create_internet_vif() # $1: vid, $2: pri
 	brctl addif brwan ethwan
 }
 
+vlan_create_intranet_vif() # $1: vid, $2: pri
+{
+	local brx="br$1"
+
+	nif_existed $brx && return
+
+	br_create $brx
+	if [ -n "$RawEth" ]; then
+		vconfig add $RawEth $1 && ifconfig $RawEth.$1 up
+		brctl addif $brx $RawEth.$1
+		vlan_set_vif_pri $RawEth.$1 $2
+	else
+		vconfig add $RawEthWan $1 && ifconfig $RawEthWan.$1 up
+		brctl addif $brx $RawEthWan.$1
+		vlan_set_vif_pri $RawEthWan.$1 $2
+	fi
+	ifconfig $brx up
+}
+
 vlan_get_freevid() # $1: up / down
 {
 	local updown=$1
 	local i tv vids
 	local freevid
 
-	for i in 1 2 3 4 5 6 7 8 9 10; do
+	for i in 0 1 2 3 4 5 6 7 8 9 10; do
 		tv=$($CONFIG get vlan_tag_$i)
 		[ -n "$tv" ] || continue
 		set - $(echo $tv)
 		# $1: enable, $2: name, $3: vid, $4: pri, $5:wports, $6:wlports
 		[ "$1" = "1" ] || continue
-		[ "$2" = "Internet" ] && continue
+		#[ "$2" = "Internet" -o "$2" = "Intranet" ] && continue
 		[ "$vids" = "" ] && vids="x${3}x" || vids="$vids x${3}x"
 	done
 
@@ -367,6 +444,16 @@ vlan_create_brs_and_vifs()
 	local landefmac=$($CONFIG get lan_factory_mac)
 	local wandefmac=$($CONFIG get wan_factory_mac)
 	local lanvid=$(vlan_get_lanvid)
+	local firmware_region=`cat /tmp/firmware_region | awk '{print $1}'`
+	local ru_feature=0
+
+	if [ "x$firmware_region" = "xWW" ] || [ "x$firmware_region" = "x" ] ;then
+		if [ "x$($CONFIG get GUI_Region)" = "xRussian" ] ;then
+			ru_feature=1
+		fi
+	elif [ "x$firmware_region" = "xRU" ] ;then
+		ru_feature=1
+	fi
 
 	local i tv used_wports=0
 	local i_vid i_pri
@@ -392,7 +479,7 @@ vlan_create_brs_and_vifs()
 	ifconfig br0 hw ether $landefmac
 
 	sw_configvlan "vlan" "start"
-	for i in 1 2 3 4 5 6 7 8 9 10; do
+	for i in 0 1 2 3 4 5 6 7 8 9 10; do
 		tv=$($CONFIG get vlan_tag_$i)
 		[ -n "$tv" ] || continue
 		set - $(echo $tv)
@@ -401,10 +488,15 @@ vlan_create_brs_and_vifs()
 		if [ "$2" = "Internet" ]; then 
 			i_vid=$3
 			i_pri=$4
+		elif [ "$2" = "Intranet" ]; then
+			if [ "$ru_feature" = "1" ]; then
+				vlan_create_intranet_vif $3 $4
+				sw_configvlan "vlan" "add" "br" "$3" "0" "$4"
+			fi
 		else
 			used_wports=$(($used_wports | $5))
 			vlan_create_br_and_vif $3 $4
-			sw_configvlan "vlan" "add" "br" $3 $5 $4
+			sw_configvlan "vlan" "add" "vlan" $3 $5 $4
 		fi
 	done
 	if [ "$i_vid" = "0" ]; then
@@ -423,10 +515,12 @@ op_create_brs_and_vifs()
 {
 	local opmode=$($CONFIG get i_opmode)
 
+	op_del_all_brs_vifs  2>/dev/null
 	case "$opmode" in
 	normal) normal_create_brs_and_vifs ;;
 	iptv) iptv_create_brs_and_vifs ;;
 	vlan) vlan_create_brs_and_vifs ;;
+	factory) factory_mode_create_brs_and_vifs ;;
 	*) apmode_create_brs_and_vifs ;;
 	esac
 }

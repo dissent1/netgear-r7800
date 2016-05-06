@@ -61,6 +61,7 @@ define Package/hotplug2/install
 	$(INSTALL_DIR) $(1)/etc
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_DATA) ./files/hotplug2.rules $(1)/etc/
+	$(INSTALL_BIN) ./files/usb_modem_hotplug $(1)/etc/
 	$(INSTALL_DIR) $(1)/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/udevtrigger $(1)/sbin/
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hotplug2 $(1)/sbin/
@@ -69,6 +70,7 @@ define Package/hotplug2/install
 	$(INSTALL_BIN) ./files/umount_unapproved $(1)/sbin/
 	$(INSTALL_BIN) ./files/app_mount $(1)/sbin/
 	$(INSTALL_BIN) ./files/hotplug2.testbusy $(1)/sbin/
+	-$(INSTALL_BIN) ./files/green_download_path $(1)/sbin/
 endef
 
 $(eval $(call BuildPackage,hotplug2))

@@ -105,7 +105,7 @@ function basic_menu_class_default()
 			settingClass(menu_div, "advanced_white_close_button");			
 		}
 		else{
-			if((top.enable_bridge_flag==1 ||top.enabled_wds==1 || top.enable_ap_flag== 1 || top.broadband_mode == "MyDetc" || top.enable_extender_flag == "1" || top.enable_mapt == 1 || top.device_mode == 1) && i == 2)
+			if((top.enable_bridge_flag==1 ||top.enabled_wds==1 || top.enable_ap_flag== 1 || top.broadband_mode == "MyDetc" || top.enable_extender_flag == "1" || top.enable_mapt == 1 || top.device_mode == "1") && i == 2)
 			{
 				var internet_div = top.document.getElementById("internet");
 				internet_div.className = internet_div.className + "_grey";
@@ -114,14 +114,18 @@ function basic_menu_class_default()
 
 			if( menu_btns[i].id == "market" )
 			{
-				if( height > 16 )
+				if( height > 30 )
 					menu_btns[i].className = "basic_button_big_green";
+				else if( height > 16 )
+					menu_btns[i].className = "basic_button_mid_green";
 				else
 					menu_btns[i].className = "basic_button_green";
 			}
 			else{
-				if( height > 16 )
+				if( height > 30 )
 					menu_btns[i].className = "basic_button_big";
+				else if( height > 16 )
+					menu_btns[i].className = "basic_button_mid";
 				else
 					menu_btns[i].className = "basic_button";
 			}
@@ -136,32 +140,32 @@ function basic_menu_class_default()
 	}
 	*/
 
-	if((top.enable_ap_flag== 1 || top.enable_bridge_flag== 1 || top.enable_extender_flag == "1" || top.device_mode == 1) && top.have_dynamic_qos == 1 )
+	if((top.enable_ap_flag== 1 || top.enable_bridge_flag== 1 || top.enable_extender_flag == "1" || top.device_mode == "1") && top.have_dynamic_qos == 1 )
 	{
 		var intqos_div = top.document.getElementById("intqos");
 		intqos_div.className = intqos_div.className + "_grey";
 	}
 
-	if(top.enable_ap_flag== 1 || top.enable_bridge_flag== 1 || top.enable_extender_flag == "1" || top.device_mode == 1 )
+	if(top.enable_ap_flag== 1 || top.enable_bridge_flag== 1 || top.enable_extender_flag == "1" || top.device_mode == "1" )
 	{
 		var parental_div = top.document.getElementById("parental");
 		if(parental_div != null)
 			parental_div.className = parental_div.className + "_grey";
 	}
 
-	if(top.enabled_wds == 1 || top.enable_bridge_flag== 1 || top.enable_extender_flag == "1" || top.device_mode == 1 )
+	if(top.enabled_wds == 1 || top.enable_bridge_flag== 1 || top.enable_extender_flag == "1" || top.device_mode == "1" )
 	{
 		var wds_div = top.document.getElementById("guest");
 		wds_div.className = wds_div.className + "_grey";
 	}
 	
-	if( top.enable_bridge_flag== 1 || top.device_mode == 1)
+	if( top.enable_bridge_flag== 1 || top.device_mode == "1")
 	{
 		var wds_div = top.document.getElementById("wireless");
 		wds_div.className = wds_div.className + "_grey";
 	}
 	
-	if( top.device_mode == 1)
+	if( top.device_mode == "1")
 	{
 		var wds_div = top.document.getElementById("readyshare");
 		wds_div.className = wds_div.className + "_grey";
@@ -325,7 +329,7 @@ function click_action(id)
                         basic_menu_color_change('home');
                         goto_formframe('basic_wait.htm');
                 }
-		else if( id == "internet" && top.enabled_wds == 0 && top.enable_ap_flag != 1 && top.broadband_mode != "MyDetc" && top.enable_bridge_flag == 0 && top.enable_extender_flag == "0" && top.enable_mapt !=1 && top.device_mode == 0)
+		else if( id == "internet" && top.enabled_wds == 0 && top.enable_ap_flag != 1 && top.broadband_mode != "MyDetc" && top.enable_bridge_flag == 0 && top.enable_extender_flag != "1" && top.enable_mapt !=1 && top.device_mode != "1")
 		{
 			if(top.have_broadband==1 && (top.is_ru_version==1 || top.is_pr_version ==1))
 			{
@@ -363,7 +367,7 @@ function click_action(id)
 			basic_menu_color_change('3g');
 			goto_formframe('BAS_3g.htm');
 		}
-                else if( id == "wireless" && top.enable_bridge_flag == 0 && top.device_mode == 0 )
+                else if( id == "wireless" && top.enable_bridge_flag == 0 && top.device_mode != "1" )
                 {
                         basic_menu_color_change('wireless');
 			if( endis_wl_radio == '1' || endis_wla_radio == '1' )
@@ -382,7 +386,7 @@ function click_action(id)
 				goto_formframe('DEV_device.htm');
 			}
                 }
-		else if( id == "intqos" && top.have_dynamic_qos == 1 && top.enable_ap_flag != 1 && top.enable_bridge_flag == 0 && top.enable_extender_flag == "0" && top.device_mode == 0 )
+		else if( id == "intqos" && top.have_dynamic_qos == 1 && top.enable_ap_flag != 1 && top.enable_bridge_flag == 0 && top.enable_extender_flag == "0" && top.device_mode != "1" )
 		{
 			basic_menu_color_change('intqos');
 			if(top.have_advanced_qos == "1")
@@ -391,17 +395,17 @@ function click_action(id)
                                 goto_formframe("QOS_dynamic.htm");
 
 		}
-		else if( id == "parental" && top.enable_ap_flag != 1 && top.enable_bridge_flag == 0 && top.enable_extender_flag == "0" && top.device_mode == 0 )
+		else if( id == "parental" && top.enable_ap_flag != 1 && top.enable_bridge_flag == 0 && top.enable_extender_flag == "0" && top.device_mode != "1" )
                 {
                         basic_menu_color_change('parental');
 			open_window('parental_ctrl.htm');
                 }
-                else if( id == "readyshare" && top.device_mode == 0 )
+                else if( id == "readyshare" && top.device_mode != "1" )
                 {
                         basic_menu_color_change('readyshare');
                         goto_formframe('USB_basic.htm');
                 }
-                else if( id == "guest" && top.enabled_wds == 0 && top.enable_bridge_flag == 0 && top.enable_extender_flag == "0" && top.device_mode == 0)
+                else if( id == "guest" && top.enabled_wds == 0 && top.enable_bridge_flag == 0 && top.enable_extender_flag == "0" && top.device_mode != "1")
                 {
                         basic_menu_color_change('guest');
                         goto_formframe('WLG_wireless_guest1.htm');
@@ -411,7 +415,7 @@ function click_action(id)
 			basic_menu_color_change('quick_qos');
 			goto_formframe('Quick_wait.htm');
 		}
-		else if( id == "green" && top.have_green_download ==1 && top.device_mode == 0 )
+		else if( id == "green" && top.have_green_download ==1 && top.device_mode != "1" )
 		{
 			if( download_type == "bt" )
 				goto_formframe("GREEN_bt_basic.htm");

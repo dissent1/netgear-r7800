@@ -201,7 +201,7 @@ static int inc_check_list( char *dname)
 		return -1;
 	for (tmp_rc = dname_list; tmp_rc; tmp_rc = tmp_rc->next) {
 		if (tmp_rc->wildcard == 0){
-			if (tmp_rc->dname != NULL && 0 == strcmp(tmp_rc->dname, dname))
+			if (tmp_rc->dname != NULL && strstr(tmp_rc->dname, dname))
 				return 0;
 		}
 		else{

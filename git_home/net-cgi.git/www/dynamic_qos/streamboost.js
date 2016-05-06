@@ -78,21 +78,15 @@ function confirm_dialox()
 
 function setSpeed(num)
 {
-	if(num == "1") {
+	if(num == "2") {
 		sAlert("$set_bandwidth_warning");
-		document.getElementById("speedtest_radio").style.display = "none";
-		document.getElementById("speedtest_radbutton").style.display = "none";
-		document.getElementById("option1").style.display = "none";
-		document.getElementById("option2").style.display = "none";
 		document.getElementById("define_radio1").style.display = "";
 		document.getElementById("define_radio2").style.display = "";
+		document.getElementById("speedtest_content").style.display = "none";
 	} else {
-		document.getElementById("speedtest_radio").style.display = "";
-		document.getElementById("speedtest_radbutton").style.display = "";
-		document.getElementById("option1").style.display = "";
-		document.getElementById("option2").style.display = "";
 		document.getElementById("define_radio1").style.display = "none";
 		document.getElementById("define_radio2").style.display = "none";
+		document.getElementById("speedtest_content").style.display = ""
 	}
 }
 
@@ -102,7 +96,7 @@ function clearNoNum(obj)
 	obj.value = obj.value.replace(/^\./g,"");
 	obj.value = obj.value.replace(/\.{2,}/g,".");
 	obj.value = obj.value.replace(".","$#$").replace(/\./g,"").replace("$#$",".");
-	obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d\d).*$/,'$1$2.$3');
+	obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d)(\d).*$/,'$$1$$2.$$3');
 }
 
 function check_qos_apply(cf)
@@ -123,7 +117,7 @@ function check_qos_apply(cf)
 	//else
 	//	cf.hid_streamboost_enable.value=0;
 
-	if(cf.detect_database.checked == true)
+	if(cf.AutoUpdateEnable.checked == true)
 		cf.hid_detect_database.value=1;
 	else{
 		cf.hid_detect_database.value=0;
@@ -135,12 +129,12 @@ function check_qos_apply(cf)
 	else
 		cf.hid_improve_service.value=0;
 
-	if(cf.sel_bandwidth[0].checked == true)
+	if(cf.qosSetting[0].checked == true)
 		cf.hid_bandwidth_type.value=0;
 	else
 		cf.hid_bandwidth_type.value=1;
 
-	if(cf.detect_database.checked == true && (first_flag != "0" ||(first_flag == "0" && cf.sel_bandwidth[0].checked == false)) && update_agreement == "1" && cf.hid_streamboost_enable.value == "1")
+	if(cf.AutoUpdateEnable.checked == true && (first_flag != "0" ||(first_flag == "0" && cf.qosSetting[0].checked == false)) && update_agreement == "1" && cf.hid_streamboost_enable.value == "1")
 	{
 		sAlert("$share_mac_warn",function(){
 			var cf=document.forms[0];
@@ -149,7 +143,7 @@ function check_qos_apply(cf)
 		},
 		function(){
 			var cf=document.forms[0];
-			cf.detect_database.checked = false;
+			cf.AutoUpdateEnable.checked = false;
 			cf.hid_detect_database.value=0;
 			cf.hid_update_agreement.value = "1";
 			check_qos_apply2();
@@ -158,16 +152,14 @@ function check_qos_apply(cf)
 	}
 	else
 		check_qos_apply2();
-
 }
 
 function check_qos_apply2()
 {
 	var cf=document.forms[0];
 
-        if(cf.sel_bandwidth[0].checked == true)
+        if(cf.qosSetting[0].checked == true && cf.hid_streamboost_enable.value == "1")
         {
-	    if(cf.hid_streamboost_enable.value == "1"){
                 if(first_flag == "0") {
                         sAlert("$warning_bandwidth", function(){
 				var cf=document.forms[0];
@@ -185,14 +177,6 @@ function check_qos_apply2()
                         cf.hid_first_flag.value="2";
 			check_qos_apply3();
                 }
-	    }
-	    else{
-		if(first_flag == "0")
-			cf.hid_first_flag.value="0";
-		else
-			cf.hid_first_flag.value="2";
-		cf.submit();
-	    }
 	}
 	else
 		check_qos_apply3();
@@ -204,7 +188,7 @@ function check_qos_apply3()
 	var streamboost_uplink=parseFloat(cf.uplink_value.value).toFixed(2);
 	var streamboost_downlink=parseFloat(cf.downlink_value.value).toFixed(2);
 
-	if(cf.sel_bandwidth[1].checked == true) {
+	if(cf.qosSetting[1].checked == true) {
 		if(internet_status == "0" && cf.hid_streamboost_enable.value == "1"){
 			sAlert("$internet_down");
 			return false;
@@ -235,14 +219,15 @@ function check_qos_apply3()
 
 function check_wmm_apply(cf)
 {
-	if(cf.wmm_enable.checked == true)
+	if(cf.wmm_enable_2g.checked == true)
 		cf.qos_endis_wmm.value=1;
 	else
 		cf.qos_endis_wmm.value=0;
-	if(cf.wmm_enable_a.checked == true)
+	if(cf.wmm_enable_5g.checked == true)
 		cf.qos_endis_wmm_a.value=1;
 	else
 		cf.qos_endis_wmm_a.value=0;
+	cf.submit();
 }
 
 function check_confirm(cf, url)
@@ -256,7 +241,7 @@ function check_confirm(cf, url)
 		cf.hid_streamboost_downlink.value="";
 	else
 		cf.hid_streamboost_downlink.value=parseInt((cf.downlink_value.value)*1000000/8);
-	if(cf.detect_database.checked == true)
+	if(cf.AutoUpdateEnable.checked == true)
 		cf.hid_detect_database.value=1;
 	else
 		cf.hid_detect_database.value=0;
@@ -285,7 +270,8 @@ function check_basic_ookla_speedtest(form)
 function check_ookla_speedtest(form)
 {
 	if(internet_status == "0"){
-		sAlert("$internet_down");
+		getObj("indicate").innerHTML="$speedtest_connect";
+		getObj("indicate").style.color="red";
 		return false;
 	}
 	if(location.href.indexOf("QOS_dynamic.htm") > 0){
@@ -486,7 +472,7 @@ function show_icon_name(num)
 	else if(num=="50")
                 device_icon_name="$qos_device50";
 	else if(num=="51")
-                device_icon_name="$qos_device51"+"/6S";
+                device_icon_name="$qos_device51";
 	else
 		device_icon_name="$qos_device47";
 
@@ -500,11 +486,11 @@ function show_type_name(name)
 		device_type="$acc_wired";
 	else if(name=="primary")
 		device_type="$2.4G $wireless";
-	else if(name=="guest")
+	else if(name=="guest" || name=="gre")
 		device_type="2.4G $guest_wireless";
 	else if(name=="primary_an")
 		device_type="5G $wireless";
-	else if(name=="guest_an")
+	else if(name=="guest_an" || name=="gre_an")
 		device_type="5G $guest_wireless";
 	else if(name=="vpn")
 		device_type="$qos_vpn";
@@ -536,11 +522,11 @@ function show_type2(name)
 		device_type="<img src=image/eth.gif />";
 	else if(name=="primary")
 		device_type="<img src=image/wifi.png /><b class='short'>2.4G</b>";
-	else if(name=="guest")
+	else if(name=="guest" || name=="gre")
 		device_type="<img src=image/wifi.png /><b class='long'>2.4G Guest</b>";
 	else if(name=="primary_an")
 		device_type="<img src=image/wifi.png /><b class='short'>5G</b>";
-	else if(name=="guest_an")
+	else if(name=="guest_an" || name=="gre_an")
 		device_type="<img src=image/wifi.png /><b class='long'>5G Guest</b>";
 	else if(name=="vpn")
 		device_type="<img src=image/vpn.gif />";
@@ -557,11 +543,11 @@ function show_type(name)
 		device_type="<div class='eth'></div>";
 	else if(name=="primary")
 		device_type="<div class='wifi'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.4G</div>";
-	else if(name=="guest")
+	else if(name=="guest" || name=="gre")
 		device_type="<div class='wifi'>2.4G Guest</div>";
 	else if(name=="primary_an")
 		device_type="<div class='wifi'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5G</div>";
-	else if(name=="guest_an")
+	else if(name=="guest_an" || name=="gre_an")
 		device_type="<div class='wifi'>5G Guest</div>";
 	else if(name=="vpn")
 		device_type="<div class='contype'></div>";

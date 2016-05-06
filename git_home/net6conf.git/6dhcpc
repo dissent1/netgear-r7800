@@ -31,6 +31,7 @@ start_dhcp6c() {
 		cp /etc/dhcp6c.conf /tmp/dhcp6c.conf
 		sleep 1
 	fi
+
 	/usr/sbin/dhcp6c -c /tmp/dhcp6c.conf -3 ${U_CLADATA:+-u $U_CLADATA} ${U_DOMAIN:+-U $U_DOMAIN}  $WAN
 
 	#add the default route

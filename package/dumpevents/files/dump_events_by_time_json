@@ -31,7 +31,9 @@ process_step() {
 	redis-cli -s /var/run/appflow/redis.sock --eval /usr/bin/filter_events_by_time.lua $keys , $begin $end $begin_index $end_index | \
 	{
 		local setcomma=$FLAG_NOTHING
+		local empty_output=yes
 		while read line; do
+			empty_output=no
 			[ -z "$line" ] && continue
 			[ "$line" = "done" ] && return $FLAG_DONE
 			if [ $setcomma -eq $FLAG_NOTHING ]; then
@@ -42,6 +44,7 @@ process_step() {
 			fi
 			echo $line
 		done
+		[ $empty_output = yes ] && return $FLAG_DONE
 		return $setcomma
 	}
 }

@@ -1,5 +1,12 @@
 #include "internet.h"
 
+//for AP autodecteion feature
+extern int flag_apautodection;
+extern int count;
+extern uint8 ap_autodection_wanaddress1[4];
+extern uint8 ap_autodection_wanaddress2[4];
+
+
 /*======================================================
                                                     [ PPPoE Detection ]
     ======================================================*/
@@ -814,6 +821,27 @@ static int verify_packet(int fd, uint32 xid, uint8 *arp, int *bpain)
 	if (opdata == NULL ||*opdata != DHCPOFFER)
 		return 0;
 	
+	//**********add for AP mode autodetection function**********//
+	if(1==flag_apautodection)
+	{
+		// To fix bug 43866 and 43867, we should get the ip address from the bootp protocol but not the ip layer destination ip.
+		if(1==count)
+		{
+			char cmd[256];
+			snprintf(cmd,256,"echo '[AP mode autodetection] first ip address: %d.%d.%d.%d' > /dev/console",dhcp->yiaddr[0],dhcp->yiaddr[1],dhcp->yiaddr[2],dhcp->yiaddr[3]);
+			system(cmd);
+			memcpy(ap_autodection_wanaddress1,dhcp->yiaddr,4);
+		}
+		else if(2==count)
+		{
+			char cmd_1[256];
+			snprintf(cmd_1,256,"echo '[AP mode autodetection] second ip address: %d.%d.%d.%d' > /dev/console",dhcp->yiaddr[0],dhcp->yiaddr[1],dhcp->yiaddr[2],dhcp->yiaddr[3]);
+			system(cmd_1);
+			memcpy(ap_autodection_wanaddress2,dhcp->yiaddr,4);
+		}
+		return 1;
+	}
+
 	opdata = get_option(dhcp, DHCP_DOMAIN_NAME, &oplen);
 	if (opdata) {
 		sprintf(domain, "%.*s", (int)oplen, opdata);

@@ -4,6 +4,7 @@ TMP_UMOUNT_TABLE=/tmp/umounting_table_fgd456
 TMP_DEVICE_NAME=/tmp/mounting_divice_name
 TMP_DATA_XYZ=/tmp/proc_partition_dev
 DISK_FIND_TABLE=/tmp/find_disk_abcxzy
+UPDATE_NAME=/tmp/update_name
 
 dev_inproc(){
 	rm -f $TMP_DATA_XYZ
@@ -250,18 +251,23 @@ ftp_down_upload()
 
 service_stop()
 {
+	killall minidlna
 	killall -9 smbd
 }
 
 service_stop
 
 if [ $# -eq 0 ]; then
+	echo "Stop greendownload..." > /dev/console
+	green_download.sh stop
 	ftp_down_upload
 	umount_all "/tmp/ftpadmin/shares"
 #	umount_all "/tmp/ftpguest/shares"
 	umount_all "/tmp/mnt"
 #	logger "[USB device detached] ALL USB storage device is removed from the router"
 else
+	echo "Detect if need to stop greendownload..." > /dev/console
+	green_download.sh stop $1
 	ftp_down_upload
 	umount_part_ftp "$1" "ftpadmin"
 #	umount_part_ftp "$1" "ftpguest"
@@ -278,3 +284,10 @@ echo `date` stop smbd at hotplug2.umount >> /tmp/debug_smb
 /sbin/cmddlna start
 # in order to run this after run update_smb, moved it here
 test -f $RESULT || echo 0 > $RESULT
+
+df |grep sd |awk '{print $1}' |cut -c 6- >$UPDATE_NAME
+while read LINE
+do
+	update_smb $LINE
+	sleep 1
+done<$UPDATE_NAME

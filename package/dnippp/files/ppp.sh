@@ -21,6 +21,33 @@ $7
 EOF
 }
 
+print_pppoe_options_v6(){
+cat <<EOF
++ipv6
+ipv6cp-accept-local
+ipv6cp-use-persistent
+noipdefault
+defaultroute
+hide-password
+$2
+noauth
+noaccomp
+default-asyncmap
+connect /bin/true
+mtu $3
+mru $3
+$4
+$5
+lcp-echo-interval 10
+lcp-echo-failure 3
+user $1
+plugin rp-pppoe.so $8
+$6
+$7
+EOF
+}
+
+
 print_pptp_options(){
     cat <<EOF
 noauth
@@ -67,6 +94,8 @@ EOF
 insert_modules(){
     if [ "$1" = "pptp" ]; then
 	load_modules /etc/modules.d/60-pptp-mod
+    elif [ "$1" = "3g" ]; then
+	load_modules /etc/modules.d/60-3g-mod
     elif [ "$1" = "l2tp" ]; then
 	load_modules /etc/modules.d/60-l2tp-mod
     else
@@ -116,6 +145,10 @@ elif [ "\$(config get wan_proto)" = "l2tp" -a "\$(config get wan_l2tp_wan_assign
 elif [ "\$(config get wan_proto)" = "pppoe" -a "\$(config get wan_pppoe_intranet_wan_assign)" = "0" ]; then
 	cat /tmp/dhcpc_resolv.conf >> /tmp/resolv.conf
 fi
+
+[ "\$(/bin/config get ipv6_sameinfo)" = "1" ] && /etc/net6conf/6pppoe adddns
+
+
 local qos_enable=\$(/bin/config get qos_endis_on)
 local qos_bandwidth_enable=\$(/bin/config get qos_threshold)
 local qos_bandwidth_type=\$(/bin/config get qos_bandwidth_type)
@@ -125,7 +158,7 @@ if [ "x\$qos_enable" = "x1" -a "x\$qos_bandwidth_enable" = "x1" ]; then
 	fi
 fi
 local ipv6_wantype=\$(/bin/config get ipv6_type)
-if [ "x\$ipv6_wantype" != "x" -a "\$ipv6_wantype" != "disabled" -a "\$ipv6_wantype" != "bridge" ]; then
+if [ "x\$ipv6_wantype" != "x" -a "\$ipv6_wantype" != "disabled" -a "\$ipv6_wantype" != "bridge" -a "\$ipv6_wantype" != "pppoe" ]; then
 	killall net6conf
 	/etc/net6conf/net6conf restart
 fi
@@ -157,7 +190,9 @@ EOF
 }
 
 setup_interface_ppp() {
-    local user passwd dns mtu mru idle demand service ip proto gw language staticdns1 staticdns2 pptp_wan_assign
+    local user passwd dns mtu mru idle demand service ip proto gw language staticdns1 staticdns2 pptp_wan_assign pppoe_type
+
+    pppoe_type=`config get ipv6_sameinfo`
 
     mknod /dev/ppp c 108 0
     mkdir -p /tmp/ppp
@@ -287,7 +322,17 @@ setup_interface_ppp() {
 			ip="$($CONFIG get wan_pppoe_ip):"
 		fi
 	fi
-	print_pppoe_options "$user" "$dns" "${mtu:-1492}" "$idle" "$demand" "$service" "$ip" "$WAN_IF" > /etc/ppp/peers/dial-provider
+
+        
+        local ipv6_wantype=`config get ipv6_type`
+
+        if [ "x$pppoe_type" = "x1" -a "x$ipv6_wantype" = "xpppoe" ] ;then
+               print_pppoe_options_v6 "$user" "$dns" "${mtu:-1492}" "$idle" "$demand" "$service" "$ip" "$WAN_IF" > /etc/ppp/peers/dial-provider
+        else
+               print_pppoe_options "$user" "$dns" "${mtu:-1492}" "$idle" "$demand" "$service" "$ip" "$WAN_IF" > /etc/ppp/peers/dial-provider
+        fi
+
+ 
         sed -i '/user/ s/\\/\\\\/g' /etc/ppp/peers/dial-provider
         sed -i '/user/ s/\#/\\#/g' /etc/ppp/peers/dial-provider
 	

@@ -56,6 +56,8 @@
 
 static int sysctl_ipfrag_overlap_drop = 0;
 static int sysctl_ipfrag_max_dist __read_mostly = 64;
+static int sysctl_ipfrag_protect_jolt2 = 0;
+static int sysctl_ipfrag_protect_ping_of_death = 0;
 
 struct ipfrag_skb_cb
 {
@@ -390,6 +392,19 @@ static int ip_frag_queue(struct ipq *qp, struct sk_buff *skb)
 	/* Determine the position of this fragment. */
 	end = offset + skb->len - ihl;
 	err = -EINVAL;
+	if (sysctl_ipfrag_protect_jolt2 == 1) {
+                /*
+                 * offset == 0 : if incomming fragment is first fragment.
+                 * qp->q.last_in & INET_FRAG_FIRST_IN: if qp received first fragment before.
+                 * After qp received offset 0 fragment, received another
+                 * offset 0 fragment ,call it Jolt2 DoS Attack(SQA's testing)
+                 */
+                if ((offset == 0) && (qp->q.last_in & INET_FRAG_FIRST_IN)) {
+                        printk
+                            ("[DoS Attack: Jolt2] from source: %u.%u.%u.%u,\n"
+                             , NIPQUAD(qp->saddr));
+                }
+        }
 
 	/* Is this the final fragment? */
 	if ((flags & IP_MF) == 0) {
@@ -660,7 +675,7 @@ out_nomem:
 	err = -ENOMEM;
 	goto out_fail;
 out_oversize:
-	if (net_ratelimit())
+	if (net_ratelimit() && sysctl_ipfrag_protect_ping_of_death == 1)
 		pr_info("Oversized IP packet from %pI4\n", &qp->saddr);
 		printk("[DoS Attack: Ping of Death] from source: %pI4,\n",
 			&qp->saddr);
@@ -787,6 +802,20 @@ static struct ctl_table ip4_frags_ctl_table[] = {
 		.mode		= 0644,
 		.proc_handler	= proc_dointvec
 	},
+        {
+                .procname       = "ipfrag_protect_jolt2",
+                .data           = &sysctl_ipfrag_protect_jolt2,
+                .maxlen         = sizeof(int),
+                .mode           = 0644,
+                .proc_handler   = proc_dointvec
+        },
+	{
+                .procname       = "ipfrag_protect_ping_of_death",
+                .data           = &sysctl_ipfrag_protect_ping_of_death,
+                .maxlen         = sizeof(int),
+                .mode           = 0644,
+                .proc_handler   = proc_dointvec
+        },
 	{ }
 };
 

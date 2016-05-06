@@ -19,7 +19,8 @@ enum {
 	OPTION_U16,
 	OPTION_S16,
 	OPTION_U32,
-	OPTION_S32
+	OPTION_S32,
+	OPTION_6RD
 };
 
 #define OPTION_REQ	0x10 /* have the client request this option */

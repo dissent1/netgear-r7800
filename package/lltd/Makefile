@@ -41,6 +41,8 @@ define Build/Configure
 endef
 
 define Package/lltd/install
+	install -d -m0755 $(1)/etc/init.d
+	install -m0755 ./files/lltd.init $(1)/etc/init.d/lltd
 	install -m0755 -d $(1)/usr/sbin
 	install -m0755 $(PKG_BUILD_DIR)/lld2d $(1)/usr/sbin/
 	install -m0755 -d $(1)/etc

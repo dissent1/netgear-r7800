@@ -56,23 +56,6 @@ del_dns6() {
         echo -n "" > $IPV6_DNS
 }
 
-#the function about deleting rhe repeating dns info.
-write_ra_dns(){
-        for xr in  `awk '{print $2}'  $1 `
-        do
-                flagadd="1"
-                for xw in `awk '{print $2}' $2 `
-                do
-                        if [ "1$xr" == "1$xw" ] ; then
-                                flagadd="0"
-                                continue
-                        fi
-                done
-                if [ "$flagadd" == "1" ] ; then
-                        echo "nameserver $xr " >> $2;
-                fi
-        done
-}
 
 #write ra_dns to resolv.conf
 write_ra_tmp_dns(){
@@ -88,9 +71,13 @@ write_ra_tmp_dns(){
 }
 #when received ra packet with RDNSS option
 local conn_type=`$CONFIG get ipv6_type`
-if [ "x$REASON" = "xra_dns" -a  "x$conn_type" = "xautoConfig" ] ; then
-        echo "write ra_dns..."  > /dev/console
-        write_ra_tmp_dns
+local PPPOEv6_WAY=`$CONFIG get ipv6_pppoe_way`
+if [ "x$REASON" = "xra_dns" ]; then
+      if [ "x$conn_type" = "xpppoe" -a "$PPPOEv6_WAY" = "1" ] || [ "x$conn_type" = "xautoConfig" ] ; then
+              echo "write ra_dns..."  > /dev/console
+              write_ra_tmp_dns
+      fi
+
 fi
 
 lease_changed()
@@ -154,11 +141,13 @@ do
 	$IP -6 addr del $loop dev $bridge
 done
 
+local dns_type=`$CONFIG get ipv6_${conn_type}_dns_assign`
+
 # wirte the dhcp6s_pd and dhcp6s_dsn file
 
 	if [ "x$new_prefix" != "x" ]; then
 		echo $new_prefix > $DHCP6S_PD
-		echo "DHCP" > /tmp/ipv6_auto_output
+#		echo "DHCP" > /tmp/ipv6_auto_output
 	fi
 
 	# for avoid adding more line
@@ -181,15 +170,18 @@ done
 #		echo "option domain-name-servers $new_domain_name_servers;" >> $DHCP6S_DSN
 #	fi
 
-	del_dns6
-	for loop in $new_domain_name_servers
-	do
-		echo "nameserver $loop" >> $IPV6_DNS
-	done
-	if [ "x$conn_type" = "xautoConfig" ] ; then
-		write_ra_dns $RA_DNS_FILE  /tmp/resolv.conf
+	# only add dns to resolv.conf when dns is not assigned(static)
+	if [ "x$dns_type" != "x1" -a "x$conn_type" != "xfixed" ] ;then
+		del_dns6
+		for loop in $new_domain_name_servers
+		do
+			echo "nameserver $loop" >> $IPV6_DNS
+		done
+		if [ "x$conn_type" = "xpppoe" -a "$PPPOEv6_WAY" = "1" ] || [ "x$conn_type" = "xautoConfig" ] ; then 
+			write_ra_dns $RA_DNS_FILE  /tmp/resolv.conf
+		fi
+		write_ra_dns $IPV6_DNS  /tmp/resolv.conf
 	fi
-	write_ra_dns $IPV6_DNS  /tmp/resolv.conf
 
 	if [ "x$new_ntp_servers" != "x" ]; then
 		echo "option ntp-servers $new_ntp_servers;" >> $DHCP6S_DSN

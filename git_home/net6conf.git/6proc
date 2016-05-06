@@ -22,7 +22,7 @@ start ()
 		# make WAN interface send NS packets
 		echo 0 > /proc/sys/net/ipv6/neigh/${WAN}/not_send_neighbor_solicitation
 		# make LAN interface send NS packets
-		echo 0 > /proc/sys/net/ipv6/neigh/${LAN}/not_send_neighbor_solicitation
+		echo 0 > /proc/sys/net/ipv6/neigh/$bridge/not_send_neighbor_solicitation
 	fi
 }
 

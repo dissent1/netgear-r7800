@@ -154,9 +154,9 @@ static void add_smbd_global(FILE *fp)
 		p = "Workgroup";
 	fprintf(fp, "  workgroup = %s\n", p);
 
-	p = config_get("usb_deviceName");
+	p = config_get("Readyshare_name");
 	if (*p == '\0')
-		p = "R7800";
+		p = config_get("usb_deviceName");
 	fprintf(fp, "  netbios name = %s\n", p);
 
 	fprintf(fp, "  bind interfaces only = yes\n"
@@ -178,9 +178,9 @@ static void add_smbd_global(FILE *fp)
 		        "  map to guest = bad user\n"
         		
 			
-			"  domain master = no\n"
-        		"  local master = no\n"
-        		"  preferred master = no\n"
+			"  domain master = yes\n"
+        		"  local master = yes\n"
+        		"  preferred master = yes\n"
         		"  os level = 0\n"
         		"  encrypt passwords = yes\n"
         		"  passdb backend = smbpasswd\n"
@@ -556,13 +556,13 @@ static void get_device_id(struct disk_partition_info *disk)
 		if ( atoi(disk->name + 3) > 0 ){
 			snprintf(id, sizeof(disk->device_id), "%s*%s", get_usb_serial_num(disk->name), disk->name + 3);
 		} else {
-			//fprintf(stderr, "[get_device_id]: Disk %s without device id, so we'll set it to 0!\n", disk->name + 3);
-			//snprintf(id, sizeof(disk->device_id), "%s*0", get_usb_serial_num(disk->name));
+//			fprintf(stderr, "[get_device_id]: Disk %s without device id, so we'll set it to 0!\n", disk->name + 3);
+//			snprintf(id, sizeof(disk->device_id), "%s*0", get_usb_serial_num(disk->name));
 			/* After use GUI to modify sharefolder information, the partition name set to the last letter,
-                        * So follow net-cgi.
-                        */
-                       printf("[get_device_id]: set the last latter as a partition name!\n");
-                       snprintf(id, sizeof(disk->device_id), "%s*%s", get_usb_serial_num(disk->name), disk->name + 2);
+			 * So follow net-cgi. 
+			 */
+			printf("[get_device_id]: set the last latter as a partition name!\n");
+			snprintf(id, sizeof(disk->device_id), "%s*%s", get_usb_serial_num(disk->name), disk->name + 2);
 		}
 
 }
@@ -1036,7 +1036,6 @@ static void load_share_info(FILE *fp, char *diskname)
 					perror("popen");
 					return;
 				}
-				memset(result, 0, sizeof(result));
 				fgets(result, sizeof(result), fp);
 				pclose(fp);
 				printf("result:%s\n", result);

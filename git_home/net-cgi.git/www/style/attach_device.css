@@ -8,7 +8,7 @@
 .down_rate, .up_rate {width: 160px; height:60px}
 .down_rate {background: url(../image/downrate.gif); position: absolute; top: 60px; left: 170px;}
 .up_rate{ background:url(../image/uprate.gif); position: absolute; top: 60px; left: 330px;}
-.access{ width:auto; max-width:330px; height: 50px; position: absolute; top: 25px; right: 20px; }
+.access{ width:auto; height: 50px; position: absolute; top: 25px; right: 20px; }
 .access a { background-color: #702b84; color: white;}
 .access b { color: #702b84 }
 .refresh{width:280px; height: 30px; position: absolute; top: 80px; right: 300px;}

@@ -45,6 +45,7 @@ struct option prog_opt[] = {
 
 extern FILE *yyin;
 
+int sigusr1_recv_t = 0;
 char *conf_file = NULL;
 char *pname;
 int sock = -1;
@@ -61,6 +62,7 @@ void sigusr1_handler(int sig);
 void timer_handler(void *data);
 void config_interface(void);
 void kickoff_adverts(void);
+void send_advert(void);
 void stop_adverts(void);
 void version(void);
 void usage(void);
@@ -344,6 +346,11 @@ main(int argc, char *argv[])
 			/* get system time */
 			start_time = uptime();
 			sigusr1_received = 0;
+			// to avoid sending too much ra packet
+			if(start_time - sigusr1_recv_t > 20) {
+				sigusr1_recv_t = start_time;
+				send_advert();
+			}
 		}
 	}
 	
@@ -420,6 +427,30 @@ kickoff_adverts(void)
 		}
 	}
 }
+
+void
+send_advert(void)
+{
+	struct Interface *iface;
+
+	/*
+	 *	send initial advertisement and set timers
+	 */
+
+	for(iface=IfaceList; iface; iface=iface->next)
+	{
+		if( iface->UnicastOnly )
+			break;
+
+		if (!iface->AdvSendAdvert)
+			break;
+
+		/* send an initial advertisement */
+		send_ra_forall(sock, iface, NULL);
+		dlog(LOG_DEBUG, 4, "sending one RA packet as recv sigusr1");
+	}
+}
+
 
 void
 stop_adverts(void)

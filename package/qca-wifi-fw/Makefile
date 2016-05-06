@@ -49,6 +49,8 @@ define WifiFirmware
 	$(INSTALL_BIN) ./files/boardData_QCA9984_CUS239_5G_v1_001.bin $$(1)/lib/firmware/$(3)
 	$(INSTALL_BIN) ./files/boardData_QCA9984_CUS260_2G_v1_002.bin $$(1)/lib/firmware/$(3)
 	$(INSTALL_BIN) ./files/boardData_QCA9984_CUS239_5G_v1_NEW_FCC_001.bin $$(1)/lib/firmware/$(3)
+	$(INSTALL_BIN) ./files/boardData_QCA9984_CUS260_2G_v1_PR_002.bin $$(1)/lib/firmware/$(3)
+	$(INSTALL_BIN) ./files/boardData_QCA9984_CUS239_5G_v1_PR_001.bin $$(1)/lib/firmware/$(3)
 	$(INSTALL_BIN) ./files/{athwlan.bin,athwlan.codeswap.bin,utf.bin,utf.codeswap.bin} $$(1)/lib/firmware/$(3)
   endef
 

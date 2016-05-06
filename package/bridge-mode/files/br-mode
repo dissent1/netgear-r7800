@@ -1,6 +1,6 @@
 #!/bin/sh /etc/rc.common
 FIREWALL="/www/cgi-bin/firewall.sh"
-START=99
+#START=99
 
 start() {
 	if [ "$($CONFIG get bridge_mode)" = "1" ]; then
@@ -68,7 +68,7 @@ start() {
 		#ifconfig $WAN_IF down
 		
 		#brctl delif $WAN_IF $WAN_PHYNAME
-                brctl addif $BR_IF $WAN_IF
+                brctl addif br0 ethwan
 		# Attach Device
 
 		/sbin/wlan updateconf
@@ -162,7 +162,7 @@ stop() {
 	fi
 	sleep 2
 
-	brctl delif $BR_IF $WAN_IF
+	brctl delif br0 ethwan
 	#brctl addif $WAN_IF $WAN_PHYNAME
 	#ifconfig $WAN_PHYNAME up
 	#ifconfig $LAN_IF.2 up

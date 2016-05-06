@@ -144,6 +144,8 @@ bh_browser_file="Gå til backupfilen med routerindstillinger, som du tidligere h
 
 bh_back_mark="Tilbage"
 
+bh_browse_mark="Gennemse"
+
 
 //BRS_03B_haveBackupFile_fileRestore.html
 bh_settings_restoring="Gendanner routerindstillinger"
@@ -238,7 +240,7 @@ bh_same_server_wan_ip="Min IP-adresse må ikke være den samme som serveradresse
 
 //readySHARE remote strings
 remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
+ready_cloud_info="<p>ReadyCLOUD giver ekstern adgang via internettet til en USB-lagerenhed, der er sluttet til din routers USB-port. For at kunne bruge ReadyCLOUD skal du have en ReadyCLOUD-konto. Hvis du ikke har en ReadyCLOUD-konto, skal du<a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">klikke her</a> og derefter klikke på <b>Log på > Opret konto</b>. </p><p><b>Sådan konfigurerer du ReadyCLOUD</b></p><p><ol><li>Tilslut en USB-lagerenhed til din routers USB-port.</li><li>Indtast dit ReadyCLOUD-brugernavn og -adgangskode i felterne nedenfor, og klik på knappen <b>Registrer</b>. Din router og USB-enheden er registreret med ReadyCLOUD.</li><li> Gå ind på <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, klik på Log på, indtast dit ReadyCLOUD-brugernavn og -adgangskode, og klik på knappen <b>Log på</b>.</li></ol></p><p>      Du kan også bruge ReadyCLOUD-appen til at oprette en sikker forbindelse fra din computer eller mobilenhed til routerens USB-lagerenhed.<br>      <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">Klik her</a> for at downloade ReadyCLOUD-appen.</p>"
 ready_share_info1="Funktionen ReadySHARE Cloud giver ekstern adgang via Internettet til en USB-lagringsenhed, der er sluttet til din routers USB-port."
 how_setup_ready_share="Sådan konfigureres ReadySHARE Cloud"
 ready_share_step1="Trin 1: Du har behov for en ReadySHARE Cloud-konto. Hvis du ikke har en <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=enhed'>, skal du klikke her</a> for at få en."
@@ -246,7 +248,7 @@ ready_share_step2="Trin 2: På denne side skal du angive dit ReadySHARE Cloud-br
 ready_share_step3="Trin 3: Log igen på <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a> med din konto. Du bør kunne se den USB-enhed, som er sluttet til din router."
 ready_share_set_note="<b>Bemærk!</b> Uden denne klient kan du gennemse indholdet på din USB-enhed, men du kan ikke åbne filer eller foretage ændringer af dem."
 ready_share_start="Registrer din router og USB-enhed til ReadyCLOUD"
-ready_share_get_account="Hvis du ikke har en ReadySHARE Cloud-konto, skal du <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>klikke her</a> for at få en"
+ready_share_get_account="Hvis du ikke har en ReadyCLOUD-konto, skal du<a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>klikke her</a> for at få en"
 username="Brugernavn"
 key_passphrase="Adgangskode"
 register="Registrer"
@@ -254,13 +256,13 @@ register_note="<b>Bemærk: </b>Routeren opretholder en konstant forbindelse til 
 help_center="Hjælp"
 help_show_hide="Vis/skjul Hjælp"
 
-resister_user="ReadySHARE Cloud er registreret med brugeren"
-access_storage_method="Du kan følge trin 2~4 ovenfor for at få adgang til lageret overalt."
+resister_user="Denne router er registreret med følgende ReadyCLOUD-bruger:"
+access_storage_method="Nu kan du logge på<a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> med din ReadyCLOUD-konto for at få adgang til din USB-enhed overalt."
 unregister_info="Klik på<B> Fjern registrering</B> for at registrere denne router med en anden ReadyCLOUD-konto"
 unregister="Afregistrer"
 
 result_register_ok="Registreringen er udført"
-result_register_fail="Registreringen mislykkedes"
+result_register_fail="Registreringen mislykkedes. Kontroller dit brugernavn og din adgangskode, og prøv igen."
 result_unreg_ok="Afregistreringen er udført"
 result_unreg_fail="Afregistreringen mislykkedes"
 
@@ -453,11 +455,13 @@ bh_mode_illustration="Klik her for at se en illustration."
 bh_router_description="Denne tilstand giver dig mulighed for at drage fordel af NETGEAR<a href='router_function.html' target='_blank'>router-funktioner.</a> NETGEAR-routeren er konfigureret som en normal WiFi-router bag din eksisterende router eller gateway. Denne tilstand kræver, at alle enheder er tilsluttet til den nye NETGEAR-router og ikke til din eksisterende gateway."
 bh_ap_description="Denne tilstand er velegnet til nem konfiguration, hvis enhederne allerede er tilsluttet til din eksisterende router eller gateway, eller hvis du bare vil bruge denne nye NETGEAR-router til at udvide din WiFi-dækning. Visse<a href='router_function.html' target='_blank'>router-funktioner</a> er ikke tilgængelige i adgangspunkttilstand."
 bh_select_tips="Det ser ud til, at du installerer NETGEAR-routeren bag din eksisterende internetudbyders WiFi-router eller gateway. Du kan vælge at installere routeren i forskellige driftstilstande."
+bh_select_router_or_ap="Hvis du selv vil vælge en funktion, skal du vælge alternativknappen Router-tilstand eller Adgangspunkt-tilstand."
 //BRS_ap_detect_01_01.html 
 bh_current_network="Dit nuværende netværk"
 bh_help_choose_page1_str="genie har registreret, at du bruger en gateway til din internetforbindelse. Hvis du vil bruge alle af din nye routers funktioner, anbefaler NETGEAR router-tilstand. genie stiller dig et par spørgsmål for at kontrollere, at router-tilstand er passende for dig."
 //BRS_ap_detect_01_02.html
 bh_help_choose_page2_str="Bruger du i øjeblikket<a href='router_function.html' target='_blank'>avancerede funktioner</a> som f.eks. <a href='port_forwording.html' target='_blank'>viderestilling af porte</a> (undertiden kaldet porttilknytning) på din eksisterende gateway? Disse funktioner bruges normalt af avancerede brugere."
+bh_select_yes_or_no="Du skal vælge alternativknappen Ja eller Nej."
 //BRS_ap_detect_01_03.html
 bh_help_choose_page3_str1="For at router-tilstanden kan fungere korrekt, skal du tilslutte alle dine trådløse og kabelbaserede enheder til NETGEAR-routeren, bortset fra udstyr, der leveres af din internetudbyder, f.eks. en tv-modtagerboks eller trådløse telefoner tilsluttet til gatewayen."
 bh_help_choose_page3_str2="Kan du frakoble alle dine andre enheder (kablede og trådløse) fra den eksisterende gateway og derefter tilslutte dem til NETGEAR-routeren?"
@@ -492,7 +496,7 @@ bh_learn_more_title="Router vs. adgangspunkt"
 bh_learn_more_str_1="genie registrerede, at du forsøger at installere din nye NETGEAR-router bag en anden gateway, f.eks. DSL- eller kabel-gateway fra din internetudbyder. Normalt leverer en gateway også funktionerne WiFi eller Voice over Internet (VoIP). Du kan installere din NETGEAR-router i to forskellige driftstilstande."
 bh_learn_more_str_2="Denne tilstand konfigurerer din nye NETGEAR-router som en normal WiFi-router bag din gateway og opretter et separat WiFi-netværk bag din gateway. For at få fuldt udbytte af disse avancerede routerfunktioner anbefaler NETGEAR, at du bruger router-tilstand. I router-tilstand er den eneste enhed, der kan være tilsluttet til din eksisterende gateway, din nye NETGEAR-router. Du skal tilslutte alle dine enheder til den nye NETGEAR-router. Hvis din eksisterende gateway har en WiFi-funktion, skal du deaktivere den."
 bh_learn_more_str_3="<p><b>Access Point</b></p><p>If you want to use the new router to get better WiFi performance beyond what you have with your existing gateway, access point mode is the easiest way to do that. NETGEAR recommends that you disable the WiFi function on your existing gateway, if it has WiFi functionality. With this mode, you can connect wired devices to the gateway and connect wired and WiFi devices to your new NETGEAR router. In this mode, by default, the new router's IP address is assigned by your gateway dynamically and is unlikely to be 192.168.1.1. However, you can still use the URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> to access the router's management GUI from a device connected to the router. Some <a href='router_function.html' target='_blank'>router functions</a> are not available in this mode, and you must use router mode if you want to use those functions.</p>"
-bh_learn_more_str_4="I denne tilstand tildeles den nye routers IP-adresse som standard dynamisk af din gateway og vil næppe være 192.168.1.1. Du kan imidlertid stadig bruge URL <a href='www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> til at få adgang til routerens administrationsbrugerflade fra en enhed, der er tilsluttet til routeren. Visse<a href='router_function.html' target='_blank'>router-funktioner</a> er ikke tilgængelige i denne tilstand, og du skal bruge router-tilstand, hvis du vil bruge disse funktioner."
+bh_learn_more_str_4="I denne tilstand tildeles den nye routers IP-adresse som standard dynamisk af din gateway og vil næppe være 192.168.1.1. Du kan imidlertid stadig bruge URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> til at få adgang til routerens administrationsbrugerflade fra en enhed, der er tilsluttet til routeren. Visse<a href='router_function.html' target='_blank'>router-funktioner</a> er ikke tilgængelige i denne tilstand, og du skal bruge router-tilstand, hvis du vil bruge disse funktioner."
 //port_forwording.html
 bh_port_forwarding="Videresendelse fra port"
 bh_port_forwarding_content="Viderestilling af porte (kaldes undertiden porttilknytning) giver adgang til dit hjemmenetværk via internettet. Hvis du har en enhed som f.eks. en webserver i dit hjem, som andre kan få fjernadgang til via et værtsnavn, som du har registreret (typisk via en dynamisk DNS-service), eller ved hjælp af en IP-adresse, har du sikkert funktionen til viderestilling af porte aktiveret. Hvis du aldrig har hørt om denne funktion, selvom du har fjernadgang til en enhed i hjemmet, bruger du højst sandsynligt ikke denne funktion."
@@ -501,7 +505,7 @@ bh_router_function="Router-funktioner"
 bh_rouer_function_str_1="<p>Følgende router-funktioner er ikke tilgængelige, hvis du vælger adgangspunkttilstand:</p><p><ul><li style='height:20px' class='textRow centerTd2'>Gæstenetværk</li><li style='height:20px' class='textRow centerTd2'>Forældrekontrol</li><li style='height:20px' class='textRow centerTd2'>QoS</li><li style='height:20px' class='textRow centerTd2'>Adgangskontrol</li><li style='height:20px' class='textRow centerTd2'>Trafikmåler</li><li style='height:20px' class='textRow centerTd2'>Bloker sider</li><li style='height:20px' class='textRow centerTd2'>Bloker tjenester</li><li style='height:20px' class='textRow centerTd2'>Statisk rute</li></ul></p>"
 bh_router_adv_function="Avancerede funktioner"
 bh_router_function_str_2="<p>Følgende router-funktioner er kun tilgængelige i router-tilstand, men de kræver konfiguration på din eksisterende gateway:</p><p><ul><li style='height:20px' class='textRow centerTd2'>Viderestilling af porte</li><li style='height:20px' class='textRow centerTd2'>Aktivering af porte</li><li style='height:20px' class='textRow centerTd2'>IPv6</li><li style='height:20px' class='textRow centerTd2'>UPnP/IGD</li><li style='height:20px' class='textRow centerTd2'>Fjernadministration</li><li style='height:20px' class='textRow centerTd2'>VPN-terminering</li></ul></p>"
-warning_info="Du skal angive, om du kan deaktivere gatewayens WiFi."
+bh_warning_info="Du skal angive, om du kan deaktivere gatewayens WiFi."
 
 bh_pppoe_identi="angivelse af forbindelse"
 bh_pppoe_online="T-Online-nummer"
@@ -583,3 +587,6 @@ bh_dsl_bridge_con="(If select Bridge Mode,the LAN4 port will be configured as IP
 bh_dsl_bridge_lan4="Enable IPTV on LAN4"
 bh_dsl_bridge_lan3="Enable IPTV on LAN3"
 bh_dsl_bridge_lan2="Enable IPTV on LAN2"
+bh_ppp_readycloud_query="Hvis du registrerer din router til ReadyCLOUD, skifter routerens internetforbindelsestilstand fra Ring op efter anmodning til Altid aktiveret. Denne ændring er påkrævet, for at ReadyCLOUD kan få ekstern adgang adgang til den tilsluttede USB-lagerenhed. Ønsker du at fortsætte?"
+bh_ppp_readycloud_warning_1="Hvis du registrerer din router til ReadyCLOUD, skal du ændre routerens internetforbindelsestilstand fra Opret forbindelse manuelt til Altid aktiveret, for at ReadyCLOUD kan få ekstern adgang til den tilsluttede USB-lagerenhed. Gå til siden Konfiguration af internet for at foretage denne ændring."
+bh_ppp_readycloud_warning_2="Din router eller gateway er ikke forbundet til internettet. Du skal bruge en internetforbindelse for at kunne registrere din router eller gateway til ReadyCLOUD. Forbind din router eller gateway til internettet, og prøv igen."

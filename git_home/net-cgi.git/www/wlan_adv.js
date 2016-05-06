@@ -179,11 +179,15 @@ function checkadv(form)
 		form.hid_wla_beamforming.value = "1";
 	else
 		form.hid_wla_beamforming.value = "0";
-	form.hid_wla_mu_mimo.value = form.enable_mu.checked? "1": "0";	
 	if(form.enable_ht160.checked == true)
 		form.hid_wla_ht160.value = "1";
 	else
 		form.hid_wla_ht160.value = "0";
+	if(form.enable_atf.checked == true)
+		form.hid_enable_atf.value = "1";
+	else
+		form.hid_enable_atf.value = "0";
+
 	if ( old_endis_wl_radio =="0" && form.wl_enable_router.value == "0")
 		form.wds_change_ip.value="still_lanip"
 	else if( old_endis_wl_radio =="0" && form.wl_enable_router.value == "1" )

@@ -144,6 +144,8 @@ bh_browser_file="Etsi aiemmin tallentamasi reitittimen asetusten varmuuskopiotie
 
 bh_back_mark="Edellinen"
 
+bh_browse_mark="Selaa"
+
 
 //BRS_03B_haveBackupFile_fileRestore.html
 bh_settings_restoring="Palautetaan reitittimen asetukset"
@@ -238,7 +240,7 @@ bh_same_server_wan_ip="IP-osoite ei saa olla sama kuin palvelimen osoite!"
 
 //readySHARE remote strings
 remote_share_head="ReadyCLOUD"
-ready_cloud_info="<p>ReadyCLOUD gives you remote access over the Internet to a USB storage device that is connected to your router's USB port. To use ReadyCLOUD, you must have a ReadyCLOUD account. If you do not have a ReadyCLOUD account, <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>click here</a>, then click <b>Sign In > Create Account</b>. </p><p><b>To set up ReadyCLOUD</b></p><p><ol><li>Connect a USB storage device to your router's USB port.</li><li>Enter your ReadyCLOUD user name and password in the fields below and click the <b>Register</b> button. Your router and the USB device are registered with ReadyCLOUD.</li><li> Visit <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a>, click Sign In, enter your ReadyCLOUD user name and password, and click the <b>Sign In</b> button.</li></ol></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can also use the ReadyCLOUD app to make a secure connection between your computer or mobile device and the router's USB storage device.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='linktype' target='_blank' href='http://readycloud.netgear.com/client/cloud_download.html'>Click here</a> to download the ReadyCLOUD app.</p>"
+ready_cloud_info="<p>ReadyCLOUD-toiminnon avulla voidaan käyttää reitittimen USB-porttiin liitettyä USB-tallennuslaitetta Internetin kautta. ReadyCLOUD-toiminnon käyttäminen edellyttää ReadyCLOUD-tiliä. Jos sinulla ei ole ReadyCLOUD-tiliä, <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/clien/index.html#page=access\">napsauta tätä</a> ja valitse <b>Kirjaudu sisään > Luo tili</b>. </p><p><b>ReadyCLOUD-toiminnon määrittäminen</b></p><p><ol><li>Liitä USB-tallennusväline reitittimen USB-porttiin.</li><li>Kirjoita ReadyCLOUD-käyttäjätunnuksesi ja -salasanasi seuraaviin kenttiin ja napsauta <b>Rekisteröidy</b>-painiketta. Reititin ja USB-laite on rekisteröity ReadyCLOUD-palveluun.</li><li> Siirry osoitteeseen <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com\">http://readycloud.netgear.com</a>, valitse Kirjaudu sisään, kirjoita ReadyCLOUD-käyttäjätunnuksesi ja -salasanasi ja napsauta <b>Kirjaudu sisään</b> -painiketta.</li></ol></p><p>      ReadyCLOUD-sovelluksella voit myös muodostaa suojatun yhteyden tietokoneen tai mobiililaitteen ja reitittimen USB-tallennusvälineen välille.<br>      Lataa ReadyCLOUD-sovellus <a class=\"linktype\" target=\"_blank\" href=\"http://readycloud.netgear.com/client/cloud_download.html\">napsauttamalla tätä</a>.</p>"
 ready_share_info1="ReadySHARE Cloud -toiminnon avulla voidaan käyttää reitittimen USB-porttiin liitettyä USB-tallennuslaitetta Internetin kautta."
 how_setup_ready_share="ReadySHARE Cloudn käyttöönotto"
 ready_share_step1="Vaihe 1: Tarvitset ReadySHARE Cloud -tilin. Jos sinulla ei ole tiliä, siirry tilin luontiin <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>napsauttamalla tätä</a>."
@@ -246,7 +248,7 @@ ready_share_step2="Vaihe 2: rekisteröi tällä sivulla reitittimesi ja siihen l
 ready_share_step3="Vaihe 3: Kirjaudu uudelleen sisään sivustoon <a class='linktype' target='_blank' href='http://readyshare.netgear.com/'>http://readyshare.netgear.com/</a>. Sivulla pitäisi näkyä reitittimeen liitetty USB-laite."
 ready_share_set_note="<b>Huomautus:</b> ilman tätä sovellusta voit selata USB-laitteen sisältöä, mutta et voi avata tai muokata tiedostoja."
 ready_share_start="Rekisteröi reitittimesi ja USB-laitteesi ReadyCLOUD-palveluun"
-ready_share_get_account="Jos sinulla ei ole ReadySHARE Cloud -tiliä, hanki se <a class='linktype' target='_blank' href='https://readyshare.netgear.com/site/index.jsp?pid=4&src=device'>napsauttamalla tätä</a>"
+ready_share_get_account="Jos sinulla ei vielä ole ReadyCLOUD-tiliä, hanki sellainen <a class='linktype' target='_blank' href='http://readycloud.netgear.com/clien/index.html#page=access'>napsauttamalla tätä</a>"
 username="Käyttäjätunnus"
 key_passphrase="Salasana"
 register="Rekisteröi"
@@ -254,13 +256,13 @@ register_note="<b>Huomautus:</b> reititin säilyttää yhteyden ReadyCLOUDiin si
 help_center="Ohjekeskus"
 help_show_hide="Näytä/piilota ohjekeskus"
 
-resister_user="ReadySHARE Cloud on rekisteröity käyttäjälle"
-access_storage_method="Noudattamalla vaiheiden 2 - 4 ohjeita voit käyttää tallennustilaa mistä tahansa."
+resister_user="Tämä reititin on rekisteröity seuraavalle ReadyCLOUD-käyttäjälle:"
+access_storage_method="Nyt voit kirjautua sisään osoitteeseen <a class='linktype' target='_blank' href='http://readycloud.netgear.com'>http://readycloud.netgear.com</a> ReadyCLOUD-tililläsi ja käyttää USB-laitettasi mistä tahansa."
 unregister_info="Valitse <B>Poista rekisteröinti</B>, jos haluat rekisteröidä tämän reitittimen eri ReadyCLOUD-tiliin"
 unregister="Poista rekisteröinti"
 
 result_register_ok="Rekisteröinti onnistui"
-result_register_fail="Rekisteröinti epäonnistui"
+result_register_fail="Rekisteröinti epäonnistui. Tarkista käyttäjätunnuksesi ja salasanasi ja yritä uudelleen."
 result_unreg_ok="Rekisteröinnin poisto onnistui"
 result_unreg_fail="Rekisteröinnin poisto epäonnistui"
 
@@ -453,11 +455,13 @@ bh_mode_illustration="Näytä kuva napsauttamalla tätä."
 bh_router_description="Tässä tilassa voit hyödyntää NETGEAR<a href='router_function.html' target='_blank'>-reitittimen toimintoja.</a> NETGEAR-reititin on määritetty tavalliseksi WiFi-reitittimeksi nykyisen reitittimen tai yhdyskäytävän taakse. Tämä tila edellyttää, että kaikki laitteet ovat yhteydessä uuteen NETGEAR-reitittimeen eivätkä nykyiseen yhdyskäytävään."
 bh_ap_description="Tämä tila sopii helppoon asennukseen, jos laitteet ovat jo yhteydessä nykyiseen reitittimeen tai yhdyskäytävään tai jos haluat vain laajentaa WiFi-kantamaa tällä uudella NETGEAR-reitittimellä. Kaikki <a href='router_function.html' target='_blank'>reitittimen toiminnot</a> eivät ole käytettävissä tukiasematilassa."
 bh_select_tips="Vaikuttaa siltä, että asennat NETGEAR-reititintä nykyisen Internet-palveluntarjoajasi WiFi-reitittimen tai -yhdyskäytävän taakse. Voit asentaa reitittimen eri käyttötiloissa."
+bh_select_router_or_ap="Jos haluat valita tilan itse, sinun on valittava Reititintila- tai Tukiasematila-valintanappi."
 //BRS_ap_detect_01_01.html 
 bh_current_network="Nykyinen verkko"
 bh_help_choose_page1_str="genie havaitsi, että muodostat Internet-yhteyden yhdyskäytävällä. Jos haluat käyttää kaikkia uuden reitittimen toimintoja, NETGEAR suosittelee reititintilaa. genien on kysyttävä muutama kysymys ja vahvistettava, että reititintila on hyvä valinta."
 //BRS_ap_detect_01_02.html
 bh_help_choose_page2_str="Käytätkö tällä hetkellä <a href='router_function.html' target='_blank'>lisätoimintoja</a>, kuten <a href='port_forwording.html' target='_blank'>portin välitystä</a> (portin kartoitusta) nykyisessä yhdyskäytävässä? Näitä toimintoja käyttävät tavallisesti kokeneet käyttäjät."
+bh_select_yes_or_no="Sinun on valittava Kyllä- tai Ei-valintanappi."
 //BRS_ap_detect_01_03.html
 bh_help_choose_page3_str1="Jotta reititintila toimii oikein, NETGEAR-reitittimeen on liitettävä kaikki WiFi- ja langalliset laitteet, paitsi Internet-palveluntarjoajalta saadut laitteet, kuten yhdyskäytävään liitetty digisovitin tai langaton puhelin."
 bh_help_choose_page3_str2="Pystytkö irrottamaan kaikki muut laitteet (langalliset ja langattomat) nykyisestä yhdyskäytävästä ja liittämään ne NETGEAR-reitittimeen?"
@@ -492,7 +496,7 @@ bh_learn_more_title="Reititin vs. tukiasema"
 bh_learn_more_str_1="genie havaitsi, että yrität asentaa uutta NETGEAR-reititintä toisen yhdyskäytävän, esimerkiksi Internet-palveluntarjoajan DSL- tai kaapeliyhdyskäytävän, taakse. Yhdyskäytävässä on tavallisesti myös WiFi- tai Voice over Internet (VoIP) -toiminto. Voit asentaa NETGEAR-reitittimen kahdessa eri käyttötilassa."
 bh_learn_more_str_2="Tämä tila määrittää uuden NETGEAR-reitittimen tavalliseksi WiFi-reitittimeksi yhdyskäytävän taakse ja luo sinne erillisen WiFi-verkon. Saat täyden hyödyn irti reitittimen lisätoiminnoista, jos käytät NETGEARin suosittelemaa reititintilaa. Reititintilassa ainoa laite, joka voi muodostaa yhteyden nykyiseen yhdyskäytävään, on uusi NETGEAR-reititin. Kaikki laitteet on liitettävä uuteen NETGEAR-reitittimeen. Jos nykyisessä yhdyskäytävässä on WiFi-toiminto, poista se käytöstä."
 bh_learn_more_str_3="<p><b>Access Point</b></p><p>If you want to use the new router to get better WiFi performance beyond what you have with your existing gateway, access point mode is the easiest way to do that. NETGEAR recommends that you disable the WiFi function on your existing gateway, if it has WiFi functionality. With this mode, you can connect wired devices to the gateway and connect wired and WiFi devices to your new NETGEAR router. In this mode, by default, the new router's IP address is assigned by your gateway dynamically and is unlikely to be 192.168.1.1. However, you can still use the URL <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a> to access the router's management GUI from a device connected to the router. Some <a href='router_function.html' target='_blank'>router functions</a> are not available in this mode, and you must use router mode if you want to use those functions.</p>"
-bh_learn_more_str_4="Tässä tilassa yhdyskäytävä määrittää uuden reitittimen IP-osoitteen dynaamisesti, eikä se luultavasti ole 192.168.1.1. Voit silti edelleen hallita reititintä siihen liitetystä laitteesta osoitteessa <a href='www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a>. Kaikki <a href='router_function.html' target='_blank'>reitittimen toiminnot</a> eivät ole käytettävissä tässä tilassa. Niitä on käytettävä reititintilassa."
+bh_learn_more_str_4="Tässä tilassa yhdyskäytävä määrittää uuden reitittimen IP-osoitteen dynaamisesti, eikä se luultavasti ole 192.168.1.1. Voit silti edelleen hallita reititintä siihen liitetystä laitteesta osoitteessa <a href='http://www.routerlogin.net' target='_blank'>http://www.routerlogin.net</a>. Kaikki <a href='router_function.html' target='_blank'>reitittimen toiminnot</a> eivät ole käytettävissä tässä tilassa. Niitä on käytettävä reititintilassa."
 //port_forwording.html
 bh_port_forwarding="Portin välitys"
 bh_port_forwarding_content="Portin välitys (tai portin kartoitus) sallii kotiverkon käytön Internetin kautta. Jos kotonasi on verkkopalvelin, jota toiset etäkäyttävät rekisteröimäsi isäntänimen (tavallisesti dynaamisen DNS-palvelun kautta) tai IP-osoitteen avulla, portin välitys on luultavasti jo käytössä. Jos et ole koskaan kuullutkaan tästä toiminnosta, vaikka voit etäkäyttää kotona olevaa laitetta, tämä toiminto ei luultavasti ole käytössä."
@@ -501,7 +505,7 @@ bh_router_function="Reitittimen toiminnot"
 bh_rouer_function_str_1="<p>Seuraavat reitittimen toiminnot eivät ole käytettävissä tukiasematilassa:</p><p><ul><li style='height:20px' class='textRow centerTd2'>Vierasverkko</li><li style='height:20px' class='textRow centerTd2'>Lapsilukko</li><li style='height:20px' class='textRow centerTd2'>QoS</li><li style='height:20px' class='textRow centerTd2'>Käytön valvonta</li><li style='height:20px' class='textRow centerTd2'>Liikennemittari</li><li style='height:20px' class='textRow centerTd2'>Estä sivustot</li><li style='height:20px' class='textRow centerTd2'>Estä palvelut</li><li style='height:20px' class='textRow centerTd2'>Kiinteä reitti</li></ul></p>"
 bh_router_adv_function="Lisätoiminnot"
 bh_router_function_str_2="<p>Seuraavat reitittimen toiminnot ovat käytettävissä vain reititintilassa, mutta ne edellyttävät nykyisen yhdyskäytävän määrittämistä:</p><p><ul><li style='height:20px' class='textRow centerTd2'>Portin välitys</li><li style='height:20px' class='textRow centerTd2'>Portin laukaisu</li><li style='height:20px' class='textRow centerTd2'>IPv6</li><li style='height:20px' class='textRow centerTd2'>UPnP/IGD</li><li style='height:20px' class='textRow centerTd2'>Etähallinta</li><li style='height:20px' class='textRow centerTd2'>VPN-lopetus</li></ul></p>"
-warning_info="Määritä, voitko poistaa yhdyskäytävän WiFi-yhteyden käytöstä."
+bh_warning_info="Määritä, voitko poistaa yhdyskäytävän WiFi-yhteyden käytöstä."
 
 bh_pppoe_identi="yhteydenilmaisin"
 bh_pppoe_online="T-Online-numero"
@@ -583,3 +587,6 @@ bh_dsl_bridge_con="(If select Bridge Mode,the LAN4 port will be configured as IP
 bh_dsl_bridge_lan4="Enable IPTV on LAN4"
 bh_dsl_bridge_lan3="Enable IPTV on LAN3"
 bh_dsl_bridge_lan2="Enable IPTV on LAN2"
+bh_ppp_readycloud_query="Jos rekisteröit reitittimesi ReadyCLOUD-palveluun, reitittimesi Internet-yhteys vaihtuu Dial on Demand -tilasta to Aina käytössä -tilaan. Tämä muutos on tarpeen, jotta ReadyCLOUD voi etäkäyttää liitettyä USB-tallennusvälinettä. Haluatko jatkaa?"
+bh_ppp_readycloud_warning_1="Jos rekisteröit reitittimesi ReadyCLOUD-palveluun, reitittimesi Internet-yhteystila on vaihdettava Manuaalinen yhteyden muodostus -tilasta Aina käytössä -tilaan, jotta ReadyCLOUD voi etäkäyttää liitettyä USB-tallennusvälinettä. Tee muutos Internet-asetukset-sivulla."
+bh_ppp_readycloud_warning_2="Reitittimellä tai yhdyskäytävällä ei ole Internet-yhteyttä. Reitittimen tai yhdyskäytävän rekisteröiminen ReadyCLOUD-palveluun vaatii Internet-yhteyden. Muodosta reitittimen tai yhdyskäytävän Internet-yhteys ja yritä uudelleen."

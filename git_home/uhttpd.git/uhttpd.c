@@ -763,8 +763,19 @@ void fw_checking()
 	}
 
 	/*1. Check after each power cycle */
-	fprintf(stderr, "AUTO FW CHECK: power cycle\n");
-	system("net-cgi -c");
+    for(int chf=0;chf<4;chf++) //for bug58012 Auto upgrade detect when DUT boot up did not work 
+    {
+        FILE *fw_fp=fopen("/tmp/fwcheck_status","r");
+        if(fw_fp!= NULL )
+        {
+            fprintf(stderr, "AUTO FW CHECK: power cycle\n");
+            system("net-cgi -c");
+            fclose(fw_fp);
+            unlink("/tmp/fwcheck_status");
+            break;
+        }
+        sleep(15);
+    }
 
 
 	/* 2 if continuing to be powered on, check once every week at 10:00 pm + 

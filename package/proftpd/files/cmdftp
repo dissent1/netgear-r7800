@@ -4,6 +4,7 @@ config=/bin/config
 PROFTPD_CONF=/tmp/proftpd.conf
 TMP_DATA_XYZ=/tmp/tmp_data_xyz
 proftpd_tmpfile=/tmp/tmp_ftp_file
+proftpd_anony=/tmp/ftp_anony.conf
 TMP_DEVICE_NAME=/tmp/tmp_device_name_xyz
 TMP_LOCK_FILE=/tmp/tmp_lock_abc123xyz
 
@@ -150,6 +151,58 @@ EOF
 EOF
 }
 
+print_share_anonymous_config()
+{
+	cat <<EOF >>$proftpd_anony
+	<Directory /tmp/ftpadmin/shares/$1>
+		<Limit DIRS>
+			DenyAll
+EOF
+	append_display_allowuser $2 $3 >> $proftpd_anony
+	cat <<EOF >> $proftpd_anony
+		</Limit>
+		<Limit Read>
+			DenyAll
+EOF
+	append_read_allowuser $2 $3 >> $proftpd_anony
+	cat <<EOF >> $proftpd_anony
+		</Limit>
+		<Limit Write>
+			DenyAll
+EOF
+	append_write_allowuser $2 $3 >> $proftpd_anony
+	cat <<EOF >> $proftpd_anony
+		</Limit>
+	</Directory>
+EOF
+	## if it has a folder /test, create a network folder in GUI,folder /test,
+	## Share name: share_test, and it has admin:admin access. And / has 
+	## all-no-password. use anonymous to login /. we should can not access to /test/.
+	if [ "x$2" != "x" -a "$2" != "0" -a "$4" != "/" ];then
+		cat <<EOF >>$proftpd_anony
+	<Directory /tmp/ftpadmin/shares/$5$4>
+		<Limit DIRS>
+			DenyAll
+EOF
+	append_display_allowuser $2 $3 >> $proftpd_anony
+	cat <<EOF >> $proftpd_anony
+		</Limit>
+		<Limit Read>
+			DenyAll
+EOF
+	append_read_allowuser $2 $3 >> $proftpd_anony
+	cat <<EOF >> $proftpd_anony
+		</Limit>
+		<Limit Write>
+			DenyAll
+EOF
+	 append_write_allowuser $2 $3 >> $proftpd_anony
+	 cat <<EOF >> $proftpd_anony
+		</Limit>
+	</Directory>
+EOF
+	fi
+}
 
 print_common_head()
 {
@@ -182,6 +235,7 @@ print_common_tail()
 {
 	cat <<EOF
 </Global>
+Include $proftpd_anony
 EOF
 }
 
@@ -578,6 +632,7 @@ scan_disk_entries()
 scan_sharefoler_in_this_disk() #$1: dev $2: vendor $3: volume $4:label $5:disk_id
 {
         local j=0
+        local root_share=""
 
        # sharename_list="" #recode all sharename
         while true
@@ -599,6 +654,7 @@ scan_sharefoler_in_this_disk() #$1: dev $2: vendor $3: volume $4:label $5:disk_i
 
                    let access=$readable+$writable
 
+		echo "$volume = $3 -a $vendor = $2 -a $serial_num _ $partition_num = $5" > /dev/console
 	   	if [ "$volume" = "$3" -a "$vendor" = "$2" -a "$serial_num"_"$partition_num" = "$5" ]; then
 	                #check this sharename have used or not? if have used, add (label) at the end of sharename
 			#'*' is a special signal, we should not use it to filter
@@ -610,7 +666,11 @@ scan_sharefoler_in_this_disk() #$1: dev $2: vendor $3: volume $4:label $5:disk_i
 	                sharename_list="$sharename_list*$sharename*"
 	
 	                if [ "x$1" != "x" ];then
+	                	if [ "$relative_path" = "/" ];then
+	                		root_share="$sharename"
+	                	fi
 	                        print_onesharefolder_config "$sharename" "$access" "$j"
+				print_share_anonymous_config "$sharename" "$access" "$j" "$relative_path" "$root_share"
 	                        #map_usb_to_ftp "$1" "$relative_path" "$sharename" "$access" "$j"
 				mount1 "$1" "$relative_path" "$sharename" ftpadmin 0 
 	                fi
@@ -651,21 +711,27 @@ generate_proftpd_conf()
 
 	print_common_head >$proftpd_tmpfile
 
-	check_all_folder_limit
-	if [ $? = 0 ]; then
-	cat << EOF >>$proftpd_tmpfile
-	<Anonymous /tmp/ftpadmin/>
-	User admin
-	UserAlias anonymous admin
-	RequireValidShell off
-	</Anonymous>
-	<Anonymous /tmp/ftpadmin/>
-	User guest
-	UserAlias anonymous guest
-	RequireValidShell off
-	</Anonymous>
+#	check_all_folder_limit
+#	if [ $? = 0 ]; then
+#	cat << EOF >>$proftpd_tmpfile
+#	<Anonymous /tmp/ftpadmin/>
+#	User admin
+#	UserAlias anonymous admin
+#	RequireValidShell off
+#	</Anonymous>
+#	<Anonymous /tmp/ftpadmin/>
+#	User guest
+#	UserAlias anonymous guest
+#	RequireValidShell off
+#	</Anonymous>
+#EOF
+	cat << EOF >$proftpd_anony
+<Anonymous /tmp/ftpadmin>
+User guest
+UserAlias anonymous guest
+RequireValidShell off
 EOF
-       fi
+#       fi
 	
 	# everytime before re-mount,umount the already folder,delete it clearly...
 	umount_all "ftpadmin"
@@ -674,6 +740,9 @@ EOF
 	#find all usb disks	
 	scan_disk_entries
 
+	cat << EOF >> $proftpd_anony
+</Anonymous>
+EOF
 	print_common_tail >>$proftpd_tmpfile
 	
 	if [ "$($config get ap_mode)" = "1" -a "$($config get usb_enableFTP)" = "1" ]; then

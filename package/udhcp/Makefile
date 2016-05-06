@@ -70,6 +70,8 @@ define Package/udhcp/install
 	install -d -m0755 $(1)/usr/share/udhcpc
 	install -m0755 $(PKG_BUILD_DIR)/default.script $(1)/usr/share/udhcpc/
 	install -m0755 $(PKG_BUILD_DIR)/default.script.ap $(1)/usr/share/udhcpc/
+	install -d -m0755 $(1)/usr/share/zcip
+	install -m0755 ./files/zcip.script $(1)/usr/share/zcip/
 endef
 
 $(eval $(call BuildPackage,udhcp))
