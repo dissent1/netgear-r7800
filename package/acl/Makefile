@@ -7,7 +7,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=acl
 PKG_RELEASE:=1
 
-PKG_GIT_TREEISH:=dni-acl-dni3
+PKG_GIT_TREEISH:=dni-acl-dni7
 
 PKG_BUILD_DEPENDS:=datalib
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)

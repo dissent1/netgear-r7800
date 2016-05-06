@@ -560,8 +560,10 @@ int update_arp_table(uint8 *mac, struct in_addr ip, int isrepl)
 	for (u = arp_tbl[i]; u && memcmp(u->mac, mac, ETH_ALEN); u = u->next);
 	if (u) {
 		if (*host) {
-			strncpy(u->host, host, MAX_HOSTNAME_LEN);
-			acl_update_name(u->mac, host);
+			if(strncmp(u->host, host, strlen(host)-1)){
+				strncpy(u->host, host, MAX_HOSTNAME_LEN);
+				acl_update_name(u->mac, host);
+ 			}
 		}
 		u->ip = ip;              /* The IP may be changed for DHCP      */
 		u->active = 1;
@@ -594,9 +596,11 @@ static void update_name(struct in_addr ip, char *host)
 	for (i = 0; i < (NEIGH_HASHMASK + 1); i++) {
 		for (u = arp_tbl[i]; u; u = u->next)
 			if (u->ip.s_addr == ip.s_addr) {
-				strncpy(u->host, host, MAX_HOSTNAME_LEN);
-				acl_update_name(u->mac, host);
-				return;
+				if(strncmp(u->host, host, strlen(host)-1)){
+					strncpy(u->host, host, MAX_HOSTNAME_LEN);
+					acl_update_name(u->mac, host);
+					return;
+				}
 			}
 	}
 }
@@ -614,8 +618,10 @@ void update_bios_name(uint8 *mac, char *host, struct in_addr ip)
 		return;
 	}
 	
-	strncpy(u->host, host, MAX_HOSTNAME_LEN);
-	acl_update_name(u->mac, host);
+	if(strncmp(u->host, host, strlen(host)-1)){
+		strncpy(u->host, host, MAX_HOSTNAME_LEN);
+		acl_update_name(u->mac, host);
+	}
 }
 
 #ifdef SUPPORT_STREAMBOOST
@@ -642,8 +648,10 @@ void update_streamboost_info(int state, uint8 *mac, struct in_addr ip, char *nam
 	}
 
 	if (strcmp(name, "null") != 0) {
-		strncpy(u->host, name, MAX_HOSTNAME_LEN);
-		acl_update_name(u->mac, name); /* should update acl name here ? */
+		if(strncmp(u->host, name, strlen(name)-1)){
+			strncpy(u->host, name, MAX_HOSTNAME_LEN);
+			acl_update_name(u->mac, name); /* should update acl name here ? */
+		}
 	}
 	u->type = type;
 	u->priority = priority;
