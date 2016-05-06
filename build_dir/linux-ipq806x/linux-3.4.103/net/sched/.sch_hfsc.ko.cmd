@@ -1,1 +1,0 @@
-cmd_net/sched/sch_hfsc.ko := arm-openwrt-linux-uclibcgnueabi-ld -EL -r  -T /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/linux-3.4.103/sourcecode/scripts/module-common.lds --build-id  -o net/sched/sch_hfsc.ko net/sched/sch_hfsc.o net/sched/sch_hfsc.mod.o

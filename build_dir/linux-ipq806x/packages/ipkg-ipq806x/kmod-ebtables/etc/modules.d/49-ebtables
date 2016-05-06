@@ -1,7 +1,0 @@
-ebtable_nat
-ebt_802_3
-ebt_among
-ebt_limit
-ebt_pkttype
-ebt_stp
-ebt_vlan

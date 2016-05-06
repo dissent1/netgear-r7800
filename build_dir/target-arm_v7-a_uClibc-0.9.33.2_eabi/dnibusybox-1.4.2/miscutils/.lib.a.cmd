@@ -1,1 +1,0 @@
-cmd_miscutils/lib.a := rm -f miscutils/lib.a; arm-openwrt-linux-uclibcgnueabi-ar  rcs miscutils/lib.a miscutils/crond.o miscutils/crontab.o miscutils/hdparm.o miscutils/less.o miscutils/lock.o miscutils/mdmm.o miscutils/strings.o miscutils/time.o miscutils/watchdog.o

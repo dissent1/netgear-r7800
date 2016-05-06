@@ -1,7 +1,0 @@
-/usr/sbin/system
-/etc/scripts/firewall/ntgrapi.rule
-/usr/sbin/firewall
-/usr/sbin/ntgr_integration_api
-/usr/sbin/internet
-/usr/sbin/api
-/usr/sbin/nvconfig

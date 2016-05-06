@@ -1,1 +1,0 @@
-cmd_util-linux/lib.a := rm -f util-linux/lib.a; arm-openwrt-linux-uclibcgnueabi-ar  rcs util-linux/lib.a util-linux/dmesg.o util-linux/getopt.o util-linux/hexdump.o util-linux/hwclock.o util-linux/mount.o util-linux/pivot_root.o util-linux/rdate.o util-linux/switch_root.o util-linux/umount.o

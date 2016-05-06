@@ -1,3 +1,0 @@
-/etc/hotplug.d/iface/35-guest_dhcp
-/etc/dhcp.guest.conf
-/etc/init.d/guest_dhcp

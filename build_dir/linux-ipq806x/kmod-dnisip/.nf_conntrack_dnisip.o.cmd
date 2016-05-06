@@ -1,1 +1,0 @@
-cmd_/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/kmod-dnisip/nf_conntrack_dnisip.o := arm-openwrt-linux-uclibcgnueabi-ld -EL    -r -o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/kmod-dnisip/nf_conntrack_dnisip.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/kmod-dnisip/nf_conntrack_sip.o 

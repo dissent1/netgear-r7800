@@ -1,3 +1,0 @@
-netddp_sendto.lo: netddp_sendto.c ../../config.h
-
-../../config.h:

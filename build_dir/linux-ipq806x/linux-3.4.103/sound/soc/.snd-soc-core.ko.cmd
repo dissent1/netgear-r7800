@@ -1,1 +1,0 @@
-cmd_sound/soc/snd-soc-core.ko := arm-openwrt-linux-uclibcgnueabi-ld -EL -r  -T /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/linux-3.4.103/sourcecode/scripts/module-common.lds --build-id  -o sound/soc/snd-soc-core.ko sound/soc/snd-soc-core.o sound/soc/snd-soc-core.mod.o

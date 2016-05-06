@@ -1,1 +1,0 @@
-cmd_arch/arm/boot/uImage := /bin/bash /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/linux-3.4.103/sourcecode/scripts/mkuboot.sh -A arm -O linux -C none  -T kernel -a 0x41508000 -e 0x41508000 -n 'Linux-3.4.103' -d arch/arm/boot/zImage arch/arm/boot/uImage

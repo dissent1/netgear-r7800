@@ -1,1 +1,0 @@
-BWIcon.js

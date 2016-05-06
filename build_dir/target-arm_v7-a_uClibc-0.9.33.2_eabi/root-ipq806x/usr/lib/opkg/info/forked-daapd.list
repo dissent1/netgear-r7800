@@ -1,7 +1,0 @@
-/usr/lib/forked-daapd/forked-daapd-sqlext.la
-/usr/sbin/forked-daapd
-/lib/upgrade/keep.d/forked-daapd
-/usr/lib/forked-daapd/forked-daapd-sqlext.so
-/etc/forked-daapd.conf
-/etc/init.d/forked-daapd
-/usr/sbin/itunes_allow_control

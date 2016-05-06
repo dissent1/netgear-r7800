@@ -1,1 +1,0 @@
-cmd_net/ipv4/netfilter/nf_nat_amanda.ko := arm-openwrt-linux-uclibcgnueabi-ld -EL -r  -T /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/linux-3.4.103/sourcecode/scripts/module-common.lds --build-id  -o net/ipv4/netfilter/nf_nat_amanda.ko net/ipv4/netfilter/nf_nat_amanda.o net/ipv4/netfilter/nf_nat_amanda.mod.o

@@ -1,4 +1,0 @@
-#!/bin/sh
-echo "Removing rc.d symlink for streamboost"
-${IPKG_INSTROOT}/etc/init.d/streamboost disable
-exit 0

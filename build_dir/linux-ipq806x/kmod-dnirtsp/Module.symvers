@@ -1,2 +1,0 @@
-0x00000000	nf_nat_rtsp_hook_expectfn	/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/kmod-dnirtsp/nf_conntrack_dnirtsp	EXPORT_SYMBOL
-0x00000000	nf_nat_rtsp_hook	/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/kmod-dnirtsp/nf_conntrack_dnirtsp	EXPORT_SYMBOL_GPL

@@ -1,9 +1,0 @@
-/usr/bin/query_upload_host_status
-/usr/bin/upload_bwestdata
-/usr/bin/send_bwestdata
-/usr/bin/upload_events
-/usr/bin/send_event
-/usr/bin/hashmac
-/usr/bin/authcurl
-/usr/bin/getsalt
-/usr/bin/anonymize.awk

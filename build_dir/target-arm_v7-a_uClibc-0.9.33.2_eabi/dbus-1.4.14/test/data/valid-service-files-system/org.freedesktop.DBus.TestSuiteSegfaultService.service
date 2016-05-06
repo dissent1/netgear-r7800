@@ -1,5 +1,0 @@
-[D-BUS Service]
-Name=org.freedesktop.DBus.TestSuiteSegfaultService
-Exec=/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/target-arm_v7-a_uClibc-0.9.33.2_eabi/dbus-1.4.14/test/test-segfault
-User=anyrandomuser
-

@@ -1,6 +1,0 @@
-/etc/uhttpd.key
-/usr/sbin/uhttpd
-/www/cgi-bin/uhttpd.sh
-/etc/init.d/uhttpd
-/etc/config/uhttpd
-/etc/uhttpd.crt

@@ -1,2 +1,0 @@
-/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/qca-mcs.ko
-/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/mc_main.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/mc_netlink.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/mc_netfilter.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/mc_snooping.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/mc_forward.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/mc_ecm.o

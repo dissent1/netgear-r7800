@@ -1,2 +1,0 @@
-/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-crypto/src/qca-nss-crypto.ko
-/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-crypto/src/nss_crypto_if.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-crypto/src/nss_crypto_ctrl.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-crypto/src/nss_crypto_debugfs.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-crypto/src/nss_crypto_platform.o

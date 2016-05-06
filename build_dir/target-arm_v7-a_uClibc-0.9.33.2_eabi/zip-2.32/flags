@@ -1,1 +1,0 @@
-CC="arm-openwrt-linux-uclibcgnueabi-gcc" CFLAGS="-I. -DUNIX -O2 -DHAVE_DIRENT_H -DHAVE_TERMIOS_H -DHAVE_FSEEKO" CPP="/usr/bin/cpp" OBJA="" BINDIR=/usr/local/bin MANDIR=manl LFLAGS1="" LFLAGS2="" LN="ln -s"

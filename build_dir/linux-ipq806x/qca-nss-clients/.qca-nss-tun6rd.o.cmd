@@ -1,1 +1,0 @@
-cmd_/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/qca-nss-tun6rd.o := arm-openwrt-linux-uclibcgnueabi-ld -EL    -r -o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/qca-nss-tun6rd.o /home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-nss-clients/nss_connmgr_tun6rd.o 

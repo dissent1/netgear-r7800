@@ -1,6 +1,0 @@
-0x00000000	mc_bridge_ipv4_update_callback_deregister	/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/qca-mcs	EXPORT_SYMBOL
-0x00000000	mc_bridge_ipv6_update_callback_deregister	/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/qca-mcs	EXPORT_SYMBOL
-0x00000000	mc_bridge_ipv6_update_callback_register	/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/qca-mcs	EXPORT_SYMBOL
-0x00000000	mc_bridge_ipv4_update_callback_register	/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/qca-mcs	EXPORT_SYMBOL
-0x00000000	mc_bridge_ipv6_get_if	/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/qca-mcs	EXPORT_SYMBOL
-0x00000000	mc_bridge_ipv4_get_if	/home/projects/R7800-V1.0.0.40_gpl_src/build_dir/linux-ipq806x/qca-mcs/qca-mcs	EXPORT_SYMBOL

@@ -1,7 +1,0 @@
-kernel/arch/arm/mach-msm/pil-tzapps.ko
-kernel/arch/arm/mach-msm/sf_partitions.ko
-kernel/arch/arm/mach-msm/rpm_stats.ko
-kernel/arch/arm/mach-msm/rpm_master_stat.ko
-kernel/arch/arm/mach-msm/rpm_rbcpr_stats.ko
-kernel/arch/arm/mach-msm/rpm_log.ko
-kernel/arch/arm/mach-msm/tz_log.ko
