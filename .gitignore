@@ -1,3 +1,7 @@
+build_dir/
+staging_dir/
+tmp/
+
 # Object files
 *.o
 *.ko
