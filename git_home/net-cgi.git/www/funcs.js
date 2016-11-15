@@ -1839,6 +1839,9 @@ function printableKeyFilter()
 
 function checkpsk(passphrase, passphrase_len)
 {
+	var cd_less_flag = 0;
+	if(top.location.href.search("BRS_index.htm") != -1)
+		cd_less_flag = 1;
 	var len = passphrase.value.length;
 	if ( len == 64 )
 	{
@@ -1846,7 +1849,10 @@ function checkpsk(passphrase, passphrase_len)
 		{
 			if(isValidHex(passphrase.value.charAt(i))==false)
 			{
-				alert("$notallowpassps");
+				if(cd_less_flag == 1)
+					alert(notallowpassps);
+				else
+					alert("$notallowpassps");
 				return false;
 			}
 		}
@@ -1855,18 +1861,27 @@ function checkpsk(passphrase, passphrase_len)
 	{
 		if(len < 8 )
 		{
-	        	alert("$passphrase_short8");
+			if(cd_less_flag == 1)
+				alert(passphrase_short8);
+			else
+				alert("$passphrase_short8");
 		        return false;
 		} 
 		if(len > 63){
-			alert("$passphrase_long63");
+			if(cd_less_flag == 1)
+				alert(passphrase_long63);
+			else
+				alert("$passphrase_long63");
 			return false;
 		}
 		for(i=0;i<passphrase.value.length;i++)
 		{
 			if(isValidChar_space(passphrase.value.charCodeAt(i))==false)
 			{
-				alert("$notallowpassps");
+				if(cd_less_flag == 1)
+					alert(notallowpassps);
+				else
+					alert("$notallowpassps");
 				return false;
 			}
 		}

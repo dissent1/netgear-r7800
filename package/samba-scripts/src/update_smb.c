@@ -1046,6 +1046,7 @@ static void load_share_info(FILE *fp, char *diskname)
 					perror("popen");
 					return;
 				}
+				memset(result, 0, sizeof(result));
 				fgets(result, sizeof(result), fp);
 				pclose(fp);
 				printf("result:%s\n", result);
